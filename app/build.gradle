@@ -1,0 +1,76 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+}
+
+android {
+    namespace 'com.example.stolperstein'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.stolperstein"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.constraintlayout
+    implementation libs.lifecycle.livedata.ktx
+    implementation libs.lifecycle.viewmodel.ktx
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.legacy.support.v4
+    implementation libs.preference
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    // add for this project
+    //
+    // jsoup HTML parser library @ https://jsoup.org/
+    // implementation 'org.jsoup:jsoup:1.17.2'
+    implementation libs.jsoup
+    //
+    // https://github.com/osmdroid/osmdroid
+    // implementation 'org.osmdroid:osmdroid-android:6.1.19'
+    releaseImplementation libs.osmdroid.android
+    //
+    // https://github.com/MKergall/osmbonuspack
+    // repositories {
+    //     ...
+    //     maven { url "https://jitpack.io" }
+    //}
+    // com.github.MKergall:osmbonuspack:6.9.0
+    implementation libs.osmbonuspack
+    //
+    // https://developer.android.com/jetpack/androidx/releases/work?hl=de
+    // implementation("androidx.work:work-runtime:2.9.0")
+    implementation libs.work.runtime
+    //
+    // https://developer.android.com/develop/ui/views/components/settings?hl=de
+    // implementation "androidx.preference:preference-ktx:1.2.0"
+    implementation libs.preference.ktx
+    //
+    // https://stackoverflow.com/questions/57449900/letting-webview-on-android-work-with-prefers-color-scheme-dark
+    implementation libs.webkit
+}

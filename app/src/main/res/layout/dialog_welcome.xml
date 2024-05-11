@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="2sp" >
+
+    <Button
+        android:id="@+id/button_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2sp"
+        android:text="@string/close"
+        android:textSize="14sp"
+        android:textColor="@color/dialogText"
+        android:background="@color/transparent"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/welcome_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textColor="@color/dialogText"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:text="@string/welcome"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button_close" />
+
+    <TextView
+        android:id="@+id/welcome_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2sp"
+        android:fontFamily="sans-serif"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/dialogText"
+        android:text="@string/stolpersteine"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:layout_below="@+id/welcome_title" />
+
+    <TextView
+        android:id="@+id/welcome_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2sp"
+        android:textSize="16sp"
+        android:textColor="@color/dialogText"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:text="@string/Greeting_Description_short"
+        android:layout_below="@+id/welcome_subtitle"/>
+
+    <ImageView
+        android:id="@+id/welcome_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        android:contentDescription="@string/todo"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/welcome_content"/>
+
+</RelativeLayout>
+

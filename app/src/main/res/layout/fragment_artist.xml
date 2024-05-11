@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/artistTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textFontWeight="@android:integer/config_longAnimTime"
+                android:text="@string/placeholder"
+                tools:targetApi="p" />
+
+            <TextView
+                android:id="@+id/artistContent1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textFontWeight="@android:integer/config_longAnimTime"
+                android:text="@string/placeholder"
+                tools:targetApi="p" />
+
+            <ImageView
+                android:id="@+id/artistPic1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/todo"
+                tools:ignore="ContentDescription">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/artistContent2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                tools:targetApi="p" />
+            <TextView
+                android:id="@+id/artistContent3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/artistContent4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/artistContent5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/artistContent6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/artistContent7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:textColorLink="@color/top"
+                android:text="@string/placeholder"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="44dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

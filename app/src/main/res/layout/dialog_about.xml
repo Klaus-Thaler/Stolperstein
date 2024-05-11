@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="2sp" >
+
+    <Button
+        android:id="@+id/button_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2sp"
+        android:text="@string/close"
+        android:textSize="14sp"
+        android:textColor="@color/dialogText"
+        android:background="@color/transparent"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/title_html"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textColor="@color/dialogText"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button_close"/>
+
+    <WebView
+        android:id="@+id/webcontent_html"
+        android:layout_width="fill_parent"
+        android:layout_height="240dp"
+        android:layout_below="@+id/title_html"
+        android:layout_alignParentStart="true"
+        android:layout_margin="8sp"
+        android:backgroundTintMode="screen" />
+    <ImageView
+        android:id="@+id/image_html"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        android:contentDescription="@string/todo"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/webcontent_html"/>
+
+</RelativeLayout>
+

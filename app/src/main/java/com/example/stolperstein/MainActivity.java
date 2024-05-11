@@ -1,0 +1,199 @@
+package com.example.stolperstein;
+
+import static com.example.stolperstein.ui.CardFragment.mMyLocationOverlay;
+
+import android.Manifest;
+import android.app.Dialog;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.location.LocationManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.NavGraph;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.webkit.WebViewFeature;
+
+import com.example.stolperstein.classes.FileManager;
+import com.example.stolperstein.classes.utils;
+import com.example.stolperstein.databinding.ActivityMainBinding;
+
+
+import com.example.stolperstein.ui.DialogAbout;
+import com.example.stolperstein.ui.DialogDownloadCacheFile;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
+import org.osmdroid.views.MapView;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+    public static MapView mapView;
+    public static String CacheFileName = "placemarks.kml";
+    LocationManager locationManager;
+    public static String[] PermsLocation = {
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_WIFI_STATE,
+            Manifest.permission.INTERNET
+    };
+    public static String[] PermsStorage = {
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.INTERNET
+    };
+    public static HashMap<Integer, List<String>> dataPerson;
+    public static String web_link = "https://kiel-wiki.de/Stolpersteine";
+    public static String preAddress = "Deutschland Schleswig-Holstein Kiel ";
+
+    private AppBarConfiguration mAppBarConfiguration;
+    public static ActivityMainBinding binding;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+        setSupportActionBar(binding.appBarMain.toolbar);
+        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+            // floating Button (Fadenkreuz)
+            @Override
+            public void onClick(View view) {
+                Dialog dialog = new Dialog(view.getContext());
+                dialog.setTitle(R.string.location);
+                dialog.setContentView(R.layout.dialog_location);
+                Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
+                buttonClose.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) { dialog.dismiss(); }
+                });
+                Button buttonNo = (Button) dialog.findViewById(R.id.button_no);
+                buttonNo.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        ActivityCompat.requestPermissions(MainActivity.this, PermsLocation, 2);
+                        mMyLocationOverlay.disableFollowLocation();
+                        dialog.dismiss();
+                    }
+                });
+                Button buttonYes = (Button) dialog.findViewById(R.id.button_yes);
+                buttonYes.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        // permissions
+                        ActivityCompat.requestPermissions(MainActivity.this, PermsLocation, 2);
+                        mMyLocationOverlay.enableFollowLocation();
+                        dialog.dismiss();
+
+                    }
+                });
+                dialog.create();
+                dialog.show();
+            }
+        });
+
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_artist, R.id.nav_setting,
+                R.id.nav_project, R.id.nav_stones)
+                .setOpenableLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
+        // start explicit Fragment
+        // https://developer.android.com/guide/navigation/use-graph/programmatic?hl=de
+        NavGraph navGraph = navController.getNavInflater().inflate(R.navigation.mobile_navigation);
+        navGraph.setStartDestination(R.id.nav_home); // here the Fragment  to start
+        navController.setGraph(navGraph);
+        NavigationUI.setupWithNavController(binding.navView, navController);
+
+        if (!FileManager.CacheFileExist(getApplication(),CacheFileName)) {
+            Dialog dialog = new Dialog(this);
+            dialog.setTitle(R.string.welcome);
+            dialog.setContentView(R.layout.dialog_welcome);
+            Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
+            buttonClose.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    dialog.dismiss(); }
+            });
+            ImageView imageView = (ImageView) dialog.findViewById(R.id.welcome_image);
+            imageView.setCropToPadding(true);
+            imageView.setMaxWidth(10);
+            imageView.setMaxHeight(10);
+            Bitmap img1 = null;
+            img1 = utils.getBitmapFromAsset(dialog.getContext(), "stolperstein_ein_mensch.png");
+            imageView.setImageBitmap(img1);
+            dialog.create();
+            dialog.show();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_settings, menu);
+        super.onCreateOptionsMenu(menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        // Items in Settings, rechts oben
+        if (item.getItemId() == R.id.settings_about) {
+            // darkmode (Let make me it simple)
+            int content = R.raw.about_html;
+            if (getResources().getString(R.string.mode).equals("night")) {
+                content = R.raw.about_html_dark;
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                DialogAbout.show(this, "About", content, "stolperstein_ein_mensch.png");
+            }
+        }
+        if (item.getItemId() == R.id.settings_donat) {
+            // darkmode (Let make me it simple)
+            int content = R.raw.donate_html;
+            if (getResources().getString(R.string.mode).equals("night")) {
+                content = R.raw.donate_html_dark;
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                DialogAbout.show(this, "Coffee & Donuts", content, "donut.png");
+            }
+        }
+        if (item.getItemId() == R.id.settings_download_cachefile) {
+            ActivityCompat.requestPermissions(this, MainActivity.PermsStorage, 2);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                DialogDownloadCacheFile.show(this, "Download");
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
+
+}

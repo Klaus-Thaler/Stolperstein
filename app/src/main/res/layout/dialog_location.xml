@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="2sp">
+
+    <Button
+        android:id="@+id/button_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2sp"
+        android:text="@string/close"
+        android:textSize="14sp"
+        android:textColor="@color/dialogText"
+        android:layout_alignParentEnd="true"
+        android:background="@color/transparent"/>
+
+    <TextView
+        android:id="@+id/location_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textColor="@color/dialogText"
+        android:text="@string/location"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button_close"/>
+
+    <TextView
+        android:id="@+id/location_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        android:textSize="16sp"
+        android:textColor="@color/dialogText"
+        android:text="@string/m_chtest_du_den_standort_ermitteln"
+        android:layout_below="@+id/location_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_below="@+id/location_content" >
+
+        <Button
+            android:id="@+id/button_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8sp"
+            android:gravity="center|center_vertical"
+            android:text="@string/follow"
+            android:textSize="14sp"
+            app:shapeAppearanceOverlay="@style/leaf"/>
+
+        <Button
+            android:id="@+id/button_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8sp"
+            android:gravity="center|center_vertical"
+            android:text="@string/nofollow"
+            android:textSize="14sp"
+            app:shapeAppearanceOverlay="@style/leaf"/>
+    </LinearLayout>
+
+</RelativeLayout>

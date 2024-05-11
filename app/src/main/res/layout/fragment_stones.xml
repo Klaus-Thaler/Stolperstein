@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/stonesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textFontWeight="@android:integer/config_longAnimTime"
+                android:text="@string/placeholder" />
+
+            <ImageView
+                android:id="@+id/stonesPic1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/todo">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/stonesContent1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/stonesContent2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:textColorLink="@color/top"
+                android:text="@string/placeholder"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="44dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
