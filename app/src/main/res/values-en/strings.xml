@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="noData"><![CDATA[<html><style>body {background-color:white;color:black;} a {color:blue;}</style><body><table><tr><th>No data available yet.</th></tr><tr><td>To start the app for the first time, please go to <i>Settings</i> -> <i>Search</i> -> click on <i>Start</i>. </td></tr></table></body></html>]]></string>
+    <string name="das_kunstprojekt">The art project</string>
+    <string name="die_stolpersteine">The stumbling blocks</string>
+    <string name="gunter_demnig_27_oktober_1947_"><![CDATA[Gunter Demnig (born 27 October 1947 in Berlin) is a German artist.   He became known for the Stolpersteine, which he has been laying since 1996 in memory of victims   victims of the National Socialist era.]]></string>
+    <string name="demnig_wuchs_in_nauen_und_berlin_"><![CDATA[Demnig grew up in Nauen and Berlin.         In 1967, he graduated from high school and began studying art education at the         Academy of Fine Arts in Berlin under Herbert Kaufmann. This was followed in 1969/1970 by a year         Industrial Design programme at the same university. From 1971, he continued his art education studies         at the Kunsthochschule Kassel and passed his first state examination there in 1974.         In the same year, Demnig began studying art at the University of Kassel under Harry Kramer,         followed by two years of work in the planning, construction management and realisation of monument renovations.         From 1980 to 1985, Demnig was an artistic-scientific assistant in the Department of Art at the University of Kassel.         at the University of Kassel.]]></string>
+    <string name="_1985_er_ffnete_demnig_ein_eigenes_Atelier_"><![CDATA[In 1985 Demnig opened his own studio in         studio in Cologne and worked on several projects, including the Moltkerei workshop and the Fuhrwerkswaage art space.         Since 1994, he has also worked at the IGNIS cultural centre.\nSince April 2011         Demnig\'s studio in Frechen was located in the Signalwerk art centre, which was built on the site of the         former station of the Cologne-Frechen-Benzelrath railway. This is also where around         20 other artists known in the region also have their studios there. In 2017, he moved his studio         to Elbenrod in Hesse.]]></string>
+    <string name="bekannt_wurde_demnig_durch_die_Herstellung_"><![CDATA[Demnig became known for         for his Stumbling Stones, which he also lays himself. They are intended to commemorate people         who fell victim to the Nazi dictatorship. The stones, which have small brass plates on the top         with the names of the victims, are laid in the pavement in front of their former homes.         pavement.\n         Launched in 1996 and realised in 1,200 German municipalities by 2017, the project has been         the largest decentralised memorial in the world and now counts 100,000 stones in 31         European countries (2023). The copyright for the Stolpersteine in the broadest sense lies         lies solely and exclusively with Gunter Demnig himself.\n         A copyright actually created by Demnig         must, however, be questioned in this respect: he was aware of the project         Names & Stones, which was started in 1994 by Tom Fecht for the first AIDS victims in the pavements         in Bonn, Hamburg and Berlin (Invalidenstraße, in front of the Natural History Museum).\n         The names of the victims were and are chiselled into small square natural stones. However,          Demnig can claim to have honoured the victims after modifying the         form (stones with brass plate) and with new content (e.g. dates of life), Demnig can claim to have honoured the         Holocaust victims throughout Germany and later worldwide.\n]]></string>
+    <string name="beruf_und_werk">Profession and work</string>
+    <string name="ausbildung">Education</string>
+    <string name="willkommen">Welcome</string>
+    <string name="start">start</string>
+    <string name="suche">Search for stumbling blocks ...</string>
+    <string name="stolpersteine">stumbling blocks</string>
+    <string name="Greeting_Description">To set up the app, data must first be generated. This can take some time, but is only necessary once to set up the app. The first step is to load information from the wiki. Then the geo-points for display on the map are determined from the addresses to which the stumbling blocks relate. If the action is successful, the map is displayed with all the information obtained. This process can be repeated individually in ‘Settings’.</string>
+    <string name="Greeting_Description_short">To set up the app, data must first be generated. This can take some time, but is only necessary once to set up the app. Go to Settings and start the search process.</string>
+    <string name="die_suche_war_erfolgreich_">The search for stumbling blocks was successful.\\nDespite this, search again?</string>
+    <string name="setting">Settings</string>
+    <string name="starte_die_suche">Start the search. Names and addresses for the stumbling blocks are being sought.</string>
+    <string name="menu_name">The Names</string>
+    <string name="close"><u>close</u></string>
+    <string name="clear">clear</string>
+    <string name="title">title</string>
+    <string name="about">about ...</string>
+    <string name="coffee_for_me">coffee for me</string>
+    <string name="search">search</string>
+    <string name="settings">settings</string>
+    <string name="contact_me">contact</string>
+    <string name="welcome">welcome</string>
+    <string name="m_chtest_du_den_standort_ermitteln">Want to find out your location? ‘Follow’ shows your location on the map. This only makes sense if you are in the city of Kiel or in the neighbourhood of Kiel. If you are not in Kiel, then use ‘No Follow’. This keeps the focus on the map of the city of Kiel.</string>
+    <string name="location">location</string>
+    <string name="follow">follow</string>
+    <string name="nofollow">no follow</string>
+    <string name="download_kml">download kml</string>
+    <string name="kml_file_speichern">Save the data found as a KML file for sharing in downloads?</string>
+    <string name="menu_karte">OSM Card</string>
+    <string name="menu_artist">The Artist</string>
+    <string name="menu_project">The Project</string>
+    <string name="menu_stones">The stumbling blocks</string>
+    <string name="this_app_is_for_android_8_and_higher">the location could not be identified this app is for android 8 and higher.</string>
+    <string name="menu_setting">Settings</string>
+    <string name="further_info">Further information: <a href="https://github.com/Klaus-Thaler?tab=repositories">Git-Hub</a></string>
+</resources>

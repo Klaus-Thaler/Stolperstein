@@ -45,7 +45,7 @@ public class FileManager {
     }
     public static void saveDataInDownload(Context context, String fileName){
         File downloads = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        utils.showToast(context,"downloads" + downloads.toString());
+        //utils.showToast(context,"downloads" + downloads.toString());
         File mExternalFile = new File(downloads, fileName);
 
         if (externalStorageWrite()) {

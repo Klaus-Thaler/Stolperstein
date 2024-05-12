@@ -1,21 +1,21 @@
 <resources>
-    <string name="app_name">Stolperstein</string>
-    <string name="mode">day</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Stolpersteine Kiel</string>
-    <string name="nav_header_subtitle">NIE WIEDER IST JETZT</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name" translatable="false">Stolperstein</string>
+    <string name="mode" translatable="false">day</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Stolpersteine Kiel</string>
+    <string name="nav_header_subtitle" translatable="false">NIE WIEDER IST JETZT</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
 
-    <string name="menu_karte">Karte</string>
+    <string name="menu_karte">OSM Karte</string>
     <string name="menu_artist">Der Künstler</string>
     <string name="menu_project">Das Projekt</string>
-    <string name="placeholder">*</string>
-    <string name="gunter_demnig">Gunter Demnig</string>
+    <string name="placeholder" translatable="false">*</string>
+    <string name="gunter_demnig" translatable="false">Gunter Demnig</string>
 
     <string name="das_kunstprojekt">Das Kunstprojekt</string>
-    <string name="this_project"><![CDATA[Die in Fußwege eingebetteten Gedenksteine halten
+    <string name="this_project" translatable="false"><![CDATA[Die in Fußwege eingebetteten Gedenksteine halten
         die Erinnerung an die Opfer des Nationalsozialismus - jüdische Bürger, Sinti und Roma,
         politisch Verfolgte, Homosexuelle, Zeugen Jehovas und "Euthanasie"-Opfer - wach. Auf den
         etwa zehn mal zehn Zentimeter großen Stolpersteinen sind kleine Messingplatten mit den Namen
@@ -29,9 +29,7 @@
         Hiroshimapark gegenüber dem Haus Lorentzendamm 36 an ihren Leidensweg erinnert.]]></string>
     <string name="die_stolpersteine">Die Stolpersteine</string>
 
-    <string name="gunter_demnig_27_oktober_1947_"><![CDATA[Gunter Demnig (* 27. Oktober 1947 in Berlin)
-        ist ein deutscher Künstler. Bekannt wurde er durch die Stolpersteine, die er seit 1996 zur
-        Erinnerung an Opfer in der Zeit des Nationalsozialismus verlegt.]]></string>
+    <string name="gunter_demnig_27_oktober_1947_"><![CDATA[Gunter Demnig (* 27. Oktober 1947 in Berlin)  ist ein deutscher Künstler.  Bekannt wurde er durch die Stolpersteine, die er seit 1996 zur  Erinnerung an Opfer in der Zeit des Nationalsozialismus verlegt.]]></string>
     <string name="demnig_wuchs_in_nauen_und_berlin_"><![CDATA[Demnig wuchs in Nauen und Berlin auf.
         1967 legte er das Abitur ab und begann ein Studium der Kunstpädagogik an der Hochschule für
         Bildende Künste in Berlin bei Herbert Kaufmann. 1969/1970 folgte ein Jahr
@@ -48,30 +46,15 @@
         ehemaligen Bahnhofs der Köln-Frechen-Benzelrather Eisenbahn liegt. Dort betreiben auch etwa
         20 andere in der Region bekannte Künstler ihre Ateliers. Im Jahr 2017 verlegte er sein Atelier
         nach Elbenrod in Hessen.]]></string>
-    <string name="bekannt_wurde_demnig_durch_die_Herstellung_"><![CDATA[Bekannt wurde Demnig durch
-        die Herstellung der Stolpersteine, die er auch selbst verlegt. Sie sollen an Menschen erinnern,
-        die der NS-Diktatur zum Opfer fielen. Die Steine, die auf der Oberseite kleine Messingplatten
-        mit den Namen der Opfer tragen, verlegt er vor deren einstigen Wohnungen im Straßen- oder
-        Gehwegpflaster.\n
-        Das 1996 gestartete Projekt, bis 2017 in 1200 deutschen Kommunen realisiert, gilt seit Jahren
-        als das größte dezentrale Mahnmal der Welt und zählt mittlerweile 100.000 Steine in 31
-        Staaten Europas (2023). Das Urheberrecht im umfassenden Sinn liegt für die Stolpersteine
-        einzig und ausschließlich nur bei Gunter Demnig persönlich.\nEin tatsächlich durch Demnig
-        entstandenes Urheberrecht muss jedoch insofern angezweifelt werden: er kannte das Projekt
-        Namen & Steine, das 1994 von Tom Fecht für die ersten AIDS-Opfer im Straßenpflaster, u. a.
-        in Bonn, Hamburg und Berlin (Invalidenstraße, vor dem Naturkundemuseum) begonnen worden ist.\n
-        Die Namen der Opfer wurden und werden in kleinen quadratischen Natursteinen eingemeißelt
-        (siehe Bild rechts). Demnig kann für sich jedoch in Anspruch nehmen, nach Modifizierung der
-        Form (Steine mit Messingplatte) und mit neuem Inhalt (z. B. Lebensdaten) die Ehrung der
-        Holocaust-Opfer deutschlandweit und später weltweit verbreitet zu haben.\n]]></string>
+    <string name="bekannt_wurde_demnig_durch_die_Herstellung_"><![CDATA[Bekannt wurde Demnig durch         die Herstellung der Stolpersteine, die er auch selbst verlegt. Sie sollen an Menschen erinnern,         die der NS-Diktatur zum Opfer fielen. Die Steine, die auf der Oberseite kleine Messingplatten         mit den Namen der Opfer tragen, verlegt er vor deren einstigen Wohnungen im Straßen- oder         Gehwegpflaster.\n         Das 1996 gestartete Projekt, bis 2017 in 1200 deutschen Kommunen realisiert, gilt seit Jahren         als das größte dezentrale Mahnmal der Welt und zählt mittlerweile 100.000 Steine in 31         Staaten Europas (2023). Das Urheberrecht im umfassenden Sinn liegt für die Stolpersteine         einzig und ausschließlich nur bei Gunter Demnig persönlich.\nEin tatsächlich durch Demnig         entstandenes Urheberrecht muss jedoch insofern angezweifelt werden: er kannte das Projekt         Namen & Steine, das 1994 von Tom Fecht für die ersten AIDS-Opfer im Straßenpflaster, u. a.         in Bonn, Hamburg und Berlin (Invalidenstraße, vor dem Naturkundemuseum) begonnen worden ist.\n         Die Namen der Opfer wurden und werden in kleinen quadratischen Natursteinen eingemeißelt. Demnig kann für sich jedoch in Anspruch nehmen, nach Modifizierung der         Form (Steine mit Messingplatte) und mit neuem Inhalt (z. B. Lebensdaten) die Ehrung der         Holocaust-Opfer deutschlandweit und später weltweit verbreitet zu haben.\n]]></string>
     <string name="beruf_und_werk">Beruf und Werk</string>
     <string name="ausbildung">Ausbildung</string>
 
-    <string name="todo">TODO</string>
+    <string name="todo" translatable="false">TODO</string>
     <!-- TODO: Remove or change this placeholder text -->
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="bei_den_steinen_handelt_es_sich"><![CDATA[Bei den Steinen handelt es sich um knapp 10 cm
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="bei_den_steinen_handelt_es_sich" translatable="false"><![CDATA[Bei den Steinen handelt es sich um knapp 10 cm
         große Betonwürfel, auf deren oberer Fläche eine Messingplatte angebracht ist. In die
         Messingplatte sind mit Schlagstempeln die Namen und Lebensdaten der Opfer und ggf. weitere
         Informationen eingeprägt. Jeder Stein ist einzeln handgefertigt. Das betrifft sowohl den
@@ -91,54 +74,39 @@
         des Zentralrats der Juden, die Steine als Entwürdigung der Opfer, während der heutige
         Zentalratspräsident Josef Schuster (seit 2014) das Stolpersteinprojekt befürwortet. ]]></string>
     <string name="menu_stones">Die Stolpersteine</string>
-    <string name="this_app_is_for_android_8_and_higher">the location could not be identified\nthis app is for android 8 and higher</string>
     <string name="willkommen">Willkommen</string>
     <string name="start">Start</string>
     <string name="suche">Suche Stolpersteine ...</string>
     <string name="stolpersteine">Stolpersteine</string>
-    <string name="Greeting_Description">Für die Einrichtung der App müssen zuerst Daten generiert
-        werden.\nDas kann einige Zeit in Anspruch nehmen, ist aber nur einmal für die Einrichtung der
-        App notwendig.\nEs werden im ersten Schritt Informationen aus dem Wiki geladen.\nDanach werden
-        aus den Adressen, auf denen sich die Stolpersteine beziehen, die Geo-Punkte für die Anzeige
-        auf der Karte ermittelt.\nIst die Aktion erfolgreich, wird die Karte mit allen gewonnen
-        Informationen angezeigt.\nDieser Vorgang kann individuell in \"Einstellungen\" wiederholt werden.\n\n
-        Weitere Infos: <a href='https://kiel-wiki.de/Stolpersteine'>Kiel-Wiki</a>\n
-        Weitere Infos: <a href='https://www.gnu.org/licenses/fdl-1.3.html'>Lizenz</a>\n\nDanke.\n
-        <a href='https://github.com/Klaus-Thaler'>Klaus Thaler @ GitHub</a>\n\n
-    </string>
-    <string name="Greeting_Description_short">Für die Einrichtung der App müssen zuerst Daten generiert
-        werden.\n\nDas kann einige Zeit in Anspruch nehmen, ist aber nur einmal für die Einrichtung der
-        App notwendig.\n\n\nGeh zu Einstellungen und starte den Such-Vorgang.\n\n
-    </string>
+    <string name="Greeting_Description">Für die Einrichtung der App müssen zuerst Daten generiert  werden. Das kann einige Zeit in Anspruch nehmen, ist aber nur einmal für die Einrichtung der  App notwendig. Es werden im ersten Schritt Informationen aus dem Wiki geladen. Danach werden  aus den Adressen, auf denen sich die Stolpersteine beziehen, die Geo-Punkte für die Anzeige auf der Karte ermittelt. Ist die Aktion erfolgreich, wird die Karte mit allen gewonnen Informationen angezeigt. Dieser Vorgang kann individuell in \"Einstellungen\" wiederholt werden.</string>
+    <string name="Greeting_Description_short">Für die Einrichtung der App müssen zuerst Daten generiert werden. Das kann einige Zeit in Anspruch nehmen, ist aber nur einmal für die Einrichtung der App notwendig. Geh zu Einstellungen und starte den Such-Vorgang.</string>
 
     <string name="die_suche_war_erfolgreich_">Die Suche nach Stolpersteine war erfolgreich.\nTrotzdem noch einmal suchen?</string>
-    <string name="setting">Setting</string>
-    <string name="menu_setting">Setting</string>
+    <string name="setting">Einstellungen</string>
+    <string name="menu_setting">Einstellungen</string>
     <string name="starte_die_suche">Starte die Suche.\nEs werden Namen und Adressen\nzu den Stolpersteinen gesucht.</string>
-    <string name="menu_name">die Namen</string>
-    <string name="noData"><![CDATA[<html><style>body {background-color:white;color:black;} a {color:blue;}</style><body><table><tr><th>Noch keine Daten vorhanden.</th></tr>
-    <tr><td>Bitte f&uuml;r den ersten Start der App &uuml;ber <i>Einstellungen</i> -> <i>Suche</i> -> auf <i>Start</i> klicken. </td></tr></table></body></html>]]></string>
-    <string name="_1_10"><![CDATA[1/10 >]]></string>
-    <string name="close"><u>Close</u></string>
-    <string name="clear">Clear</string>
-    <string name="title">Title</string>
-    <string name="about">About</string>
-    <string name="coffee_for_me">coffee for me</string>
-    <string name="search">Search</string>
-    <string name="settings">Settings</string>
-    <string name="contact_me">Contact me</string>
+    <string name="menu_name">Die Namen</string>
+    <string name="noData" translatable="false"><![CDATA[<html><style>body {background-color:white;color:black;} a {color:blue;}</style><body><table><tr><th>Noch keine Daten vorhanden.</th></tr>     <tr><td>Bitte f&uuml;r den ersten Start der App &uuml;ber <i>Einstellungen</i> -> <i>Suche</i> -> auf <i>Start</i> klicken. </td></tr></table></body></html>]]></string>
+    <string name="_1_10" translatable="false"><![CDATA[1/10 >]]></string>
+    <string name="close"><u>Schliessen</u></string>
+    <string name="title">Titel</string>
+    <string name="about">Über ...</string>
+    <string name="coffee_for_me">Kaffee für mich</string>
+    <string name="search">Suche</string>
+    <string name="settings">Einstellungen</string>
+    <string name="contact_me">Kontakt</string>
     <string name="welcome">Willkommen</string>
-    <string name="no">NO</string>
-    <string name="yes">YES</string>
-    <string name="m_chtest_du_den_standort_ermitteln">Möchtest du deinen Standort ermitteln?\n
-        \"Follow\" zeigt deinen Standort auf der Karte an. Das ist nur sinnvoll,
-        wenn du in der Stadt Kiel oder in der Umgebung von Kiel bist.\nWenn du nicht in Kiel bist,
-        dann benutze \"No Follow\". So bleibt der Fokus auf der Karte der Stadt Kiel.</string>
+    <string name="no" translatable="false">no</string>
+    <string name="yes" translatable="false">yes</string>
+    <string name="m_chtest_du_den_standort_ermitteln">Möchtest du deinen Standort ermitteln? \"Follow\" zeigt deinen Standort auf der Karte an. Das ist nur sinnvoll, wenn du in der Stadt Kiel oder in der Umgebung von Kiel bist. Wenn du nicht in Kiel bist, dann benutze \"No Follow\". So bleibt der Fokus auf der Karte der Stadt Kiel.</string>
 
     <string name="location">Standort</string>
-    <string name="follow">Follow</string>
-    <string name="nofollow">noFollow</string>
-    <string name="download_kml">Download Kiel.kml</string>
+    <string name="follow">Folgen</string>
+    <string name="nofollow">nicht Folgen</string>
+    <string name="download_kml">Download kml</string>
     <string name="kml_file_speichern">Die ermittelten Daten als KML-File zur Weitergabe in Downloads speichern?</string>
+    <string name="clear">löschen</string>
+    <string name="this_app_is_for_android_8_and_higher">Der Standort konnte nicht identifiziert werden.\\nDiese App ist für Android 8 und höher</string>
+    <string name="further_info">Further information: <a href="https://github.com/Klaus-Thaler?tab=repositories">Git-Hub</a></string>
 
 </resources>

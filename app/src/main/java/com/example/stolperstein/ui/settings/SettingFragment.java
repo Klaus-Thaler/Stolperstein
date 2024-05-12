@@ -53,6 +53,8 @@ public class SettingFragment extends Fragment {
         final TextView settingSearch = binding.listSetup;
         SettingViewModel.mSearch.observe(getViewLifecycleOwner(), settingSearch::setText);
 
+        final  TextView furtherText = binding.furtherInfo;
+        furtherText.setMovementMethod(LinkMovementMethod.getInstance());
 
         final Button settingButton = binding.searchStart;
         SettingViewModel.mButton.observe(getViewLifecycleOwner(), settingButton::setText);

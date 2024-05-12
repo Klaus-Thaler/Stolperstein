@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="mode">night</string>
-    <string name="noData"><![CDATA[<html><style>body {background-color:black;color:white;} a {color:orange;}</style><body><table><tr><th>Noch keine Daten vorhanden.</th></tr>
-    <tr><td>Bitte f&uuml;r den ersten Start der App &uuml;ber <i>Einstellungen</i> -> <i>Suche</i> -> auf <i>Start</i> klicken. </td></tr></table></body></html>]]></string>
+    <string name="mode" translatable="false">night</string>
+    <string name="noData"><![CDATA[<html><style>body {background-color:white;color:black;} a {color:blue;}</style><body><table><tr><th>Noch keine Daten vorhanden.</th></tr><tr><td>Bitte f&uuml;r den ersten Start der App &uuml;ber <i>Einstellungen</i> -> <i>Suche</i> -> auf <i>Start</i> klicken. </td></tr></table></body></html>]]></string>
 </resources>
