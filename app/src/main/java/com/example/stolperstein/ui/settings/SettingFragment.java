@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.work.OneTimeWorkRequest;
@@ -34,6 +35,7 @@ public class SettingFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         SettingViewModel settingViewModel =
                 new ViewModelProvider(this).get(SettingViewModel.class);
 
@@ -46,7 +48,7 @@ public class SettingFragment extends Fragment {
 
         final ProgressBar progBarSet = binding.counterWeb;
         SettingViewModel.progBarSet.observe(getViewLifecycleOwner(), progBarSet::setProgress);
-        progBarSet.setProgressTintList(ColorStateList.valueOf(Color.RED));
+        //progBarSet.setProgressTintList(ColorStateList.valueOf(Color.RED));
 
         final TextView settingSearch = binding.listSetup;
         SettingViewModel.mSearch.observe(getViewLifecycleOwner(), settingSearch::setText);

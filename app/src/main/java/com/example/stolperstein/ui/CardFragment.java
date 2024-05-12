@@ -37,7 +37,7 @@ import java.util.Objects;
 
 public class CardFragment extends Fragment {
         private FragmentHomeBinding binding;
-        public MapView mapView;
+        public static MapView mapView;
         public static MyLocationNewOverlay mMyLocationOverlay;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -78,13 +78,13 @@ public class CardFragment extends Fragment {
         mapView.getOverlays().add(compassOverlay);
         mapView.invalidate();
 
-        mMyLocationOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider(requireContext()), mapView);
+        //mMyLocationOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider(requireContext()), mapView);
         //IMapController controller = mapView.getController();
-        mMyLocationOverlay.setEnabled(false);
-        mMyLocationOverlay.enableMyLocation();
-        mMyLocationOverlay.setEnabled(true);
-        mapView.getOverlays().add(mMyLocationOverlay);
-        mapView.invalidate();
+        //mMyLocationOverlay.setEnabled(false);
+        //mMyLocationOverlay.enableMyLocation();
+        //mMyLocationOverlay.setEnabled(true);
+        //mapView.getOverlays().add(mMyLocationOverlay);
+        //mapView.invalidate();
 
         if (FileManager.CacheFileExist(requireActivity(),CacheFileName)) {
             // cache file

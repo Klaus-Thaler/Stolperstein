@@ -35,6 +35,7 @@ import com.example.stolperstein.databinding.ActivityMainBinding;
 
 import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
+import com.example.stolperstein.classes.getLocation;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        ActivityCompat.requestPermissions(MainActivity.this, PermsLocation, 2);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
@@ -87,22 +89,20 @@ public class MainActivity extends AppCompatActivity {
                 buttonClose.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) { dialog.dismiss(); }
                 });
-                Button buttonNo = (Button) dialog.findViewById(R.id.button_no);
+                // Button follow
+                Button buttonNo = (Button) dialog.findViewById(R.id.button_yes);
                 buttonNo.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        ActivityCompat.requestPermissions(MainActivity.this, PermsLocation, 2);
-                        mMyLocationOverlay.disableFollowLocation();
+                        getLocation.get(true);
                         dialog.dismiss();
                     }
                 });
-                Button buttonYes = (Button) dialog.findViewById(R.id.button_yes);
+                // Button no follow
+                Button buttonYes = (Button) dialog.findViewById(R.id.button_no);
                 buttonYes.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        // permissions
-                        ActivityCompat.requestPermissions(MainActivity.this, PermsLocation, 2);
-                        mMyLocationOverlay.enableFollowLocation();
+                        getLocation.get(false);
                         dialog.dismiss();
-
                     }
                 });
                 dialog.create();
