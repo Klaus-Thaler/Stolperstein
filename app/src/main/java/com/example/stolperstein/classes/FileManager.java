@@ -1,25 +1,16 @@
 package com.example.stolperstein.classes;
 
 import static android.content.ContentValues.TAG;
-
 import static com.example.stolperstein.MainActivity.CacheFileName;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
-
-import androidx.core.app.ActivityCompat;
-
-import com.example.stolperstein.MainActivity;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -76,12 +67,10 @@ public class FileManager {
         }
     }
     public static boolean removeCacheFile(Context context, String filename) {
-        File file = null;
+        File file;
         if (CacheFileExist(context, filename)) {
             file = context.getFileStreamPath(filename);
-            if (file.delete()) {
-                return true;
-            }
+            return file.delete();
         }
         return false;
     }

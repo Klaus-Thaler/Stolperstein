@@ -19,19 +19,18 @@
                 android:id="@+id/artistTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textFontWeight="@android:integer/config_longAnimTime"
                 android:text="@string/placeholder"
-                tools:targetApi="p" />
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/artistContent1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:textFontWeight="@android:integer/config_longAnimTime"
                 android:text="@string/placeholder"
-                tools:targetApi="p" />
+                android:textSize="16sp"/>
 
             <ImageView
                 android:id="@+id/artistPic1"
@@ -45,34 +44,27 @@
                 android:id="@+id/artistContent2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="2sp"
+                android:paddingBottom="22sp"
                 android:text="@string/placeholder"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                tools:targetApi="p" />
+                />
             <TextView
                 android:id="@+id/artistContent3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
                 android:text="@string/placeholder" />
             <TextView
                 android:id="@+id/artistContent4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textStyle="bold"
+                android:paddingTop="6sp"
+                android:paddingBottom="6sp"
                 android:text="@string/placeholder" />
+
             <TextView
                 android:id="@+id/artistContent5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/placeholder" />
-            <TextView
-                android:id="@+id/artistContent6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/placeholder" />
-            <TextView
-                android:id="@+id/artistContent7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"

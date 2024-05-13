@@ -11,16 +11,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.stolperstein.R;
 
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {
-    //private final TextView view;
-    private final WebView webView;
+    TextView nameText;
+    TextView addressText;
+    TextView bornText;
+    TextView deathText;
+    TextView bioText;
+    TextView fotoText;
 
     public RecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
-        webView = itemView.findViewById(R.id.name_webview);
+        nameText = itemView.findViewById(R.id.name_name);
+        addressText = itemView.findViewById(R.id.name_address);
+        bornText = itemView.findViewById(R.id.name_born);
+        deathText = itemView.findViewById(R.id.name_death);
+        bioText = itemView.findViewById(R.id.name_bio);
+        fotoText = itemView.findViewById(R.id.name_foto);
     }
 
-    public WebView getView(){
+    public TextView getView(){
         //view.setMovementMethod(LinkMovementMethod.getInstance());
-        return webView;
+        return nameText;
     }
 }

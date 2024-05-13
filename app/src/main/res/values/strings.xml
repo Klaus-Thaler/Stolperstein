@@ -15,22 +15,16 @@
     <string name="gunter_demnig" translatable="false">Gunter Demnig</string>
 
     <string name="das_kunstprojekt">Das Kunstprojekt</string>
-    <string name="this_project" translatable="false"><![CDATA[Die in Fußwege eingebetteten Gedenksteine halten
-        die Erinnerung an die Opfer des Nationalsozialismus - jüdische Bürger, Sinti und Roma,
-        politisch Verfolgte, Homosexuelle, Zeugen Jehovas und "Euthanasie"-Opfer - wach. Auf den
-        etwa zehn mal zehn Zentimeter großen Stolpersteinen sind kleine Messingplatten mit den Namen
-        und Lebensdaten von NS-Opfern angebracht.\nSie werden vor dem letzten bekannten und frei
-        gewählten Wohnort in das Pflaster des Gehweges eingelassen. Finanziert werden die Stolpersteine
-        durch private Spenden.\n\n
-        Zuletzt wurden am 20. Mai 2019 insgesamt 9 Stolpersteine verlegt (s. u.). In Kiel liegen damit
-        bereits 262 Steine.\n\n
-        Die Sinti und Roma in Schleswig-Holstein lehnen allerdings Stolpersteine für ihre Opfer ab.
-        In Kiel wird stattdessen durch einen Gedenkstein und eine erläuternde Informationstafel im
-        Hiroshimapark gegenüber dem Haus Lorentzendamm 36 an ihren Leidensweg erinnert.]]></string>
+    <string name="this_project1">Die in Fußwege eingebetteten Gedenksteine halten die Erinnerung an die Opfer des Nationalsozialismus - jüdische Bürger, Sinti und Roma, politisch Verfolgte, Homosexuelle, Zeugen Jehovas und "Euthanasie"-Opfer - wach.</string>
+    <string name="this_project2">Auf den etwa zehn mal zehn Zentimeter großen Stolpersteinen sind kleine Messingplatten mit den Namen und Lebensdaten von NS-Opfern angebracht.\nSie werden vor dem letzten bekannten und frei gewählten Wohnort in das Pflaster des Gehweges eingelassen. Finanziert werden die Stolpersteine durch private Spenden.</string>
+    <string name="this_project3">Zuletzt wurden am 20. Mai 2019 insgesamt 9 Stolpersteine verlegt. In Kiel liegen damit bereits 262 Steine.</string>
+    <string name="this_project4">Die Sinti und Roma in Schleswig-Holstein lehnen allerdings Stolpersteine für ihre Opfer ab.\nIn Kiel wird stattdessen durch einen Gedenkstein und eine erläuternde Informationstafel im Hiroshimapark gegenüber dem Haus Lorentzendamm 36 an ihren Leidensweg erinnert.</string>
     <string name="die_stolpersteine">Die Stolpersteine</string>
 
-    <string name="gunter_demnig_27_oktober_1947_"><![CDATA[Gunter Demnig (* 27. Oktober 1947 in Berlin)  ist ein deutscher Künstler.  Bekannt wurde er durch die Stolpersteine, die er seit 1996 zur  Erinnerung an Opfer in der Zeit des Nationalsozialismus verlegt.]]></string>
-    <string name="demnig_wuchs_in_nauen_und_berlin_"><![CDATA[Demnig wuchs in Nauen und Berlin auf.
+    <string name="this_artist1">Gunter Demnig (* 27. Oktober 1947 in Berlin)  ist ein deutscher Künstler.
+        Bekannt wurde er durch die Stolpersteine, die er seit 1996 zur  Erinnerung an Opfer in der Zeit
+        des Nationalsozialismus verlegt.</string>
+    <string name="this_artist2">Demnig wuchs in Nauen und Berlin auf.
         1967 legte er das Abitur ab und begann ein Studium der Kunstpädagogik an der Hochschule für
         Bildende Künste in Berlin bei Herbert Kaufmann. 1969/1970 folgte ein Jahr
         Industrial-Design-Studium an derselben Hochschule. Ab 1971 setzte er das Kunstpädagogik-Studium
@@ -38,15 +32,28 @@
         Jahr begann Demnig ein Kunststudium an der Universität Kassel bei Harry Kramer, dem ab 1977 für
         zwei Jahre die Tätigkeit in Planung, Bauleitung und -ausführung von Denkmalsanierungen folgte.
         Von 1980 bis 1985 war Demnig künstlerisch-wissenschaftlicher Mitarbeiter im Fachbereich Kunst
-        der Universität Kassel.]]>"</string>
-    <string name="_1985_er_ffnete_demnig_ein_eigenes_Atelier_"><![CDATA[1985 eröffnete Demnig ein eigenes
+        der Universität Kassel."</string>
+    <string name="this_artist3">1985 eröffnete Demnig ein eigenes
         Atelier in Köln und arbeitete bei mehreren Projekten mit, so bei der Moltkerei-Werkstatt und dem
         Kunstraum Fuhrwerkswaage. Seit 1994 war er auch im IGNIS-Kulturzentrum tätig.\nSeit April 2011
         befand sich Demnigs Atelier in Frechen im Kunstzentrum Signalwerk, das auf dem Gelände des
         ehemaligen Bahnhofs der Köln-Frechen-Benzelrather Eisenbahn liegt. Dort betreiben auch etwa
         20 andere in der Region bekannte Künstler ihre Ateliers. Im Jahr 2017 verlegte er sein Atelier
-        nach Elbenrod in Hessen.]]></string>
-    <string name="bekannt_wurde_demnig_durch_die_Herstellung_"><![CDATA[Bekannt wurde Demnig durch         die Herstellung der Stolpersteine, die er auch selbst verlegt. Sie sollen an Menschen erinnern,         die der NS-Diktatur zum Opfer fielen. Die Steine, die auf der Oberseite kleine Messingplatten         mit den Namen der Opfer tragen, verlegt er vor deren einstigen Wohnungen im Straßen- oder         Gehwegpflaster.\n         Das 1996 gestartete Projekt, bis 2017 in 1200 deutschen Kommunen realisiert, gilt seit Jahren         als das größte dezentrale Mahnmal der Welt und zählt mittlerweile 100.000 Steine in 31         Staaten Europas (2023). Das Urheberrecht im umfassenden Sinn liegt für die Stolpersteine         einzig und ausschließlich nur bei Gunter Demnig persönlich.\nEin tatsächlich durch Demnig         entstandenes Urheberrecht muss jedoch insofern angezweifelt werden: er kannte das Projekt         Namen & Steine, das 1994 von Tom Fecht für die ersten AIDS-Opfer im Straßenpflaster, u. a.         in Bonn, Hamburg und Berlin (Invalidenstraße, vor dem Naturkundemuseum) begonnen worden ist.\n         Die Namen der Opfer wurden und werden in kleinen quadratischen Natursteinen eingemeißelt. Demnig kann für sich jedoch in Anspruch nehmen, nach Modifizierung der         Form (Steine mit Messingplatte) und mit neuem Inhalt (z. B. Lebensdaten) die Ehrung der         Holocaust-Opfer deutschlandweit und später weltweit verbreitet zu haben.\n]]></string>
+        nach Elbenrod in Hessen.</string>
+    <string name="this_artist4">Bekannt wurde Demnig durch die Herstellung der Stolpersteine, die er
+        auch selbst verlegt. Sie sollen an Menschen erinnern, die der NS-Diktatur zum Opfer fielen.
+        Die Steine, die auf der Oberseite kleine Messingplatten mit den Namen der Opfer tragen, verlegt
+        er vor deren einstigen Wohnungen im Straßen- oder Gehwegpflaster.\nDas 1996 gestartete Projekt,
+        bis 2017 in 1200 deutschen Kommunen realisiert, gilt seit Jahren als das größte dezentrale Mahnmal
+        der Welt und zählt mittlerweile 100.000 Steine in 31 Staaten Europas (2023). Das Urheberrecht im
+        umfassenden Sinn liegt für die Stolpersteine einzig und ausschließlich nur bei Gunter Demnig persönlich.\n
+        Ein tatsächlich durch Demnig entstandenes Urheberrecht muss jedoch insofern angezweifelt werden:
+        er kannte das Projekt Namen &amp; Steine das 1994 von Tom Fecht für die ersten AIDS-Opfer im
+        Straßenpflaster, u. a. in Bonn, Hamburg und Berlin (Invalidenstraße, vor dem Naturkundemuseum)
+        begonnen worden ist.\nDie Namen der Opfer wurden und werden in kleinen quadratischen Natursteinen
+        eingemeißelt. Demnig kann für sich jedoch in Anspruch nehmen, nach Modifizierung der Form (Steine
+        mit Messingplatte) und mit neuem Inhalt (z. B. Lebensdaten) die Ehrung der Holocaust-Opfer
+        deutschlandweit und später weltweit verbreitet zu haben.</string>
     <string name="beruf_und_werk">Beruf und Werk</string>
     <string name="ausbildung">Ausbildung</string>
 
@@ -54,25 +61,27 @@
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="bei_den_steinen_handelt_es_sich" translatable="false"><![CDATA[Bei den Steinen handelt es sich um knapp 10 cm
+    <string name="this_stone1">Bei den Steinen handelt es sich um knapp 10 cm
         große Betonwürfel, auf deren oberer Fläche eine Messingplatte angebracht ist. In die
         Messingplatte sind mit Schlagstempeln die Namen und Lebensdaten der Opfer und ggf. weitere
-        Informationen eingeprägt. Jeder Stein ist einzeln handgefertigt. Das betrifft sowohl den
+        Informationen eingeprägt.</string>
+    <string name="this_stone2">Jeder Stein ist einzeln handgefertigt. Das betrifft sowohl den
         Guss des Betonsteins als auch die Beschriftung der Messingplatte und ihre Anbringung auf
         dem Betonblock.\n Die Steine wurden bis 2005 vom Künstler Gunter Demnig selbst produziert.
         Seitdem werden sie von dem Berliner Bildhauer Michael Friedrichs-Friedländer in seinem
-        Berliner Atelier für Demnig hergestellt[4], der 2017 alleine mit der Verlegung der Steine 270
-        Tage im Jahr beschäftigt war. Friedlaender stellt dort jeden Monat rund 500 Stolpersteine her.\n\n
-        Das angebliche "Millionengeschäft auf dem Rücken der Opfer", das dem Künstler von Kritikern
+        Berliner Atelier für Demnig hergestellt[, der 2017 alleine mit der Verlegung der Steine 270
+        Tage im Jahr beschäftigt war. Friedlaender stellt dort jeden Monat rund 500 Stolpersteine her.</string>
+    <string name="this_stone3">Das angebliche "Millionengeschäft auf dem Rücken der Opfer", das dem Künstler von Kritikern
         mitunter vorgehalten wird, relativiert sich schnell, wenn man berücksichtigt, dass von den 120 €,
         die ein Stolperstein kostet, Material, Werkzeug, Versand, Organisation und die insgesamt acht
-        Mitarbeiter des Projekts bezahlt werden.\n\nAuch aus anderer Richtung gibt es Kritik. So
+        Mitarbeiter des Projekts bezahlt werden.</string>
+    <string name="this_stone4">Auch aus anderer Richtung gibt es Kritik. So
         lehnen die Sinti und Roma in Schleswig-Holstein Stolpersteine für ihre Opfer ab, weil man die
         Steine mit den Füßen treten könne. Darum gibt es für diese Opfer einen besonderen Gedenkstein
         im Hiroshimapark. Aus dem gleichen Grund betrachtet Charlotte Knobloch, die Präsidentin der
         israelitischen Kultusgemeinde München und Oberbayern und ehemalige Präsidentin (2006-2010)
         des Zentralrats der Juden, die Steine als Entwürdigung der Opfer, während der heutige
-        Zentalratspräsident Josef Schuster (seit 2014) das Stolpersteinprojekt befürwortet. ]]></string>
+        Zentalratspräsident Josef Schuster (seit 2014) das Stolpersteinprojekt befürwortet.></string>
     <string name="menu_stones">Die Stolpersteine</string>
     <string name="willkommen">Willkommen</string>
     <string name="start">Start</string>
@@ -86,7 +95,7 @@
     <string name="menu_setting">Einstellungen</string>
     <string name="starte_die_suche">Starte die Suche.\nEs werden Namen und Adressen\nzu den Stolpersteinen gesucht.</string>
     <string name="menu_name">Die Namen</string>
-    <string name="noData" translatable="false"><![CDATA[<html><style>body {background-color:white;color:black;} a {color:blue;}</style><body><table><tr><th>Noch keine Daten vorhanden.</th></tr>     <tr><td>Bitte f&uuml;r den ersten Start der App &uuml;ber <i>Einstellungen</i> -> <i>Suche</i> -> auf <i>Start</i> klicken. </td></tr></table></body></html>]]></string>
+    <string name="noData"><![CDATA[<html><style>body {background-color:white;color:black;} a {color:blue;}</style><body><table><tr><th>Noch keine Daten vorhanden.</th></tr>     <tr><td>Bitte f&uuml;r den ersten Start der App &uuml;ber <i>Einstellungen</i> -> <i>Suche</i> -> auf <i>Start</i> klicken. </td></tr></table></body></html>]]></string>
     <string name="_1_10" translatable="false"><![CDATA[1/10 >]]></string>
     <string name="close"><u>Schliessen</u></string>
     <string name="title">Titel</string>
@@ -107,6 +116,14 @@
     <string name="kml_file_speichern">Die ermittelten Daten als KML-File zur Weitergabe in Downloads speichern?</string>
     <string name="clear">löschen</string>
     <string name="this_app_is_for_android_8_and_higher">Der Standort konnte nicht identifiziert werden.\\nDiese App ist für Android 8 und höher</string>
-    <string name="further_info">Further information: <a href="https://github.com/Klaus-Thaler?tab=repositories">Git-Hub</a></string>
+    <string name="quelle_wikipedia">Quelle: https://de.wikipedia.org/wiki/Gunter_Demnig</string>
+    <string name="source_github">Quell-Code: https://github.com/Klaus-Thaler/Stolperstein</string>
+    <string name="show_in_card">in Map anzeigen</string>
+    <string name="name">Name</string>
+    <string name="address">Adresse</string>
+    <string name="born">geboren</string>
+    <string name="death">gestorben/deportiert</string>
+    <string name="bio">Biografie</string>
+    <string name="foto">Foto</string>
 
 </resources>

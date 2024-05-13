@@ -34,15 +34,31 @@ public class StonesFragment extends Fragment {
         title.setText(R.string.die_stolpersteine);
         title.setTextSize(24);
 
-        String resString1 = getString(R.string.bei_den_steinen_handelt_es_sich);
+        String resString1 = getString(R.string.this_stone1);
         final TextView content1 = binding.stonesContent1;
         content1.setMovementMethod(LinkMovementMethod.getInstance());
         content1.setText(resString1);
 
-        String resString2 = "Quelle: https://kiel-wiki.de/Stolpersteine";
+        String resString2 = getString(R.string.this_stone2);
         final TextView content2 = binding.stonesContent2;
         content2.setMovementMethod(LinkMovementMethod.getInstance());
         content2.setText(resString2);
+
+        String resString3 = getString(R.string.this_stone3);
+        final TextView content3 = binding.stonesContent3;
+        content3.setMovementMethod(LinkMovementMethod.getInstance());
+        content3.setText(resString3);
+
+        String resString4 = getString(R.string.this_stone4);
+        final TextView content4 = binding.stonesContent4;
+        content4.setMovementMethod(LinkMovementMethod.getInstance());
+        content4.setText(resString4);
+
+
+        String resString5 = getString(R.string.quelle_wikipedia);
+        final TextView content5 = binding.stonesContent5;
+        content5.setMovementMethod(LinkMovementMethod.getInstance());
+        content5.setText(resString5);
 
         ImageView imageView = binding.stonesPic1;
         imageView.setCropToPadding(true);

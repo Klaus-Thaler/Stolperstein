@@ -20,9 +20,10 @@
                 android:id="@+id/projectTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/placeholder"
+                android:textSize="24sp"
                 android:textAlignment="center"
-                android:textFontWeight="@android:integer/config_longAnimTime"
-                android:text="@string/placeholder" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/projectPic1"
@@ -36,9 +37,32 @@
                 android:id="@+id/projectContent1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
                 android:text="@string/placeholder" />
             <TextView
                 android:id="@+id/projectContent2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/projectContent3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/projectContent4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/projectContent5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"

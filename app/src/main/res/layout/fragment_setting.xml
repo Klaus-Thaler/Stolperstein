@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="22sp"
             android:scrollbars="vertical"
-            android:text="@string/further_info"
+            android:text="@string/source_github"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColorLink="@color/top"
             android:visibility="visible" />

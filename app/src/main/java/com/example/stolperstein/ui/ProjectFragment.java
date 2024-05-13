@@ -39,15 +39,30 @@ public class ProjectFragment extends Fragment {
         title.setText(R.string.das_kunstprojekt);
         title.setTextSize(24);
 
-        String resString1 = getResources().getString(R.string.this_project);
+        String resString1 = getResources().getString(R.string.this_project1);
         final TextView content1 = binding.projectContent1;
         content1.setMovementMethod(LinkMovementMethod.getInstance());
         content1.setText(resString1);
 
-        String resString2 = "Quelle: https://kiel-wiki.de/Stolpersteine";
+        String resString2 = getResources().getString(R.string.this_project2);
         final TextView content2 = binding.projectContent2;
         content2.setMovementMethod(LinkMovementMethod.getInstance());
         content2.setText(resString2);
+
+        String resString3 = getResources().getString(R.string.this_project3);
+        final TextView content3 = binding.projectContent3;
+        content3.setMovementMethod(LinkMovementMethod.getInstance());
+        content3.setText(resString3);
+
+        String resString4 = getResources().getString(R.string.this_project4);
+        final TextView content4 = binding.projectContent4;
+        content4.setMovementMethod(LinkMovementMethod.getInstance());
+        content4.setText(resString4);
+
+        String resString5 = "Quelle: https://kiel-wiki.de/Stolpersteine";
+        final TextView content5 = binding.projectContent5;
+        content5.setMovementMethod(LinkMovementMethod.getInstance());
+        content5.setText(resString5);
 
 
         ImageView imageView = binding.projectPic1;

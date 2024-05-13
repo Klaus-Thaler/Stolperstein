@@ -36,9 +36,32 @@
                 android:id="@+id/stonesContent1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
                 android:text="@string/placeholder" />
             <TextView
                 android:id="@+id/stonesContent2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/stonesContent3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/stonesContent4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginBottom="6sp"
+                android:text="@string/placeholder" />
+            <TextView
+                android:id="@+id/stonesContent5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"

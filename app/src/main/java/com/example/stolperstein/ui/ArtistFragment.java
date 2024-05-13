@@ -39,40 +39,30 @@ public class ArtistFragment extends Fragment {
         title.setText(R.string.gunter_demnig);
         title.setTextSize(24);
 
-        String resString1 = getString(R.string.gunter_demnig_27_oktober_1947_);
+        String resString1 = getString(R.string.this_artist1);
         final TextView content1 = binding.artistContent1;
-        //content1.setMovementMethod(LinkMovementMethod.getInstance());
+        content1.setMovementMethod(LinkMovementMethod.getInstance());
         content1.setText(resString1);
 
-        String resString2 = getString(R.string.ausbildung);
+        String resString2 = getString(R.string.this_artist2);
         final TextView content2 = binding.artistContent2;
+        content2.setMovementMethod(LinkMovementMethod.getInstance());
         content2.setText(resString2);
-        title.setTextSize(22);
 
-        String resString3 = getString(R.string.demnig_wuchs_in_nauen_und_berlin_);
+        String resString3 = getString(R.string.this_artist3);
         final TextView content3 = binding.artistContent3;
-        //content3.setMovementMethod(LinkMovementMethod.getInstance());
+        content3.setMovementMethod(LinkMovementMethod.getInstance());
         content3.setText(resString3);
 
-        String resString4 = getString(R.string.beruf_und_werk);
+        String resString4 = getString(R.string.this_artist4);
         final TextView content4 = binding.artistContent4;
+        content4.setMovementMethod(LinkMovementMethod.getInstance());
         content4.setText(resString4);
-        title.setTextSize(22);
 
-        String resString5 = getString(R.string._1985_er_ffnete_demnig_ein_eigenes_Atelier_);
+        String resString5 = getString(R.string.source_github);
         final TextView content5 = binding.artistContent5;
-        //content5.setMovementMethod(LinkMovementMethod.getInstance());
+        content5.setMovementMethod(LinkMovementMethod.getInstance());
         content5.setText(resString5);
-
-        String resString6 = getString(R.string.bekannt_wurde_demnig_durch_die_Herstellung_);
-        final TextView content6 = binding.artistContent6;
-        //content6.setMovementMethod(LinkMovementMethod.getInstance());
-        content6.setText(resString6);
-
-        String resString7 = "Quelle: https://de.wikipedia.org/wiki/Gunter_Demnig";
-        final TextView content7 = binding.artistContent7;
-        content7.setText(resString7);
-        content7.setMovementMethod(LinkMovementMethod.getInstance());
 
         ImageView imageView = binding.artistPic1;
         imageView.setCropToPadding(true);
@@ -82,10 +72,5 @@ public class ArtistFragment extends Fragment {
         imageView.setImageBitmap(img1);
 
         return root;
-    }
-    private Bitmap getBitmapFromAsset(String fileName) throws IOException{
-        AssetManager assetManager = getResources().getAssets();
-        InputStream inStream = assetManager.open(fileName);
-        return BitmapFactory.decodeStream(inStream);
     }
 }
