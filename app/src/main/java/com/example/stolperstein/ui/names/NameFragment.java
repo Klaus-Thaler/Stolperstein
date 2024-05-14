@@ -2,7 +2,6 @@ package com.example.stolperstein.ui.names;
 
 import static com.example.stolperstein.MainActivity.CacheFileName;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,17 +31,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class NameFragment extends Fragment {
-
-    private FragmentNameBinding binding;
-
-    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //View view = inflater.inflate(R.layout.fragment_name, container, false);
 
-        binding = FragmentNameBinding.inflate(inflater, container, false);
+        com.example.stolperstein.databinding.FragmentNameBinding binding = FragmentNameBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         NameViewModel nameViewModel =
@@ -67,8 +62,10 @@ public class NameFragment extends Fragment {
                 dataPerson.add(data.get(z).getElementsByTag("death").text());
                 dataPerson.add(data.get(z).getElementsByTag("biographie").html());
                 dataPerson.add(data.get(z).getElementsByTag("photo").html());
+                dataPerson.add(data.get(z).getElementsByTag("installed").text());
+                dataPerson.add(data.get(z).getElementsByTag("geopoint").text());
                 hashPerson.put(z,dataPerson);
-                Log.i("ST_name", ": " + z + " -" + dataPerson.get(0));
+                Log.i("ST_NameFragment", ": " + z + " -" + dataPerson.get(0));
             }
         } else {
             utils.showToast(requireContext(), "no Data");
@@ -78,7 +75,7 @@ public class NameFragment extends Fragment {
         RecyclerView recyclerView = root.findViewById(R.id.name_recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
-        NameListAdapter nameListAdapter = new NameListAdapter(hashPerson);
+        NameListAdapter nameListAdapter = new NameListAdapter(hashPerson, getContext());
         recyclerView.setAdapter(nameListAdapter);
         return root;
     }

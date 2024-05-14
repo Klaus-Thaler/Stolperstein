@@ -8,18 +8,16 @@
     android:layout_marginLeft="12sp"
     android:layout_marginRight="12sp"
     android:orientation="vertical"
-    android:stretchColumns="1">
+    android:stretchColumns="*">
 
     <TableRow>
         <TextView
-            android:id="@+id/name_str"
-            android:text="@string/name"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
-        <TextView
             android:id="@+id/name_name"
             android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
+            android:layout_margin="2sp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_span="3" />
     </TableRow>
     <TableRow>
         <TextView
@@ -30,7 +28,8 @@
         <TextView
             android:id="@+id/name_address"
             android:layout_height="wrap_content"
-            android:layout_margin="2sp"/>
+            android:layout_margin="2sp"
+            android:layout_span="2"/>
     </TableRow>
     <TableRow>
         <TextView
@@ -41,7 +40,8 @@
         <TextView
             android:id="@+id/name_born"
             android:layout_height="wrap_content"
-            android:layout_margin="2sp"/>
+            android:layout_margin="2sp"
+            android:layout_span="2"/>
     </TableRow>
     <TableRow>
         <TextView
@@ -52,46 +52,81 @@
         <TextView
             android:id="@+id/name_death"
             android:layout_height="wrap_content"
-            android:layout_margin="2sp"/>
+            android:layout_margin="2sp"
+            android:layout_span="2"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:id="@+id/installed_str"
+            android:text="installed"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp" />
+        <TextView
+            android:id="@+id/name_installed"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:layout_span="2"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:id="@+id/geopoint_str"
+            android:text="Geopoint"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp" />
+        <TextView
+            android:id="@+id/name_geopoint"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:autoLink="web"
+            android:layout_span="2"/>
     </TableRow>
     <TableRow>
         <TextView
             android:id="@+id/bio_str"
-            android:text="@string/bio"
+            android:text="Biografie"
             android:layout_height="wrap_content"
             android:layout_margin="2sp" />
-        <Button
+        <TextView
             android:id="@+id/name_bio"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:text="go to" />
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:autoLink="web"
+            android:layout_span="2"/>
     </TableRow>
     <TableRow>
         <TextView
             android:id="@+id/foto_str"
-            android:text="@string/foto"
+            android:text="Foto"
             android:layout_height="wrap_content"
             android:layout_margin="2sp" />
-        <Button
-            android:id="@+id/name_foto"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:text="go to" />
-    </TableRow>
-    <TableRow android:gravity="center_horizontal">
         <TextView
-            android:id="@+id/card_str"
-            android:text="@string/map"
+            android:id="@+id/name_foto"
             android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
-
-        <Button
-            android:id="@+id/name_card"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:padding="0sp"
-            android:layout_margin="0sp"
-            android:text="go to" />
+            android:layout_margin="2sp"
+            android:autoLink="web"
+            android:layout_span="2"/>
     </TableRow>
-
+    <TableRow>
+        <Button
+            android:id="@+id/name_button_bio"
+            android:text="bio"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="6sp"
+            android:layout_marginRight="6sp"
+            style="?android:attr/buttonBarButtonStyle" />
+        <Button
+            android:id="@+id/name_button_foto"
+            android:text="foto"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="6sp"
+            android:layout_marginRight="6sp"
+            style="?android:attr/buttonBarButtonStyle" />
+        <Button
+            android:id="@+id/name_button_geopoint"
+            android:text="map"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="6sp"
+            android:layout_marginRight="6sp"
+            style="?android:attr/buttonBarButtonStyle" />
+    </TableRow>
 </TableLayout>

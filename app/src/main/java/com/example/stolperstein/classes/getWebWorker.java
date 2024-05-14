@@ -25,8 +25,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
-import com.example.stolperstein.classes.utils.*;
-
 public class getWebWorker extends Worker {
     public getWebWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
@@ -54,7 +52,7 @@ public class getWebWorker extends Worker {
             Elements mTable = doc.select("table tbody");
             mRows = mTable.select("tr");
             for (int i = 1; mRows.size() > i; i++) { //first row is the col names so skip it.
-                ArrayList<String> entryTD = new ArrayList<>();
+                    ArrayList<String> entryTD = new ArrayList<>();
                 Elements mTD = mRows.get(i).select("td");
                 for (int z = 0; mTD.size() > z; z++) {
                     Log.i("ST_FS_entry", "i " + i + " z " + z + " - " + mTD.get(z).toString());
@@ -63,16 +61,16 @@ public class getWebWorker extends Worker {
                     entryTD.add(mTD.get(1).text());                             // adresse
                     entryTD.add(mTD.get(2).text());                             // geboren
                     entryTD.add(mTD.get(3).text());                             // deportiert
-                    entryTD.add(mTD.get(4).select("a").toString());    // Link Biografie
-                    entryTD.add(mTD.get(5).select("a").toString());    // Link Foto
+                    entryTD.add(mTD.get(4).select("a").attr("href"));    // Link Biografie
+                    entryTD.add(mTD.get(5).select("a").attr("href"));    // Link Foto
                     entryTD.add(mTD.get(6).text());                             // verlegt am
                 }
                 // address zu Geo Daten. Laengen- und Breitengrad
                 List<Address> mCoder = mGeoCoder.getFromLocationName(preAddress
                         + Objects.requireNonNull(entryTD.get(1)), maxResults);
                 if (!mCoder.isEmpty()) {
-                    Log.i("ST_getWS_mcoder", "mcoder: " + i
-                            + " " + mCoder.isEmpty()
+                    Log.i("ST_getWebWorker", "mcoder: " + i
+                            + " " + false
                             + " " + preAddress + Objects.requireNonNull(entryTD.get(1))
                             + " " + mCoder.get(0).getLongitude() + "," + mCoder.get(0).getLatitude());
                     Log.i("ST_FS_td", "index " + i + "-> " + entryTD);
@@ -90,8 +88,7 @@ public class getWebWorker extends Worker {
                             .append("-").append(Objects.requireNonNull(entryTD.get(3)))     // deportiert
                             .append("\n\t</description>\n")
                             .append("\t<Point>\n\t\t<coordinates>")
-                            .append(mCoder.get(0).getLongitude()).append(",")
-                            .append(mCoder.get(0).getLatitude())
+                            .append(mCoder.get(0).getLongitude()).append(",").append(mCoder.get(0).getLatitude())
                             .append("</coordinates>\n\t</Point>\n")
                             .append("\t<data>\n")
                             .append("\t\t<name>").append(Objects.requireNonNull(entryTD.get(0)))
@@ -106,6 +103,11 @@ public class getWebWorker extends Worker {
                             .append(Objects.requireNonNull(entryTD.get(4))).append("</biographie>\n")
                             .append("\t\t<photo>")
                             .append(Objects.requireNonNull(entryTD.get(5))).append("</photo>\n")
+                            .append("\t\t<installed>")
+                            .append((Objects.requireNonNull(entryTD.get(6)))).append("</installed>\n")
+                            .append("\t\t<geopoint>")
+                            .append(mCoder.get(0).getLongitude()).append(",").append(mCoder.get(0).getLatitude())
+                            .append("</geopoint>\n")
                             .append("\t</data>\n")
                             .append("</Placemark>\n");
                 }
@@ -120,17 +122,15 @@ public class getWebWorker extends Worker {
             SettingViewModel.progBarSet.postValue(0);
             SettingViewModel.mButton.postValue("GONE");
 
-            Log.i("ST_getWS", "kmlfile: " + kmlFile);
+            Log.i("ST_getWebWorker", "kmlfile: " + kmlFile);
             // safe in cache
             FileManager.saveCacheFile(getApplicationContext(), MainActivity.CacheFileName, kmlFile.toString());
-            Log.i("ST_cachefile", "mod: " + FileManager.CacheFileLastModified(
+            Log.i("ST_getWebWorker", "mod: " + FileManager.CacheFileLastModified(
                     getApplicationContext(),FileManager.loadCacheFile
                             (getApplicationContext(), CacheFileName)));
         }
-
-        Log.i("ST_worker", "result: "+ Result.failure());
-        Log.i("ST_worker", "result: "+ Result.success());
-
+        Log.i("ST_getWebWorker", "result: "+ Result.failure());
+        Log.i("ST_getWebWorker", "result: "+ Result.success());
         return null;
     }
 }

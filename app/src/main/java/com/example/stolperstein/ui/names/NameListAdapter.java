@@ -1,6 +1,9 @@
 package com.example.stolperstein.ui.names;
 
-import android.text.Html;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.stolperstein.R;
+import com.example.stolperstein.classes.utils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,8 +21,9 @@ import java.util.Objects;
 
 public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
     private final HashMap<Integer,List<String>> data;
-
-    public NameListAdapter(HashMap<Integer, List<String>> data) {
+    private final Context mContext;
+    public NameListAdapter(HashMap<Integer, List<String>> data, Context context) {
+        this.mContext = context;
         this.data = data;
     }
 
@@ -42,8 +47,26 @@ public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
         holder.bornText.setText(show.get(2));
         holder.deathText.setText(show.get(3));
         holder.bioText.setText(show.get(4));
+            holder.bioText.setMovementMethod(LinkMovementMethod.getInstance());
         holder.fotoText.setText(show.get(5));
-        Log.i("NameListAdapter", "-> " + show.get(0));
+            holder.fotoText.setMovementMethod(LinkMovementMethod.getInstance());
+        holder.installedText.setText(show.get(6));
+        holder.geopointText.setText(show.get(7));
+        // buttons
+        holder.bioButton.setOnClickListener(v -> {
+            //utils.showToast(v.getContext(), "klick pdf");
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(show.get(4)));
+            mContext.startActivity(intent);
+        });
+        holder.fotoButton.setOnClickListener(v -> {
+            //utils.showToast(v.getContext(), "klick foto");
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(show.get(5)));
+            mContext.startActivity(intent);
+        });
+        holder.geopointButton.setOnClickListener(v -> utils.showToast(v.getContext(), "klick geopoint"));
+        Log.i("ST_NameListAdapter", "-> " + show.get(0));
     }
 
     @Override

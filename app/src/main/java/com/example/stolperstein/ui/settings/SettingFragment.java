@@ -1,8 +1,6 @@
 package com.example.stolperstein.ui.settings;
 
 import android.annotation.SuppressLint;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
@@ -13,23 +11,19 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 
-import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.MainActivity;
 import com.example.stolperstein.R;
+import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.classes.getWebWorker;
 import com.example.stolperstein.databinding.FragmentSettingBinding;
-import com.example.stolperstein.ui.settings.SettingViewModel;
-import com.example.stolperstein.classes.getWebSite;
 
 public class SettingFragment extends Fragment {
-    private FragmentSettingBinding binding;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -39,7 +33,7 @@ public class SettingFragment extends Fragment {
         SettingViewModel settingViewModel =
                 new ViewModelProvider(this).get(SettingViewModel.class);
 
-        binding = FragmentSettingBinding.inflate(inflater, container, false);
+        com.example.stolperstein.databinding.FragmentSettingBinding binding = FragmentSettingBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textViewDesc = binding.firstDescription;
