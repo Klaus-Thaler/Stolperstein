@@ -125,5 +125,6 @@
     <string name="death">gestorben/deportiert</string>
     <string name="bio">Biografie</string>
     <string name="foto">Foto</string>
+    <string name="map">Map</string>
 
 </resources>

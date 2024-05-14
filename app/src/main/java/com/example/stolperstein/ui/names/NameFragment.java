@@ -4,7 +4,6 @@ import static com.example.stolperstein.MainActivity.CacheFileName;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +16,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.R;
+import com.example.stolperstein.classes.FileManager;
+import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.FragmentNameBinding;
 
 import org.jsoup.Jsoup;
@@ -30,7 +30,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 public class NameFragment extends Fragment {
 
@@ -46,12 +45,6 @@ public class NameFragment extends Fragment {
         binding = FragmentNameBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // darkmode (Let make me it simple)
-        String css = "<style>body {background-color:white;color:black;} a {color:blue;}</style>";
-        if (getResources().getString(R.string.mode).equals("night")) {
-            css = "<style>body {background-color:black;color:white;} a {color:orange;}</style>";
-        }
-
         NameViewModel nameViewModel =
                 new ViewModelProvider(this).get(NameViewModel.class);
 
@@ -59,7 +52,6 @@ public class NameFragment extends Fragment {
         KmlDocument kmlDoc = new KmlDocument();
 
         HashMap<Integer, List<String>> hashPerson = new HashMap<>();
-
 
         if (kmlDoc.parseKMLFile(cachefile)) {
 
@@ -79,9 +71,7 @@ public class NameFragment extends Fragment {
                 Log.i("ST_name", ": " + z + " -" + dataPerson.get(0));
             }
         } else {
-            List<String> noDataPerson = new ArrayList<>();
-            noDataPerson.add("no data");
-            hashPerson.put(0, noDataPerson);
+            utils.showToast(requireContext(), "no Data");
         }
         // Add the following lines to create RecyclerView
         // Add RecyclerView member

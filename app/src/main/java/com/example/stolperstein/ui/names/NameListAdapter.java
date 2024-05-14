@@ -1,8 +1,6 @@
 package com.example.stolperstein.ui.names;
 
-import android.os.Build;
 import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,8 +41,8 @@ public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
         holder.addressText.setText(show.get(1));
         holder.bornText.setText(show.get(2));
         holder.deathText.setText(show.get(3));
-        holder.bioText.setText(Html.fromHtml(show.get(4), Html.FROM_HTML_MODE_COMPACT));
-        holder.fotoText.setText(Html.fromHtml(show.get(5), Html.FROM_HTML_MODE_LEGACY));
+        holder.bioText.setText(show.get(4));
+        holder.fotoText.setText(show.get(5));
         Log.i("NameListAdapter", "-> " + show.get(0));
     }
 

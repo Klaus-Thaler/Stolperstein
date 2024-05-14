@@ -60,10 +60,11 @@
             android:text="@string/bio"
             android:layout_height="wrap_content"
             android:layout_margin="2sp" />
-        <TextView
+        <Button
             android:id="@+id/name_bio"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp"/>
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:text="go to" />
     </TableRow>
     <TableRow>
         <TextView
@@ -71,17 +72,26 @@
             android:text="@string/foto"
             android:layout_height="wrap_content"
             android:layout_margin="2sp" />
-        <TextView
+        <Button
             android:id="@+id/name_foto"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:text="go to" />
     </TableRow>
     <TableRow android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/card_str"
+            android:text="@string/map"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp" />
+
         <Button
             android:id="@+id/name_card"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/show_in_card" />
+            android:padding="0sp"
+            android:layout_margin="0sp"
+            android:text="go to" />
     </TableRow>
 
 </TableLayout>

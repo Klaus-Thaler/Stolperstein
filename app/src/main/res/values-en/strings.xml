@@ -59,4 +59,5 @@
     <string name="death">died/deported</string>
     <string name="bio">Biografie</string>
     <string name="foto">Foto</string>
+    <string name="map">Map</string>
 </resources>

@@ -1,8 +1,7 @@
 package com.example.stolperstein.ui.names;
 
-import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +14,8 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     TextView addressText;
     TextView bornText;
     TextView deathText;
-    TextView bioText;
-    TextView fotoText;
+    Button bioText;
+    Button fotoText;
 
     public RecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
