@@ -1,21 +1,16 @@
 package com.example.stolperstein;
 
-import static com.example.stolperstein.ui.CardFragment.mMyLocationOverlay;
-
 import android.Manifest;
 import android.app.Dialog;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,29 +21,24 @@ import androidx.navigation.NavGraph;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.webkit.WebViewFeature;
 
 import com.example.stolperstein.classes.FileManager;
+import com.example.stolperstein.classes.getLocation;
 import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.ActivityMainBinding;
-
-
 import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
-import com.example.stolperstein.classes.getLocation;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 import org.osmdroid.views.MapView;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static MapView mapView;
     public static String CacheFileName = "placemarks.kml";
-    LocationManager locationManager;
+    //LocationManager locationManager;
     public static String[] PermsLocation = {
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -60,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.INTERNET
     };
-    public static HashMap<Integer, List<String>> dataPerson;
+    //public static HashMap<Integer, List<String>> dataPerson;
     public static String web_link = "https://kiel-wiki.de/Stolpersteine";
     public static String preAddress = "Deutschland Schleswig-Holstein Kiel ";
 
@@ -78,36 +68,29 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            // floating Button (Fadenkreuz)
-            @Override
-            public void onClick(View view) {
-                Dialog dialog = new Dialog(view.getContext());
-                dialog.setTitle(R.string.location);
-                dialog.setContentView(R.layout.dialog_location);
-                Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
-                buttonClose.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) { dialog.dismiss(); }
-                });
-                // Button follow
-                Button buttonNo = (Button) dialog.findViewById(R.id.button_yes);
-                buttonNo.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                        getLocation.get(true);
-                        dialog.dismiss();
-                    }
-                });
-                // Button no follow
-                Button buttonYes = (Button) dialog.findViewById(R.id.button_no);
-                buttonYes.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                        getLocation.get(false);
-                        dialog.dismiss();
-                    }
-                });
-                dialog.create();
-                dialog.show();
-            }
+        // floating Button (Fadenkreuz)
+        binding.appBarMain.fab.setOnClickListener(view1 -> {
+            Dialog dialog = new Dialog(view1.getContext());
+            dialog.setTitle(R.string.location);
+            dialog.setContentView(R.layout.dialog_location);
+            Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
+            buttonClose.setOnClickListener(v -> dialog.dismiss());
+            // Button follow
+            Button buttonNo = (Button) dialog.findViewById(R.id.button_yes);
+            buttonNo.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    getLocation.get(true);
+                    dialog.dismiss();
+                }
+            });
+            // Button no follow
+            Button buttonYes = (Button) dialog.findViewById(R.id.button_no);
+            buttonYes.setOnClickListener(v -> {
+                getLocation.get(false);
+                dialog.dismiss();
+            });
+            dialog.create();
+            dialog.show();
         });
 
         DrawerLayout drawer = binding.drawerLayout;
@@ -134,10 +117,7 @@ public class MainActivity extends AppCompatActivity {
             dialog.setTitle(R.string.welcome);
             dialog.setContentView(R.layout.dialog_welcome);
             Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
-            buttonClose.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    dialog.dismiss(); }
-            });
+            buttonClose.setOnClickListener(v -> dialog.dismiss());
             ImageView imageView = (ImageView) dialog.findViewById(R.id.welcome_image);
             imageView.setCropToPadding(true);
             imageView.setMaxWidth(10);

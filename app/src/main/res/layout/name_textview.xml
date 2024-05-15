@@ -68,45 +68,6 @@
             android:layout_span="2"/>
     </TableRow>
     <TableRow>
-        <TextView
-            android:id="@+id/geopoint_str"
-            android:text="Geopoint"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
-        <TextView
-            android:id="@+id/name_geopoint"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp"
-            android:autoLink="web"
-            android:layout_span="2"/>
-    </TableRow>
-    <TableRow>
-        <TextView
-            android:id="@+id/bio_str"
-            android:text="Biografie"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
-        <TextView
-            android:id="@+id/name_bio"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp"
-            android:autoLink="web"
-            android:layout_span="2"/>
-    </TableRow>
-    <TableRow>
-        <TextView
-            android:id="@+id/foto_str"
-            android:text="Foto"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
-        <TextView
-            android:id="@+id/name_foto"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp"
-            android:autoLink="web"
-            android:layout_span="2"/>
-    </TableRow>
-    <TableRow>
         <Button
             android:id="@+id/name_button_bio"
             android:text="bio"

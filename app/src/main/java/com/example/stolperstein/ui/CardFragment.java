@@ -2,7 +2,6 @@ package com.example.stolperstein.ui;
 
 import static com.example.stolperstein.MainActivity.CacheFileName;
 
-
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -11,16 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.databinding.FragmentHomeBinding;
 
+import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.kml.KmlDocument;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
-import org.osmdroid.api.IMapController;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.CopyrightOverlay;
@@ -28,11 +26,9 @@ import org.osmdroid.views.overlay.FolderOverlay;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
-import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
 import java.io.File;
-import java.util.Objects;
 
 
 public class CardFragment extends Fragment {
@@ -99,7 +95,6 @@ public class CardFragment extends Fragment {
             mapView.getOverlays().add(kmlOverlay);
             mapView.invalidate();
         }
-
         return root;
     }
     /*

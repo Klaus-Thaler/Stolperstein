@@ -19,6 +19,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.osmdroid.bonuspack.location.GeocoderNominatim;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,6 @@ public class getWebWorker extends Worker {
     public getWebWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
     }
-
     @NonNull
     @Override
     public Result doWork() {
@@ -51,12 +51,15 @@ public class getWebWorker extends Worker {
             Document doc = Jsoup.connect(website).get();
             Elements mTable = doc.select("table tbody");
             mRows = mTable.select("tr");
-            for (int i = 1; mRows.size() > i; i++) { //first row is the col names so skip it.
-                    ArrayList<String> entryTD = new ArrayList<>();
+            Log.i("ST_getWebWorker","mRows: " + mRows.size());
+            for (int i = 1; mRows.size() > i; i++) {
+            // fuer kurze tests
+            //for (int i = 254; 257 > i; i++) {
+                //first row is the col names so skip it.
+                ArrayList<String> entryTD = new ArrayList<>();
                 Elements mTD = mRows.get(i).select("td");
                 for (int z = 0; mTD.size() > z; z++) {
                     Log.i("ST_FS_entry", "i " + i + " z " + z + " - " + mTD.get(z).toString());
-
                     entryTD.add(mTD.get(0).select("span[style=\"display:none;\"]").text()); // name
                     entryTD.add(mTD.get(1).text());                             // adresse
                     entryTD.add(mTD.get(2).text());                             // geboren
@@ -70,19 +73,17 @@ public class getWebWorker extends Worker {
                         + Objects.requireNonNull(entryTD.get(1)), maxResults);
                 if (!mCoder.isEmpty()) {
                     Log.i("ST_getWebWorker", "mcoder: " + i
-                            + " " + false
+                            //+ " " + false
                             + " " + preAddress + Objects.requireNonNull(entryTD.get(1))
                             + " " + mCoder.get(0).getLongitude() + "," + mCoder.get(0).getLatitude());
-                    Log.i("ST_FS_td", "index " + i + "-> " + entryTD);
+                    Log.i("ST_FS_td", "index " + i + "-> " + mCoder.get(0).getLongitude() + "+" + mCoder.get(0).getLatitude());
                     SettingViewModel.progBarSet.postValue((i * 100) / mRows.size());
                     SettingViewModel.mSearch.postValue(Objects.requireNonNull(entryTD.get(0)) + "\n"
                             + Objects.requireNonNull(entryTD.get(1)));
                     kmlFile.append("<Placemark>\n") // kml file
                             .append("\t<id>").append(i).append("</id>\n") // id
                             .append("\t<title>").append("Stolperstein").append("</title>\n")
-                            .append("\t<description>\n")
-                            //.append("\t\t").append(Objects.requireNonNull(entryTD.get(0)))      // name
-                            //.append(" - ")
+                            .append("\t<description>\n\t\t")
                             .append(Objects.requireNonNull(entryTD.get(1)))   // adresse
                             .append(" - ").append(Objects.requireNonNull(entryTD.get(2)))   // geboren
                             .append("-").append(Objects.requireNonNull(entryTD.get(3)))     // deportiert
@@ -99,10 +100,10 @@ public class getWebWorker extends Worker {
                             .append("</born>\n")
                             .append("\t\t<death>").append(Objects.requireNonNull(entryTD.get(3)))
                             .append("</death>\n")
-                            .append("\t\t<biographie>")
-                            .append(Objects.requireNonNull(entryTD.get(4))).append("</biographie>\n")
-                            .append("\t\t<photo>")
-                            .append(Objects.requireNonNull(entryTD.get(5))).append("</photo>\n")
+                            .append("\t\t<biographie><![CDATA[")
+                            .append(Objects.requireNonNull(entryTD.get(4))).append("]]></biographie>\n")
+                            .append("\t\t<photo><![CDATA[")
+                            .append(Objects.requireNonNull(entryTD.get(5))).append("]]></photo>\n")
                             .append("\t\t<installed>")
                             .append((Objects.requireNonNull(entryTD.get(6)))).append("</installed>\n")
                             .append("\t\t<geopoint>")
@@ -116,8 +117,10 @@ public class getWebWorker extends Worker {
             // todo
             // live in karte eintragen
         } catch (IOException e) {
+            Log.i("ST_getWebWorker", "result: " + Result.failure());
             throw new RuntimeException(e);
         } finally {
+            assert mRows != null;
             SettingViewModel.mSearch.postValue(mRows.size() - 1 + " Stolpersteine gefunden.");
             SettingViewModel.progBarSet.postValue(0);
             SettingViewModel.mButton.postValue("GONE");
@@ -125,12 +128,13 @@ public class getWebWorker extends Worker {
             Log.i("ST_getWebWorker", "kmlfile: " + kmlFile);
             // safe in cache
             FileManager.saveCacheFile(getApplicationContext(), MainActivity.CacheFileName, kmlFile.toString());
-            Log.i("ST_getWebWorker", "mod: " + FileManager.CacheFileLastModified(
-                    getApplicationContext(),FileManager.loadCacheFile
-                            (getApplicationContext(), CacheFileName)));
+
+            // logging
+            File cacheFile = FileManager.loadCacheFile(getApplicationContext(), CacheFileName);
+            Log.i("ST_getWebWorker", "Cachefile size: " + FileManager.getFileSize(cacheFile));
+            Log.i("ST_getWebWorker", "Cachefile modified: " + FileManager.CacheFileLastModified(cacheFile));
         }
-        Log.i("ST_getWebWorker", "result: "+ Result.failure());
         Log.i("ST_getWebWorker", "result: "+ Result.success());
-        return null;
+        return Result.success();
     }
 }

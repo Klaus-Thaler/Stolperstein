@@ -1,6 +1,5 @@
 package com.example.stolperstein.classes;
 
-import static android.content.ContentValues.TAG;
 import static com.example.stolperstein.MainActivity.CacheFileName;
 
 import android.content.Context;
@@ -15,11 +14,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class FileManager {
 
-    public static Long CacheFileLastModified(Context context, File file) {
-        return file.lastModified();
+    public static String CacheFileLastModified(File file) {
+        long timeStamp = file.lastModified();
+        Date date = new java.util.Date(timeStamp);
+        return new SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.GERMANY).format(date);
     }
     public static boolean CacheFileExist(Context context, String filename){
         return context.getFileStreamPath(filename).exists();
@@ -47,15 +51,21 @@ public class FileManager {
                 fos.write(kmlFile.getBytes());
                 fos.close();
             } catch (IOException e) {
-                Log.e(TAG, "IOE_saveDataFile: " + e.getMessage());
+                Log.i("ST_FileManager", "IOE_saveDataFile: " + e.getMessage());
                 utils.showToast(context,"Not saved.");
             } finally {
+                Log.i("ST_FileManager", "save in Download");
                 utils.showToast(context, "Ready.");
             }
         } else {
             utils.showToast(context,"Saving in Downloads not possible!");
         }
     }
+    static String getFileSize(File file) {
+        //return (double) file.length() / (1024 * 1024) + " mb";
+        return (int) file.length() / (1024) + " kb";
+    }
+
     public static void saveCacheFile(Context context, String filename, String dataString) {
         FileOutputStream fileOutputStream;
         try {
@@ -63,8 +73,12 @@ public class FileManager {
             fileOutputStream.write(dataString.getBytes());
             fileOutputStream.close();
         } catch (IOException e) {
-            Log.e(TAG, "IOE_saveCacheFile: " + e.getMessage());
+            Log.i("ST_FileManager", "IOE_saveCacheFile: " + e.getMessage());
+            throw new RuntimeException(e);
+        } finally {
+            Log.i("ST_FileManager", "saveCacheFile");
         }
+
     }
     public static boolean removeCacheFile(Context context, String filename) {
         File file;
@@ -75,16 +89,19 @@ public class FileManager {
         return false;
     }
     public static File loadCacheFile (Context context, String filename) {
-        File file = null;
+        File file;
         try {
             file = context.getFileStreamPath(filename);
         } catch (Exception e) {
-            Log.e(TAG, "IOE_loadCacheFile: " + e.getMessage());
+            Log.i("ST_FileManager", "IOE_loadCacheFile: " + e.getMessage());
+            throw new RuntimeException(e);
+        } finally {
+            Log.i("ST_FileManager", "loadCacheFile ready");
         }
         return file;
     }
     public static String readCacheFile(Context context, String filename) {
-        String data = null;
+        String data;
         FileInputStream fileInputStream;
         try {
             fileInputStream = context.openFileInput(filename);
@@ -92,7 +109,10 @@ public class FileManager {
             data = convertStreamToString(stream);
             fileInputStream.close();
         } catch (Exception e) {
-            Log.e(TAG, "IOE_readCacheFile: " + e.getMessage());
+            Log.i("ST_FileManager", "IOE_readCacheFile: " + e.getMessage());
+            throw new RuntimeException(e);
+        } finally {
+            Log.i("ST_FileManager", "readCacheFile ready");
         }
         return data;
     }
@@ -105,12 +125,13 @@ public class FileManager {
                 stringBuilder.append(line).append('\n');
             }
         } catch (IOException e) {
-            Log.e(TAG, "IOE_convertStream: " + e.getMessage());
+            Log.i("ST_FileManager", "IOE_convertStream: " + e.getMessage());
+            throw new RuntimeException(e);
         } finally {
             try {
                 bufferedReader.close();
             } catch (IOException e) {
-                Log.e(TAG, "IOE_convertStream: " + e.getMessage());
+                Log.i("ST_FileManager", "IOE_convertStream: " + e.getMessage());
             }
         }
         return stringBuilder.toString();

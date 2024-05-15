@@ -3,7 +3,6 @@ package com.example.stolperstein.ui.names;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,21 +45,16 @@ public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
         holder.addressText.setText(show.get(1));
         holder.bornText.setText(show.get(2));
         holder.deathText.setText(show.get(3));
-        holder.bioText.setText(show.get(4));
-            holder.bioText.setMovementMethod(LinkMovementMethod.getInstance());
-        holder.fotoText.setText(show.get(5));
-            holder.fotoText.setMovementMethod(LinkMovementMethod.getInstance());
         holder.installedText.setText(show.get(6));
-        holder.geopointText.setText(show.get(7));
         // buttons
         holder.bioButton.setOnClickListener(v -> {
-            //utils.showToast(v.getContext(), "klick pdf");
+            utils.showToast(v.getContext(), "klick pdf");
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(show.get(4)));
             mContext.startActivity(intent);
         });
         holder.fotoButton.setOnClickListener(v -> {
-            //utils.showToast(v.getContext(), "klick foto");
+            utils.showToast(v.getContext(), "klick foto");
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(show.get(5)));
             mContext.startActivity(intent);

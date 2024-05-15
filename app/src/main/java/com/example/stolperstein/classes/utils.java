@@ -1,21 +1,10 @@
 package com.example.stolperstein.classes;
 
-import static com.example.stolperstein.MainActivity.binding;
-
-import android.app.Dialog;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.view.View;
-import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.stolperstein.R;
-import com.google.android.material.navigation.NavigationView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,7 +29,7 @@ public class utils {
             try {
                 if ((string = br.readLine()) == null) break; }
             catch (IOException e) {
-                e.printStackTrace(); }
+                throw new RuntimeException(e); }
             sb.append(string).append("\n");
         }
         return sb.toString();
