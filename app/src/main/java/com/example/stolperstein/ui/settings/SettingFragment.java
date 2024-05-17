@@ -24,14 +24,12 @@ import com.example.stolperstein.classes.getWebWorker;
 import com.example.stolperstein.databinding.FragmentSettingBinding;
 
 public class SettingFragment extends Fragment {
-
     @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        SettingViewModel settingViewModel =
-                new ViewModelProvider(this).get(SettingViewModel.class);
+        SettingViewModel settingViewModel = new ViewModelProvider(this).get(SettingViewModel.class);
 
         com.example.stolperstein.databinding.FragmentSettingBinding binding = FragmentSettingBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

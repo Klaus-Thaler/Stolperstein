@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
         View root = binding.getRoot();
         setContentView(root);
 
-
-
         setSupportActionBar(binding.appBarMain.toolbar);
         // floating Button (Fadenkreuz)
         binding.appBarMain.fab.setOnClickListener(view1 -> {
@@ -73,16 +71,16 @@ public class MainActivity extends AppCompatActivity {
             dialog.setTitle(R.string.location);
             dialog.setContentView(R.layout.dialog_location);
             // Dialog Button close
-            Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
+            Button buttonClose = dialog.findViewById(R.id.button_close);
             buttonClose.setOnClickListener(v -> dialog.dismiss());
             // Dialog Button follow
-            Button buttonNo = (Button) dialog.findViewById(R.id.button_yes);
+            Button buttonNo = dialog.findViewById(R.id.button_yes);
             buttonNo.setOnClickListener(v -> {
                 getLocation.get(true);
                 dialog.dismiss();
             });
             // Dialog Button no follow
-            Button buttonYes = (Button) dialog.findViewById(R.id.button_no);
+            Button buttonYes = dialog.findViewById(R.id.button_no);
             buttonYes.setOnClickListener(v -> {
                 getLocation.get(false);
                 dialog.dismiss();
@@ -114,9 +112,9 @@ public class MainActivity extends AppCompatActivity {
             Dialog dialog = new Dialog(this);
             dialog.setTitle(R.string.welcome);
             dialog.setContentView(R.layout.dialog_welcome);
-            Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
+            Button buttonClose = dialog.findViewById(R.id.button_close);
             buttonClose.setOnClickListener(v -> dialog.dismiss());
-            ImageView imageView = (ImageView) dialog.findViewById(R.id.welcome_image);
+            ImageView imageView = dialog.findViewById(R.id.welcome_image);
             imageView.setCropToPadding(true);
             imageView.setMaxWidth(10);
             imageView.setMaxHeight(10);

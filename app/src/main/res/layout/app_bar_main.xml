@@ -31,6 +31,6 @@
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/white"
         app:srcCompat="@android:drawable/ic_menu_mylocation"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/todo" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
