@@ -32,7 +32,7 @@
     <string name="close"><u>close</u></string>
     <string name="clear">clear</string>
     <string name="title">title</string>
-    <string name="about">about ...</string>
+    <string name="about">about …</string>
     <string name="coffee_for_me">coffee for me</string>
     <string name="search">search</string>
     <string name="settings">settings</string>
@@ -60,4 +60,5 @@
     <string name="bio">Biografie</string>
     <string name="foto">Foto</string>
     <string name="map">Map</string>
+    <string name="installed">installed</string>
 </resources>

@@ -3,7 +3,6 @@ package com.example.stolperstein.ui;
 import static com.example.stolperstein.MainActivity.CacheFileName;
 
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,6 @@ import com.example.stolperstein.databinding.FragmentHomeBinding;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.kml.KmlDocument;
-import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -32,14 +30,13 @@ import java.io.File;
 
 
 public class CardFragment extends Fragment {
-        private FragmentHomeBinding binding;
-        public static MapView mapView;
+    public static MapView mapView;
         public static MyLocationNewOverlay mMyLocationOverlay;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        com.example.stolperstein.databinding.FragmentHomeBinding binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         // Start Position
@@ -85,10 +82,10 @@ public class CardFragment extends Fragment {
         if (FileManager.CacheFileExist(requireActivity(),CacheFileName)) {
             // cache file
             // parse den kml file aus dem cache
-            File data = FileManager.loadCacheFile(requireActivity(), CacheFileName);
+            File mCacheFile = FileManager.loadCacheFile(requireActivity(), CacheFileName);
             KmlDocument kmlDoc = new KmlDocument();
-            kmlDoc.parseKMLFile(data);
-            Log.i("ST_readcache",  "data " + data);
+            kmlDoc.parseKMLFile(mCacheFile);
+            Log.i("ST_readcache",  "data " + mCacheFile);
             String erg = FileManager.readCacheFile(requireActivity(), CacheFileName);
             Log.i("ST_readfile", "readfile: " + erg);
             FolderOverlay kmlOverlay = (FolderOverlay) kmlDoc.mKmlRoot.buildOverlay(mapView, null, null, kmlDoc);
@@ -97,7 +94,17 @@ public class CardFragment extends Fragment {
         }
         return root;
     }
-    /*
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mapView != null) { mapView.onResume(); }
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mapView != null) { mapView.onPause(); }
+    }
+        /*
     @Override
     public void onStart() {
         super.onStart();
@@ -108,19 +115,4 @@ public class CardFragment extends Fragment {
         super.onStop();
     }
     */
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Configuration.getInstance().load(requireActivity(),
-                PreferenceManager.getDefaultSharedPreferences(requireActivity()));
-        if (mapView != null) { mapView.onResume(); }
-    }
-    @Override
-    public void onPause() {
-        super.onPause();
-        Configuration.getInstance().save(requireActivity(),
-                PreferenceManager.getDefaultSharedPreferences(requireActivity()));
-        if (mapView != null) { mapView.onPause(); }
-    }
 }

@@ -2,24 +2,18 @@ package com.example.stolperstein.ui;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.view.View;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
-import androidx.webkit.WebSettingsCompat;
-import androidx.webkit.WebViewFeature;
 
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.utils;
 
-import java.io.IOException;
 import java.io.InputStream;
 
 public class DialogAbout {
@@ -45,9 +39,7 @@ public class DialogAbout {
         imageView.setImageBitmap(img1);
         
         Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
-        buttonClose.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) { dialog.dismiss(); }
-        });
+        buttonClose.setOnClickListener(v -> dialog.dismiss());
         dialog.show();
     }
 }

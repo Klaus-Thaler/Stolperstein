@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Stolperstein</string>
+    <string name="app_name" translatable="false">Stolperstein Kiel</string>
     <string name="mode" translatable="false">day</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
@@ -85,7 +85,7 @@
     <string name="menu_stones">Die Stolpersteine</string>
     <string name="willkommen">Willkommen</string>
     <string name="start">Start</string>
-    <string name="suche">Suche Stolpersteine ...</string>
+    <string name="suche">Suche Stolpersteine …</string>
     <string name="stolpersteine">Stolpersteine</string>
     <string name="Greeting_Description">Für die Einrichtung der App müssen zuerst Daten generiert  werden. Das kann einige Zeit in Anspruch nehmen, ist aber nur einmal für die Einrichtung der  App notwendig. Es werden im ersten Schritt Informationen aus dem Wiki geladen. Danach werden  aus den Adressen, auf denen sich die Stolpersteine beziehen, die Geo-Punkte für die Anzeige auf der Karte ermittelt. Ist die Aktion erfolgreich, wird die Karte mit allen gewonnen Informationen angezeigt. Dieser Vorgang kann individuell in \"Einstellungen\" wiederholt werden.</string>
     <string name="Greeting_Description_short">Für die Einrichtung der App müssen zuerst Daten generiert werden. Das kann einige Zeit in Anspruch nehmen, ist aber nur einmal für die Einrichtung der App notwendig. Geh zu Einstellungen und starte den Such-Vorgang.</string>
@@ -99,7 +99,7 @@
     <string name="_1_10" translatable="false"><![CDATA[1/10 >]]></string>
     <string name="close"><u>Schliessen</u></string>
     <string name="title">Titel</string>
-    <string name="about">Über ...</string>
+    <string name="about">Über …</string>
     <string name="coffee_for_me">Kaffee für mich</string>
     <string name="search">Suche</string>
     <string name="settings">Einstellungen</string>
@@ -126,5 +126,6 @@
     <string name="bio">Biografie</string>
     <string name="foto">Foto</string>
     <string name="map">Map</string>
+    <string name="installed">installed</string>
 
 </resources>

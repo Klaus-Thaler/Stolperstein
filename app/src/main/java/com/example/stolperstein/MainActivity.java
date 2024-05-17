@@ -3,7 +3,6 @@ package com.example.stolperstein;
 import android.Manifest;
 import android.app.Dialog;
 import android.graphics.Bitmap;
-import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -32,11 +31,9 @@ import com.google.android.material.navigation.NavigationView;
 
 import org.osmdroid.views.MapView;
 
-import java.util.HashMap;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
     public static MapView mapView;
+
     public static String CacheFileName = "placemarks.kml";
     //LocationManager locationManager;
     public static String[] PermsLocation = {
@@ -64,8 +61,10 @@ public class MainActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(MainActivity.this, PermsLocation, 2);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        View root = binding.getRoot();
+        setContentView(root);
+
+
 
         setSupportActionBar(binding.appBarMain.toolbar);
         // floating Button (Fadenkreuz)
@@ -73,17 +72,16 @@ public class MainActivity extends AppCompatActivity {
             Dialog dialog = new Dialog(view1.getContext());
             dialog.setTitle(R.string.location);
             dialog.setContentView(R.layout.dialog_location);
+            // Dialog Button close
             Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
             buttonClose.setOnClickListener(v -> dialog.dismiss());
-            // Button follow
+            // Dialog Button follow
             Button buttonNo = (Button) dialog.findViewById(R.id.button_yes);
-            buttonNo.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    getLocation.get(true);
-                    dialog.dismiss();
-                }
+            buttonNo.setOnClickListener(v -> {
+                getLocation.get(true);
+                dialog.dismiss();
             });
-            // Button no follow
+            // Dialog Button no follow
             Button buttonYes = (Button) dialog.findViewById(R.id.button_no);
             buttonYes.setOnClickListener(v -> {
                 getLocation.get(false);
@@ -122,8 +120,7 @@ public class MainActivity extends AppCompatActivity {
             imageView.setCropToPadding(true);
             imageView.setMaxWidth(10);
             imageView.setMaxHeight(10);
-            Bitmap img1 = null;
-            img1 = utils.getBitmapFromAsset(dialog.getContext(), "stolperstein_ein_mensch.png");
+            Bitmap img1 = utils.getBitmapFromAsset(dialog.getContext(), "stolperstein_ein_mensch.png");
             imageView.setImageBitmap(img1);
             dialog.create();
             dialog.show();
@@ -141,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         // Items in Settings, rechts oben
+        // Items je nach mode <string name="mode" ...></string> hell <> dunkel
         if (item.getItemId() == R.id.settings_about) {
             // darkmode (Let make me it simple)
             int content = R.raw.about_html;

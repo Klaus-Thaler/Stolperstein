@@ -58,7 +58,7 @@
     <TableRow>
         <TextView
             android:id="@+id/installed_str"
-            android:text="installed"
+            android:text="@string/installed"
             android:layout_height="wrap_content"
             android:layout_margin="2sp" />
         <TextView
@@ -70,21 +70,21 @@
     <TableRow>
         <Button
             android:id="@+id/name_button_bio"
-            android:text="bio"
+            android:text="@string/bio"
             android:layout_width="wrap_content"
             android:layout_marginLeft="6sp"
             android:layout_marginRight="6sp"
             style="?android:attr/buttonBarButtonStyle" />
         <Button
             android:id="@+id/name_button_foto"
-            android:text="foto"
+            android:text="@string/foto"
             android:layout_width="wrap_content"
             android:layout_marginLeft="6sp"
             android:layout_marginRight="6sp"
             style="?android:attr/buttonBarButtonStyle" />
         <Button
             android:id="@+id/name_button_geopoint"
-            android:text="map"
+            android:text="@string/map"
             android:layout_width="wrap_content"
             android:layout_marginLeft="6sp"
             android:layout_marginRight="6sp"

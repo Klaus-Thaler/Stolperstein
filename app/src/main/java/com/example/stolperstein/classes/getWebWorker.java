@@ -54,7 +54,7 @@ public class getWebWorker extends Worker {
             Log.i("ST_getWebWorker","mRows: " + mRows.size());
             for (int i = 1; mRows.size() > i; i++) {
             // fuer kurze tests
-            //for (int i = 254; 257 > i; i++) {
+            //for (int i = 1; 4 > i; i++) {
                 //first row is the col names so skip it.
                 ArrayList<String> entryTD = new ArrayList<>();
                 Elements mTD = mRows.get(i).select("td");
@@ -82,33 +82,22 @@ public class getWebWorker extends Worker {
                             + Objects.requireNonNull(entryTD.get(1)));
                     kmlFile.append("<Placemark>\n") // kml file
                             .append("\t<id>").append(i).append("</id>\n") // id
-                            .append("\t<title>").append("Stolperstein").append("</title>\n")
-                            .append("\t<description>\n\t\t")
-                            .append(Objects.requireNonNull(entryTD.get(1)))   // adresse
-                            .append(" - ").append(Objects.requireNonNull(entryTD.get(2)))   // geboren
-                            .append("-").append(Objects.requireNonNull(entryTD.get(3)))     // deportiert
-                            .append("\n\t</description>\n")
-                            .append("\t<Point>\n\t\t<coordinates>")
+                            .append("\t\t<title>Stolperstein</title>\n") //name
+                            .append("\t\t<description>\n")
+                            .append("\t\t\t<name><![CDATA[").append(Objects.requireNonNull(entryTD.get(0))).append("]]></name>\n") //name
+                            .append("\t\t\t<address><![CDATA[").append(Objects.requireNonNull(entryTD.get(1))).append("]]></address>\n")   // adresse
+                            .append("\t\t</description>\n")
+                            .append("\t<Point>\n")
+                            .append("\t\t<coordinates>")
                             .append(mCoder.get(0).getLongitude()).append(",").append(mCoder.get(0).getLatitude())
-                            .append("</coordinates>\n\t</Point>\n")
+                            .append("</coordinates>\n")
+                            .append("\t</Point>\n")
                             .append("\t<data>\n")
-                            .append("\t\t<name>").append(Objects.requireNonNull(entryTD.get(0)))
-                            .append("</name>\n")
-                            .append("\t\t<address>").append(Objects.requireNonNull(entryTD.get(1)))
-                            .append("</address>\n")
-                            .append("\t\t<born>").append(Objects.requireNonNull(entryTD.get(2)))
-                            .append("</born>\n")
-                            .append("\t\t<death>").append(Objects.requireNonNull(entryTD.get(3)))
-                            .append("</death>\n")
-                            .append("\t\t<biographie><![CDATA[")
-                            .append(Objects.requireNonNull(entryTD.get(4))).append("]]></biographie>\n")
-                            .append("\t\t<photo><![CDATA[")
-                            .append(Objects.requireNonNull(entryTD.get(5))).append("]]></photo>\n")
-                            .append("\t\t<installed>")
-                            .append((Objects.requireNonNull(entryTD.get(6)))).append("</installed>\n")
-                            .append("\t\t<geopoint>")
-                            .append(mCoder.get(0).getLongitude()).append(",").append(mCoder.get(0).getLatitude())
-                            .append("</geopoint>\n")
+                            .append("\t\t<born><![CDATA[").append(Objects.requireNonNull(entryTD.get(2))).append("]]></born>\n")   // geboren
+                            .append("\t\t<death><![CDATA[").append(Objects.requireNonNull(entryTD.get(3))).append("]]></death>\n")     // deportiert
+                            .append("\t\t<biographie><![CDATA[").append(Objects.requireNonNull(entryTD.get(4))).append("]]></biographie>\n")
+                            .append("\t\t<photo><![CDATA[").append(Objects.requireNonNull(entryTD.get(5))).append("]]></photo>\n")
+                            .append("\t\t<installed>").append((Objects.requireNonNull(entryTD.get(6)))).append("</installed>\n")
                             .append("\t</data>\n")
                             .append("</Placemark>\n");
                 }

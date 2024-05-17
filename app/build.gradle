@@ -72,5 +72,5 @@ dependencies {
     implementation libs.preference.ktx
     //
     // https://stackoverflow.com/questions/57449900/letting-webview-on-android-work-with-prefers-color-scheme-dark
-    implementation libs.webkit
+    //implementation libs.webkit
 }
