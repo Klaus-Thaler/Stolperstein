@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,7 +37,7 @@ public class NameFragment extends Fragment {
         // Inflate the layout for this fragment
         //View view = inflater.inflate(R.layout.fragment_name, container, false);
 
-        com.example.stolperstein.databinding.FragmentNameBinding binding = FragmentNameBinding.inflate(inflater, container, false);
+        FragmentNameBinding binding = FragmentNameBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         //NameViewModel nameViewModel = new ViewModelProvider(this).get(NameViewModel.class);

@@ -31,7 +31,7 @@ public class SettingFragment extends Fragment {
 
         SettingViewModel settingViewModel = new ViewModelProvider(this).get(SettingViewModel.class);
 
-        com.example.stolperstein.databinding.FragmentSettingBinding binding = FragmentSettingBinding.inflate(inflater, container, false);
+        FragmentSettingBinding binding = FragmentSettingBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textViewDesc = binding.firstDescription;
