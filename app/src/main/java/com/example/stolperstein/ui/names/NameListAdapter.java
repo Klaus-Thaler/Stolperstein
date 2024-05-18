@@ -8,13 +8,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.stolperstein.R;
 import com.example.stolperstein.ui.DialogMap;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;

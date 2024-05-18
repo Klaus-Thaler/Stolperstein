@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(MainActivity.this, PermsLocation, 2);
 
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
         setContentView(root);

@@ -65,7 +65,7 @@ public class DialogMap {
         mMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
         mMarker.setTitle(mName);
         mMarker.setSnippet(mAddress);
-        mMarker.setSubDescription("SubDescription");
+        //mMarker.setSubDescription("SubDescription");
         dialogMap.getOverlays().add(mMarker);
         dialogMap.invalidate();
         dialog.setContentView(dialogMap);

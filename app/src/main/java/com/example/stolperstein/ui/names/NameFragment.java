@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.work.ListenableWorker;
 
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.FileManager;
@@ -25,6 +26,7 @@ import org.jsoup.select.Elements;
 import org.osmdroid.bonuspack.kml.KmlDocument;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,39 +46,48 @@ public class NameFragment extends Fragment {
 
         //mProgressBar = root.findViewById(R.id.name_progressBar);
 
-        File cachefile = FileManager.loadCacheFile(getContext(), CacheFileName);
-        KmlDocument kmlDoc = new KmlDocument();
-
         HashMap<Integer, List<String>> hashPerson = new HashMap<>();
 
-        if (kmlDoc.parseKMLFile(cachefile)) {
-            //utils.showToast(getContext(), "start");
-            String kmlFile = FileManager.readCacheFile(getContext(), CacheFileName);
-            Log.i("ST_NameFragment", "cachfile: " + kmlFile);
-            Document doc = Jsoup.parse(kmlFile);
-            Elements data = doc.select("Placemark");
+        if (FileManager.CacheFileExist(requireContext(), CacheFileName)) {
 
-            // todo nur 10 anzeigen und dann vor oder besser -> abc
-            // for (int z = 0; 10 > z; z++) {
-            for (int z = 0; data.size() > z; z++) {
-                List<String> dataPerson = new ArrayList<>();
-                Log.i("ST_NameFragment", "data: " + data);
-                dataPerson.add(data.get(z).getElementsByTag("name").text());
-                dataPerson.add(data.get(z).getElementsByTag("address").text());
-                dataPerson.add(data.get(z).getElementsByTag("born").text());
-                dataPerson.add(data.get(z).getElementsByTag("death").text());
-                dataPerson.add(data.get(z).getElementsByTag("biographie").text());
-                dataPerson.add(data.get(z).getElementsByTag("photo").text());
-                dataPerson.add(data.get(z).getElementsByTag("installed").text());
-                dataPerson.add(data.get(z).getElementsByTag("coordinates").text());
-                hashPerson.put(z,dataPerson);
-                Log.i("ST_NameFragment", ": " + z + " -" + dataPerson.get(0));
+            //WorkRequest uploadWorkRequest = new OneTimeWorkRequest.Builder(getNameWorker.class).build();
+            //WorkManager.getInstance(requireContext()).enqueue(uploadWorkRequest);
+
+            KmlDocument kmlDoc = new KmlDocument();
+            File kmlFile = FileManager.loadCacheFile(getContext(), CacheFileName);
+            try {
+                kmlDoc.parseKMLFile(kmlFile);
+                Document doc = Jsoup.parse(kmlFile);
+                Elements data = doc.select("Placemark");
+                utils.showToast(getContext(), "max: " + data.size());
+                // todo nur 10 anzeigen und dann vor oder besser -> abc
+                //for (int z = 0; 10 > z; z++) {
+                for (int z = 0; data.size() > z; z++) {
+                    List<String> dataPerson = new ArrayList<>();
+                    Log.i("ST_NameFragment", "data: " + data);
+                    dataPerson.add(data.get(z).getElementsByTag("name").text());
+                    dataPerson.add(data.get(z).getElementsByTag("address").text());
+                    dataPerson.add(data.get(z).getElementsByTag("born").text());
+                    dataPerson.add(data.get(z).getElementsByTag("death").text());
+                    dataPerson.add(data.get(z).getElementsByTag("biographie").text());
+                    dataPerson.add(data.get(z).getElementsByTag("photo").text());
+                    dataPerson.add(data.get(z).getElementsByTag("installed").text());
+                    dataPerson.add(data.get(z).getElementsByTag("coordinates").text());
+                    hashPerson.put(z,dataPerson);
+                    Log.i("ST_NameFragment", ": " + z + " -" + dataPerson.get(0));
+                }
+            } catch (IOException e) {
+                Log.i("ST_getNameWorker", "result: " + ListenableWorker.Result.failure());
+                throw new RuntimeException(e);
+            } finally {
+                Log.i("ST_getNameWorker", "finally result: " + ListenableWorker.Result.success());
             }
         } else {
             utils.showToast(requireContext(), "no Data");
         }
         // Add the following lines to create RecyclerView
         // Add RecyclerView member
+
         RecyclerView recyclerView = root.findViewById(R.id.name_recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));

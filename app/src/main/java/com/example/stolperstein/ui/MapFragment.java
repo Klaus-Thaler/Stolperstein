@@ -1,21 +1,20 @@
 package com.example.stolperstein.ui;
 
 import static com.example.stolperstein.MainActivity.CacheFileName;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
 import com.example.stolperstein.classes.FileManager;
-import com.example.stolperstein.databinding.FragmentHomeBinding;
-
+import com.example.stolperstein.databinding.FragmentMapBinding;
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.kml.KmlDocument;
+import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -25,18 +24,17 @@ import org.osmdroid.views.overlay.ScaleBarOverlay;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
-
 import java.io.File;
 
-
-public class CardFragment extends Fragment {
-    public static MapView mapView;
-        public static MyLocationNewOverlay mMyLocationOverlay;
+public class MapFragment extends Fragment {
+    //public static MapView mapView;
+    public static MyLocationNewOverlay mMyLocationOverlay;
+    private MapView mapView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        com.example.stolperstein.databinding.FragmentHomeBinding binding = FragmentHomeBinding.inflate(inflater, container, false);
+        com.example.stolperstein.databinding.FragmentMapBinding binding = FragmentMapBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         // Start Position
@@ -97,22 +95,23 @@ public class CardFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (mapView != null) { mapView.onResume(); }
+        Configuration.getInstance().load(requireActivity(),
+                PreferenceManager.getDefaultSharedPreferences(requireActivity()));
+        //if (mapView != null) { mapView.onResume(); }
     }
     @Override
     public void onPause() {
         super.onPause();
-        if (mapView != null) { mapView.onPause(); }
+        Configuration.getInstance().load(requireActivity(),
+                PreferenceManager.getDefaultSharedPreferences(requireActivity()));
+        //if (mapView != null) { mapView.onPause(); }
     }
-        /*
     @Override
     public void onStart() {
         super.onStart();
     }
-
     @Override
     public void onStop() {
         super.onStop();
     }
-    */
 }

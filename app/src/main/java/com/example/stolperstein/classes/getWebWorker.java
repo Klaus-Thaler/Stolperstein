@@ -51,10 +51,10 @@ public class getWebWorker extends Worker {
             Document doc = Jsoup.connect(website).get();
             Elements mTable = doc.select("table tbody");
             mRows = mTable.select("tr");
-            Log.i("ST_getWebWorker","mRows: " + mRows.size());
+            Log.i("ST_getWebWorker", "mRows: " + mRows.size());
             for (int i = 1; mRows.size() > i; i++) {
-            // fuer kurze tests
-            //for (int i = 1; 4 > i; i++) {
+                // fuer kurze tests
+                //for (int i = 1; 4 > i; i++) {
                 //first row is the col names so skip it.
                 ArrayList<String> entryTD = new ArrayList<>();
                 Elements mTD = mRows.get(i).select("td");
@@ -123,7 +123,7 @@ public class getWebWorker extends Worker {
             Log.i("ST_getWebWorker", "Cachefile size: " + FileManager.getFileSize(cacheFile));
             Log.i("ST_getWebWorker", "Cachefile modified: " + FileManager.CacheFileLastModified(cacheFile));
         }
-        Log.i("ST_getWebWorker", "result: "+ Result.success());
+        Log.i("ST_getWebWorker", "result: " + Result.success());
         return Result.success();
     }
 }
