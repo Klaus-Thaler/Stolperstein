@@ -61,7 +61,7 @@ public class FileManager {
             utils.showToast(context,"Saving in Downloads not possible!");
         }
     }
-    static String getFileSize(File file) {
+    public static String getFileSize(File file) {
         //return (double) file.length() / (1024 * 1024) + " mb";
         return (int) file.length() / (1024) + " kb";
     }

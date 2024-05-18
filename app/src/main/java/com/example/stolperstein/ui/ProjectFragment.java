@@ -13,11 +13,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.utils;
-import com.example.stolperstein.databinding.FragmentArtistBinding;
 import com.example.stolperstein.databinding.FragmentProjectBinding;
 
 import java.io.IOException;
@@ -63,7 +61,6 @@ public class ProjectFragment extends Fragment {
         final TextView content5 = binding.projectContent5;
         content5.setMovementMethod(LinkMovementMethod.getInstance());
         content5.setText(resString5);
-
 
         ImageView imageView = binding.projectPic1;
         imageView.setCropToPadding(true);

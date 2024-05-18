@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.work.ListenableWorker;
@@ -24,6 +25,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.osmdroid.bonuspack.kml.KmlDocument;
+import org.osmdroid.config.Configuration;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +34,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class NameFragment extends Fragment {
-
+    private final HashMap<Integer, List<String>> hashPerson = new HashMap<>();
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class NameFragment extends Fragment {
 
         //mProgressBar = root.findViewById(R.id.name_progressBar);
 
-        HashMap<Integer, List<String>> hashPerson = new HashMap<>();
+
 
         if (FileManager.CacheFileExist(requireContext(), CacheFileName)) {
 
@@ -96,5 +98,25 @@ public class NameFragment extends Fragment {
 
         //utils.showToast(getContext(), "end");
         return root;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        Configuration.getInstance().load(requireActivity(),
+                PreferenceManager.getDefaultSharedPreferences(requireActivity()));
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        Configuration.getInstance().load(requireActivity(),
+                PreferenceManager.getDefaultSharedPreferences(requireActivity()));
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 }

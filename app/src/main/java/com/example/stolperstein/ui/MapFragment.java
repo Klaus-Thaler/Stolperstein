@@ -1,17 +1,25 @@
 package com.example.stolperstein.ui;
 
 import static com.example.stolperstein.MainActivity.CacheFileName;
+import static com.example.stolperstein.MainActivity.PermsLocation;
+
+import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
+import com.example.stolperstein.R;
 import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.databinding.FragmentMapBinding;
+
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.kml.KmlDocument;
 import org.osmdroid.config.Configuration;
@@ -23,7 +31,9 @@ import org.osmdroid.views.overlay.FolderOverlay;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
+import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
+
 import java.io.File;
 
 public class MapFragment extends Fragment {
@@ -34,7 +44,7 @@ public class MapFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        com.example.stolperstein.databinding.FragmentMapBinding binding = FragmentMapBinding.inflate(inflater, container, false);
+        FragmentMapBinding binding = FragmentMapBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         // Start Position
@@ -69,13 +79,28 @@ public class MapFragment extends Fragment {
         mapView.getOverlays().add(compassOverlay);
         mapView.invalidate();
 
-        //mMyLocationOverlay = new MyLocationNewOverlay(new GpsMyLocationProvider(requireContext()), mapView);
-        //IMapController controller = mapView.getController();
-        //mMyLocationOverlay.setEnabled(false);
-        //mMyLocationOverlay.enableMyLocation();
-        //mMyLocationOverlay.setEnabled(true);
-        //mapView.getOverlays().add(mMyLocationOverlay);
-        //mapView.invalidate();
+        binding.fab.setOnClickListener(view -> {
+            Dialog dialog = new Dialog(view.getContext());
+            dialog.setTitle(R.string.location);
+            dialog.setContentView(R.layout.dialog_location);
+            // Dialog Button close
+            Button buttonClose = dialog.findViewById(R.id.button_close);
+            buttonClose.setOnClickListener(v -> dialog.dismiss());
+            // Dialog Button follow
+            Button buttonNo = dialog.findViewById(R.id.button_yes);
+            buttonNo.setOnClickListener(v -> {
+                getLocation(true);
+                dialog.dismiss();
+            });
+            // Dialog Button no follow
+            Button buttonYes = dialog.findViewById(R.id.button_no);
+            buttonYes.setOnClickListener(v -> {
+                getLocation(false);
+                dialog.dismiss();
+            });
+            dialog.create();
+            dialog.show();
+        });
 
         if (FileManager.CacheFileExist(requireActivity(),CacheFileName)) {
             // cache file
@@ -86,11 +111,26 @@ public class MapFragment extends Fragment {
             Log.i("ST_readcache",  "data " + mCacheFile);
             String erg = FileManager.readCacheFile(requireActivity(), CacheFileName);
             Log.i("ST_readfile", "readfile: " + erg);
-            FolderOverlay kmlOverlay = (FolderOverlay) kmlDoc.mKmlRoot.buildOverlay(mapView, null, null, kmlDoc);
+            FolderOverlay kmlOverlay = (FolderOverlay) kmlDoc.mKmlRoot.buildOverlay(
+                    mapView, null, null, kmlDoc);
             mapView.getOverlays().add(kmlOverlay);
             mapView.invalidate();
         }
         return root;
+    }
+    public void getLocation (Boolean follow) {
+        ActivityCompat.requestPermissions(requireActivity(), PermsLocation, 2);
+        mMyLocationOverlay = new MyLocationNewOverlay(
+                new GpsMyLocationProvider(requireContext()), mapView);
+        mMyLocationOverlay.enableMyLocation();
+        if (follow) {
+            mMyLocationOverlay.enableFollowLocation();
+        } else {
+            mMyLocationOverlay.disableFollowLocation();
+        }
+        mMyLocationOverlay.setEnabled(true);
+        mapView.getOverlays().add(mMyLocationOverlay);
+        mapView.invalidate();
     }
     @Override
     public void onResume() {

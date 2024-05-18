@@ -1,4 +1,4 @@
-package com.example.stolperstein.classes;
+package com.example.stolperstein.ui.settings;
 
 import static com.example.stolperstein.MainActivity.CacheFileName;
 import static com.example.stolperstein.MainActivity.preAddress;
@@ -12,7 +12,7 @@ import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
 import com.example.stolperstein.MainActivity;
-import com.example.stolperstein.ui.settings.SettingViewModel;
+import com.example.stolperstein.classes.FileManager;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

@@ -2,14 +2,11 @@ package com.example.stolperstein.ui;
 
 import static com.example.stolperstein.MainActivity.CacheFileName;
 
-import android.app.Activity;
-import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.stolperstein.MainActivity;
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.classes.utils;

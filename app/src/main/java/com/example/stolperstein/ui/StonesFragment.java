@@ -2,10 +2,6 @@ package com.example.stolperstein.ui;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.stolperstein.R;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
+import com.example.stolperstein.R;
 import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.FragmentStonesBinding;
-
-import java.io.IOException;
 
 public class StonesFragment extends Fragment {
     public FragmentStonesBinding binding;

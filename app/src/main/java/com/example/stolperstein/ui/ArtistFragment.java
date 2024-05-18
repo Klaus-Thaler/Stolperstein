@@ -1,11 +1,8 @@
 package com.example.stolperstein.ui;
 
 import android.annotation.SuppressLint;
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,14 +12,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.stolperstein.R;
-import com.example.stolperstein.databinding.FragmentArtistBinding;
 import com.example.stolperstein.classes.utils;
-
-import java.io.IOException;
-import java.io.InputStream;
+import com.example.stolperstein.databinding.FragmentArtistBinding;
 
 public class ArtistFragment extends Fragment {
 

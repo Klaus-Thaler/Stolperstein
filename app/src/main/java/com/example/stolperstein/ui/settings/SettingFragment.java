@@ -20,7 +20,6 @@ import androidx.work.WorkRequest;
 import com.example.stolperstein.MainActivity;
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.FileManager;
-import com.example.stolperstein.classes.getWebWorker;
 import com.example.stolperstein.databinding.FragmentSettingBinding;
 
 public class SettingFragment extends Fragment {

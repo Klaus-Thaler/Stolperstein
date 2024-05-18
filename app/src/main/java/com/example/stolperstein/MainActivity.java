@@ -22,7 +22,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.stolperstein.classes.FileManager;
-import com.example.stolperstein.classes.getLocation;
 import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.ActivityMainBinding;
 import com.example.stolperstein.ui.DialogAbout;
@@ -57,38 +56,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ActivityCompat.requestPermissions(MainActivity.this, PermsLocation, 2);
-
+        //ActivityCompat.requestPermissions(this, PermsLocation, 2);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
         setContentView(root);
 
+        ActivityCompat.requestPermissions(this, PermsStorage, 2);
+
         setSupportActionBar(binding.appBarMain.toolbar);
         // floating Button (Fadenkreuz)
-        binding.appBarMain.fab.setOnClickListener(view1 -> {
-            Dialog dialog = new Dialog(view1.getContext());
-            dialog.setTitle(R.string.location);
-            dialog.setContentView(R.layout.dialog_location);
-            // Dialog Button close
-            Button buttonClose = dialog.findViewById(R.id.button_close);
-            buttonClose.setOnClickListener(v -> dialog.dismiss());
-            // Dialog Button follow
-            Button buttonNo = dialog.findViewById(R.id.button_yes);
-            buttonNo.setOnClickListener(v -> {
-                getLocation.get(true);
-                dialog.dismiss();
-            });
-            // Dialog Button no follow
-            Button buttonYes = dialog.findViewById(R.id.button_no);
-            buttonYes.setOnClickListener(v -> {
-                getLocation.get(false);
-                dialog.dismiss();
-            });
-            dialog.create();
-            dialog.show();
-        });
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
