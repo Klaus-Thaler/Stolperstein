@@ -48,8 +48,6 @@ public class NameFragment extends Fragment {
 
         //mProgressBar = root.findViewById(R.id.name_progressBar);
 
-
-
         if (FileManager.CacheFileExist(requireContext(), CacheFileName)) {
 
             //WorkRequest uploadWorkRequest = new OneTimeWorkRequest.Builder(getNameWorker.class).build();
@@ -63,7 +61,7 @@ public class NameFragment extends Fragment {
                 Elements data = doc.select("Placemark");
                 utils.showToast(getContext(), "max: " + data.size());
                 // todo nur 10 anzeigen und dann vor oder besser -> abc
-                //for (int z = 0; 10 > z; z++) {
+                //for (int z = 0; 1 > z; z++) {
                 for (int z = 0; data.size() > z; z++) {
                     List<String> dataPerson = new ArrayList<>();
                     Log.i("ST_NameFragment", "data: " + data);
@@ -93,7 +91,7 @@ public class NameFragment extends Fragment {
         RecyclerView recyclerView = root.findViewById(R.id.name_recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
-        NameListAdapter nameListAdapter = new NameListAdapter(hashPerson, getContext());
+        NameListAdapter nameListAdapter = new NameListAdapter(hashPerson, root.getContext());
         recyclerView.setAdapter(nameListAdapter);
 
         //utils.showToast(getContext(), "end");

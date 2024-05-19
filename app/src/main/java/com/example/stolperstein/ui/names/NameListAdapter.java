@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.stolperstein.R;
-import com.example.stolperstein.ui.DialogMap;
+import com.example.stolperstein.ui.DialogSingleMap;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
@@ -61,7 +62,7 @@ public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
         holder.geopointButton.setOnClickListener(v -> {
             //utils.showToast(v.getContext(), "klick geopoint");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                DialogMap.show(v.getContext(), "title", show.get(0), show.get(1), show.get(7));
+                DialogSingleMap.show(v.getContext(), "title", show.get(0), show.get(1), show.get(7));
             }
         });
         Log.i("ST_NameListAdapter", "-> " + show.get(0));

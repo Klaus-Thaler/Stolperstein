@@ -31,7 +31,6 @@ import com.google.android.material.navigation.NavigationView;
 import org.osmdroid.views.MapView;
 
 public class MainActivity extends AppCompatActivity {
-    public static MapView mapView;
 
     public static String CacheFileName = "placemarks.kml";
     //LocationManager locationManager;

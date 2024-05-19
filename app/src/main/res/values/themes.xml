@@ -16,9 +16,9 @@
     </style>
 
     <style name="leaf">
-        <item name="cornerSizeTopLeft">85%</item>           //can specify corner position
+        <item name="cornerSizeTopLeft">95%</item>           //can specify corner position
         <!--<item name="cornerFamilyTopLeft">cut</item>-->
-        <item name="cornerSizeBottomRight">85%</item>
+        <item name="cornerSizeBottomRight">95%</item>
         <!--<item name="cornerFamilyBottomRight">cut</item>-->
     </style>
 

@@ -3,8 +3,10 @@ package com.example.stolperstein.ui;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Build;
+import android.widget.Button;
 
 import androidx.annotation.RequiresApi;
+
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.utils;
 
@@ -18,30 +20,25 @@ import org.osmdroid.views.overlay.ScaleBarOverlay;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
 
-public class DialogMap {
+public class DialogSingleMap {
     //Building dialog
-    public static MapView dialogMap;
-
     @RequiresApi(api = Build.VERSION_CODES.Q)
     public static void show(Context context, String dialogTitle, String mName, String mAddress, String mGeopoint) {
         // zeigt den Dialog Frame nach Klick: show in maps
 
         utils.showToast(context,"geo: " + mGeopoint);
-        double defaultZOOM = 16.;
+        double defaultZOOM = 14.;
 
-        Dialog dialog = new Dialog(context);
-        dialog.setTitle(dialogTitle);
-        dialog.setContentView(R.layout.dialog_map);
+        Dialog mapDialog = new Dialog(context);
+        mapDialog.setTitle(dialogTitle);
+        mapDialog.setContentView(R.layout.dialog_map);
 
-        dialogMap = new MapView(context);
-        dialogMap.findViewById(R.id.dialogMapView);
+        MapView dialogMap = (MapView) mapDialog.findViewById(R.id.dialogMapView);
 
-        //mapView.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
-        dialogMap.setTileSource(TileSourceFactory.MAPNIK);
+
+        dialogMap.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
         // controller fur osm
         IMapController mapController = dialogMap.getController();
-        // start in kiel
-        //GeoPoint startPoint = new GeoPoint(defaultLATITUDE, defaultLONGITUDE);
         GeoPoint mPoint = GeoPoint.fromInvertedDoubleString(mGeopoint, ',');
         mapController.setCenter(mPoint);
         mapController.setZoom(defaultZOOM);
@@ -59,7 +56,7 @@ public class DialogMap {
                 new InternalCompassOrientationProvider(context), dialogMap);
         compassOverlay.enableCompass();
         dialogMap.getOverlays().add(compassOverlay);
-        dialogMap.invalidate();
+        // set Marker
         Marker mMarker = new Marker(dialogMap);
         mMarker.setPosition(mPoint);
         mMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
@@ -68,17 +65,12 @@ public class DialogMap {
         //mMarker.setSubDescription("SubDescription");
         dialogMap.getOverlays().add(mMarker);
         dialogMap.invalidate();
-        dialog.setContentView(dialogMap);
-
-        /*
-        // Button close
-        Button buttonClose = (Button) dialog.findViewById(R.id.fab_close);
-        buttonClose.setOnClickListener(v -> {
-            utils.showToast(context,"klick");
-            //dialog.dismiss();
-        });
-        */
-        //dialog.create();
-        dialog.show();
+        // button close
+        Button buttonClose = (Button) mapDialog.findViewById(R.id.button_close);
+        buttonClose.setOnClickListener(v -> mapDialog.dismiss());
+        // show
+        mapDialog.create();
+        mapDialog.show();
     }
+
 }
