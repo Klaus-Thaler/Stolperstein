@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class NameFragment extends Fragment {
+    public ProgressBar progressBar;
     private final HashMap<Integer, List<String>> hashPerson = new HashMap<>();
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -46,20 +48,13 @@ public class NameFragment extends Fragment {
 
         //NameViewModel nameViewModel = new ViewModelProvider(this).get(NameViewModel.class);
 
-        //mProgressBar = root.findViewById(R.id.name_progressBar);
-
         if (FileManager.CacheFileExist(requireContext(), CacheFileName)) {
-
-            //WorkRequest uploadWorkRequest = new OneTimeWorkRequest.Builder(getNameWorker.class).build();
-            //WorkManager.getInstance(requireContext()).enqueue(uploadWorkRequest);
-
             KmlDocument kmlDoc = new KmlDocument();
             File kmlFile = FileManager.loadCacheFile(getContext(), CacheFileName);
             try {
                 kmlDoc.parseKMLFile(kmlFile);
                 Document doc = Jsoup.parse(kmlFile);
                 Elements data = doc.select("Placemark");
-                utils.showToast(getContext(), "max: " + data.size());
                 // todo nur 10 anzeigen und dann vor oder besser -> abc
                 //for (int z = 0; 1 > z; z++) {
                 for (int z = 0; data.size() > z; z++) {

@@ -35,4 +35,11 @@
         android:layout_height="wrap_content"
         android:text="@string/nav_header_subtitle"
         android:textColor="#BBDEFB" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

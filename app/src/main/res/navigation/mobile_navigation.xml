@@ -34,6 +34,7 @@
         android:name="com.example.stolperstein.ui.StonesFragment"
         android:label="@string/menu_stones"
         tools:layout="@layout/fragment_stones" />
+
     <fragment
         android:id="@+id/nav_setting"
         android:name="com.example.stolperstein.ui.settings.SettingFragment"

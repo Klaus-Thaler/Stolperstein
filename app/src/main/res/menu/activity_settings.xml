@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="settings_view">
 
+    <group  android:id="@+id/settingTitle"
+        android:menuCategory="system">
+        <item
+            android:id="@+id/setting_title"
+            android:title="@string/setting"
+            android:checkable="false" />
+    </group>
     <group
         android:id="@+id/settingItemGroup"
         android:menuCategory="system">
-
-        <item
-            android:id="@+id/action_loc_settings"
-            android:title="@string/setting"
-            app:showAsAction="ifRoom" />
 
         <item
             android:id="@+id/settings_about"

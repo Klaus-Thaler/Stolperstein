@@ -29,7 +29,7 @@
         android:layout_below="@+id/button_close" />
 
     <TextView
-        android:id="@+id/welcome_subtitle"
+        android:id="@+id/welcome_subtitle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2sp"
@@ -43,6 +43,19 @@
         android:layout_below="@+id/welcome_title" />
 
     <TextView
+        android:id="@+id/welcome_subtitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2sp"
+        android:fontFamily="sans-serif"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/dialogText"
+        android:text="@string/kiel"
+        android:textAlignment="center"
+        android:visibility="visible"
+        android:layout_below="@+id/welcome_subtitle1" />
+    <TextView
         android:id="@+id/welcome_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +66,7 @@
         android:textAlignment="center"
         android:visibility="visible"
         android:text="@string/Greeting_Description_short"
-        android:layout_below="@+id/welcome_subtitle"/>
+        android:layout_below="@+id/welcome_subtitle2"/>
 
     <ImageView
         android:id="@+id/welcome_image"

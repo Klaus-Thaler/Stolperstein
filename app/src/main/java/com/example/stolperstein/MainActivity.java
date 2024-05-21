@@ -28,8 +28,6 @@ import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
 import com.google.android.material.navigation.NavigationView;
 
-import org.osmdroid.views.MapView;
-
 public class MainActivity extends AppCompatActivity {
 
     public static String CacheFileName = "placemarks.kml";
@@ -61,10 +59,7 @@ public class MainActivity extends AppCompatActivity {
         View root = binding.getRoot();
         setContentView(root);
 
-        ActivityCompat.requestPermissions(this, PermsStorage, 2);
-
         setSupportActionBar(binding.appBarMain.toolbar);
-        // floating Button (Fadenkreuz)
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;

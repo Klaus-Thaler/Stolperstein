@@ -40,6 +40,19 @@
             android:textStyle="bold"
             android:typeface="monospace"
             android:visibility="visible" />
+        <TextView
+            android:id="@+id/second_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:fontFamily="monospace"
+            android:text="@string/kiel"
+            android:textAlignment="center"
+            android:textColor="@color/dialogText"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:visibility="visible" />
 
         <ProgressBar
             android:id="@+id/counterWeb"
@@ -64,19 +77,19 @@
             android:id="@+id/searchStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0sp"
-            android:layout_marginBottom="6sp"
-            android:layout_marginStart="260sp"
+            android:layout_gravity="right"
+            android:layout_marginEnd="22sp"
             android:text="@string/start"
             android:clickable="true"
             android:soundEffectsEnabled="true"
-            app:shapeAppearanceOverlay="@style/leaf"/>
+            app:shapeAppearanceOverlay="@style/leaf"
+            tools:ignore="RtlHardcoded" />
 
         <TextView
             android:id="@+id/first_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="22sp"
+            android:layout_margin="22sp"
             android:scrollbars="vertical"
             android:text="@string/Greeting_Description"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -87,7 +100,7 @@
             android:id="@+id/furtherInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="22sp"
+            android:layout_margin="22sp"
             android:scrollbars="vertical"
             android:text="@string/source_github"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"

@@ -23,8 +23,13 @@
     <string name="start">start</string>
     <string name="suche">Search for stumbling blocks …</string>
     <string name="stolpersteine">stumbling blocks</string>
-    <string name="Greeting_Description">To set up the app, data must first be generated. This can take some time, but is only necessary once to set up the app. The first step is to load information from the wiki. Then the geo-points for display on the map are determined from the addresses to which the stumbling blocks relate. If the action is successful, the map is displayed with all the information obtained. This process can be repeated individually in ‘Settings’.</string>
-    <string name="Greeting_Description_short">To set up the app, data must first be generated. This can take some time, but is only necessary once to set up the app. Go to Settings and start the search process.</string>
+    <string name="Greeting_Description">To set up the app, data must first be generated.
+        This can take some time, but is only necessary once to set up the app. The first step is to
+        load information from the wiki. Then the geo-points for display on the map are determined
+        from the addresses to which the stumbling blocks relate. If the action is successful,
+        the map is displayed with all the information obtained. This process can be repeated individually in \"Search\".</string>
+    <string name="Greeting_Description_short">To set up the app, data must first be generated.
+        This can take some time, but is only necessary once to set up the app. Go to \"Search\" and start the search process.</string>
     <string name="die_suche_war_erfolgreich_">The search for Stolperstein was successful.\\nDespite this, search again?</string>
     <string name="setting">Settings</string>
     <string name="starte_die_suche">Start the search. Names and addresses for the stumbling blocks are being sought.</string>
@@ -61,4 +66,5 @@
     <string name="foto">Foto</string>
     <string name="map">Map</string>
     <string name="installed">installed</string>
+    <string name="menu_search">Search</string>
 </resources>
