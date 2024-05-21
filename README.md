@@ -15,5 +15,3 @@ Screenshots
 ![Screenshot_20240521-131222_Stolperstein Kiel](https://github.com/Klaus-Thaler/Stolperstein/assets/97182272/e4bfb279-2983-4643-a1ab-4ba43f4c9f65)
 ![Screenshot_20240521-123420_Stolperstein Kiel](https://github.com/Klaus-Thaler/Stolperstein/assets/97182272/6e0f2df6-0f2d-41c3-b283-ac652c17daa4)
 
-
-![Screenshot_20240521-123018_Stolperstein Kiel](https://github.com/Klaus-Thaler/Stolperstein/assets/97182272/f64d2280-bffc-4f82-a2d5-8639a7878d2b)
