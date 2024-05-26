@@ -62,7 +62,10 @@ public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
         holder.geopointButton.setOnClickListener(v -> {
             //utils.showToast(v.getContext(), "klick geopoint");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                DialogSingleMap.show(v.getContext(), "title", show.get(0), show.get(1), show.get(7));
+                // todo: ist geopoit string "null"?
+                if (!Objects.equals(show.get(7), "null")) {
+                    DialogSingleMap.show(v.getContext(), "title", show.get(0), show.get(1), show.get(7));
+                }
             }
         });
         Log.i("ST_NameListAdapter", "-> " + show.get(0));

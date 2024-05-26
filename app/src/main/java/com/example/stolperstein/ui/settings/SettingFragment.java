@@ -49,7 +49,7 @@ public class SettingFragment extends Fragment {
 
         final Button settingButton = binding.searchStart;
         SettingViewModel.mButton.observe(getViewLifecycleOwner(), settingButton::setText);
-        if (FileManager.CacheFileExist(requireContext(), MainActivity.CacheFileName)) {
+        if (FileManager.CacheFileExist(requireContext(), MainActivity.CacheXMLData)) {
             settingSearch.setText(R.string.die_suche_war_erfolgreich_);
         }
 

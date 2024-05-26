@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,9 +29,20 @@ import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
 import com.google.android.material.navigation.NavigationView;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+import java.io.CharArrayWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
-    public static String CacheFileName = "placemarks.kml";
+    //public static String CacheKMLFileName = "StolpersteineKiel.kml";
+    public static String CacheXMLData = "KielStolpersteine.xml";
+
     //LocationManager locationManager;
     public static String[] PermsLocation = {
             Manifest.permission.ACCESS_FINE_LOCATION,
@@ -80,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         navController.setGraph(navGraph);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        if (!FileManager.CacheFileExist(getApplication(),CacheFileName)) {
+        if (!FileManager.CacheFileExist(getApplicationContext(), CacheXMLData)) {
             Dialog dialog = new Dialog(this);
             dialog.setTitle(R.string.welcome);
             dialog.setContentView(R.layout.dialog_welcome);

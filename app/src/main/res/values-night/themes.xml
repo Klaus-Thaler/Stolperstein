@@ -14,6 +14,8 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="leaf">
+        <item name="android:background">@color/top</item>
+        <item name="android:textColor">@color/white</item>
         <item name="cornerSizeTopLeft">85%</item>           //can specify corner position
         <!--<item name="cornerFamilyTopLeft">cut</item>-->
         <item name="cornerSizeBottomRight">85%</item>

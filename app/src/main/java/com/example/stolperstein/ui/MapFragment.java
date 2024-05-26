@@ -1,6 +1,6 @@
 package com.example.stolperstein.ui;
 
-import static com.example.stolperstein.MainActivity.CacheFileName;
+import static com.example.stolperstein.MainActivity.CacheXMLData;
 import static com.example.stolperstein.MainActivity.PermsLocation;
 
 import android.app.Dialog;
@@ -20,26 +20,29 @@ import com.example.stolperstein.R;
 import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.databinding.FragmentMapBinding;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.osmdroid.api.IMapController;
-import org.osmdroid.bonuspack.kml.KmlDocument;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.CopyrightOverlay;
-import org.osmdroid.views.overlay.FolderOverlay;
+import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
-import java.io.File;
+import java.util.Objects;
 
 public class MapFragment extends Fragment {
     //public static MapView mapView;
     public static MyLocationNewOverlay mMyLocationOverlay;
     private MapView mapView;
+    private StringBuilder kmlFile;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -79,6 +82,7 @@ public class MapFragment extends Fragment {
         mapView.getOverlays().add(compassOverlay);
         mapView.invalidate();
 
+        // location klick
         binding.fab.setOnClickListener(view -> {
             Dialog dialog = new Dialog(view.getContext());
             dialog.setTitle(R.string.location);
@@ -102,20 +106,31 @@ public class MapFragment extends Fragment {
             dialog.show();
         });
 
-        if (FileManager.CacheFileExist(requireActivity(),CacheFileName)) {
-            // cache file
-            // parse den kml file aus dem cache
-            File mCacheFile = FileManager.loadCacheFile(requireActivity(), CacheFileName);
-            KmlDocument kmlDoc = new KmlDocument();
-            kmlDoc.parseKMLFile(mCacheFile);
-            Log.i("ST_readcache",  "data " + mCacheFile);
-            String erg = FileManager.readCacheFile(requireActivity(), CacheFileName);
-            Log.i("ST_readfile", "readfile: " + erg);
-            FolderOverlay kmlOverlay = (FolderOverlay) kmlDoc.mKmlRoot.buildOverlay(
-                    mapView, null, null, kmlDoc);
-            mapView.getOverlays().add(kmlOverlay);
-            mapView.invalidate();
+        // kml file zusammenstellen
+        if (FileManager.CacheFileExist(requireContext(), CacheXMLData)) {
+            String xmlFile = FileManager.readCacheFile(requireContext(), CacheXMLData);
+            Document Doc = Jsoup.parse(xmlFile, "utf-8");
+            Elements data = Doc.select("person");
+
+            Log.i("ST_MapFragment"," " + xmlFile);
+
+            for (int z = 0; data.size() > z; z++) {
+                if (!Objects.equals(data.get(z).getElementsByTag("coordinates").text(), "null")) {
+                    Log.i("ST_MapFragment", " " + Objects.requireNonNull(data.get(z).getElementsByTag("coordinates").text()));
+
+                    Marker mMarker = new Marker(mapView);
+                    mMarker.setPosition(GeoPoint.fromInvertedDoubleString(data.get(z).getElementsByTag("coordinates").text(), ','));
+                    mMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                    mMarker.setTitle(data.get(z).getElementsByTag("address").text());
+                    mMarker.setSnippet(data.get(z).getElementsByTag("name").text());
+                    //mMarker.setSubDescription("SubDescription");
+                    mapView.getOverlays().add(mMarker);
+                    mapView.invalidate();
+                }
+
+            }
         }
+
         return root;
     }
     public void getLocation (Boolean follow) {

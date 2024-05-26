@@ -1,7 +1,5 @@
 package com.example.stolperstein.classes;
 
-import static com.example.stolperstein.MainActivity.CacheFileName;
-
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
@@ -44,7 +42,7 @@ public class FileManager {
         File mExternalFile = new File(downloads, fileName);
 
         if (externalStorageWrite()) {
-            String kmlFile = readCacheFile(context, CacheFileName);
+            String kmlFile = readCacheFile(context, fileName);
             Log.i("ST_file","else");
             try {
                 FileOutputStream fos = new FileOutputStream(mExternalFile);

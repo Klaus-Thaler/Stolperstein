@@ -8,7 +8,6 @@ import android.widget.Button;
 import androidx.annotation.RequiresApi;
 
 import com.example.stolperstein.R;
-import com.example.stolperstein.classes.utils;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -26,7 +25,7 @@ public class DialogSingleMap {
     public static void show(Context context, String dialogTitle, String mName, String mAddress, String mGeopoint) {
         // zeigt den Dialog Frame nach Klick: show in maps
 
-        utils.showToast(context,"geo: " + mGeopoint);
+        //utils.showToast(context,"geo: " + mGeopoint);
         double defaultZOOM = 14.;
 
         Dialog mapDialog = new Dialog(context);

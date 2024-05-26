@@ -1,6 +1,5 @@
 package com.example.stolperstein.ui;
 
-import static com.example.stolperstein.MainActivity.CacheFileName;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -10,6 +9,7 @@ import android.widget.Button;
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.classes.utils;
+import static com.example.stolperstein.MainActivity.CacheXMLData;
 
 public class DialogDownloadCacheFile {
     public FileManager fileManager;
@@ -20,16 +20,18 @@ public class DialogDownloadCacheFile {
         dialog.setContentView(R.layout.dialog_download_cachefile);
 
         Button buttonDownload = (Button) dialog.findViewById(R.id.button_download);
-        if (FileManager.CacheFileExist(context, CacheFileName)) {
+
+        if (FileManager.CacheFileExist(context, CacheXMLData)) {
             buttonDownload.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    FileManager.saveDataInDownload(context, CacheFileName);
+                    FileManager.saveDataInDownload(context, CacheXMLData);
                     dialog.dismiss();
                 }
             });
         } else {
             utils.showToast(context,"No data available yet. Please run Setting first.");
         }
+
         Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
         buttonClose.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) { dialog.dismiss(); }
