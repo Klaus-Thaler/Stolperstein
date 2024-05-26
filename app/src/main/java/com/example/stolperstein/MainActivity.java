@@ -5,7 +5,6 @@ import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,15 +27,6 @@ import com.example.stolperstein.databinding.ActivityMainBinding;
 import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
 import com.google.android.material.navigation.NavigationView;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.io.CharArrayWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 

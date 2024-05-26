@@ -22,20 +22,16 @@ public class DialogDownloadCacheFile {
         Button buttonDownload = (Button) dialog.findViewById(R.id.button_download);
 
         if (FileManager.CacheFileExist(context, CacheXMLData)) {
-            buttonDownload.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    FileManager.saveDataInDownload(context, CacheXMLData);
-                    dialog.dismiss();
-                }
+            buttonDownload.setOnClickListener(v -> {
+                FileManager.saveDataInDownload(context, CacheXMLData);
+                dialog.dismiss();
             });
         } else {
             utils.showToast(context,"No data available yet. Please run Setting first.");
         }
 
         Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
-        buttonClose.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) { dialog.dismiss(); }
-        });
+        buttonClose.setOnClickListener(v -> dialog.dismiss());
         dialog.show();
     }
 }
