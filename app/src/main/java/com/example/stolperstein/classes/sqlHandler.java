@@ -14,8 +14,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class sqlHandler extends SQLiteOpenHelper {
-    // creating a constant variables for our database.
-    // below variable is for our database name.
+    // creating a constant variables for this database.
+    // below variable is for database name.
     private static final String DB_NAME = "stolpersteine.db";
 
     // below int is our database version
