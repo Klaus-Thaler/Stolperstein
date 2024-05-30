@@ -4,9 +4,9 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class NameViewModel extends ViewModel {
-    public static MutableLiveData<Integer> kringelSet;
+    public static MutableLiveData<String> kringelSet;
     public NameViewModel() throws Exception {
         kringelSet = new MutableLiveData<>();
-        kringelSet.setValue(0);
+        kringelSet.setValue("okay");
     }
 }

@@ -1,5 +1,7 @@
 package com.example.stolperstein.ui.names;
 
+import static com.example.stolperstein.classes.sqlHandler.getInstance;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +13,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.stolperstein.R;
+import com.example.stolperstein.classes.sqlHandler;
+import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.ui.DialogSingleMap;
 
 import java.util.HashMap;
@@ -20,7 +24,7 @@ import java.util.Objects;
 public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
     private final HashMap<Integer,List<String>> data;
     private final Context mContext;
-    public NameListAdapter(HashMap<Integer, List<String>> data, Context context) {
+    public NameListAdapter(HashMap<Integer,List<String>> data, Context context) {
         this.mContext = context;
         this.data = data;
     }
@@ -61,13 +65,20 @@ public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
         });
         holder.geopointButton.setOnClickListener(v -> {
             //utils.showToast(v.getContext(), "klick geopoint");
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                // todo: ist geopoit string "null"?
-                if (!Objects.equals(show.get(7), "null")) {
-                    DialogSingleMap.show(v.getContext(), "title", show.get(0), show.get(1), show.get(7));
+
+            // creating a new db handler class
+            sqlHandler sqlHandler = getInstance(mContext);
+            String geoPoint = sqlHandler.getGeoPoint(show.get(1));
+
+            if (!Objects.equals(geoPoint, "")) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    DialogSingleMap.show(v.getContext(), "title", show.get(0), show.get(1), geoPoint);
                 }
+            } else {
+                utils.showToast(mContext, "no GeoPoint for this address. ;-(");
             }
         });
+
         Log.i("ST_NameListAdapter", "-> " + show.get(0));
     }
 

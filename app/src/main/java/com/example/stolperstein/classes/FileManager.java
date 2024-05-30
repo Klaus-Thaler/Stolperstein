@@ -43,17 +43,16 @@ public class FileManager {
 
         if (externalStorageWrite()) {
             String kmlFile = readCacheFile(context, fileName);
-            Log.i("ST_file","else");
             try {
                 FileOutputStream fos = new FileOutputStream(mExternalFile);
                 fos.write(kmlFile.getBytes());
                 fos.close();
             } catch (IOException e) {
                 Log.i("ST_FileManager", "IOE_saveDataFile: " + e.getMessage());
-                utils.showToast(context,"Not saved.");
+                //utils.showToast(context,"Not saved.");
             } finally {
                 Log.i("ST_FileManager", "save in Download");
-                utils.showToast(context, "Ready.");
+                //utils.showToast(context, "Ready.");
             }
         } else {
             utils.showToast(context,"Saving in Downloads not possible!");

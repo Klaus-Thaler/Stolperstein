@@ -17,9 +17,6 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 
-import com.example.stolperstein.MainActivity;
-import com.example.stolperstein.R;
-import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.databinding.FragmentSettingBinding;
 
 public class SettingFragment extends Fragment {
@@ -49,10 +46,14 @@ public class SettingFragment extends Fragment {
 
         final Button settingButton = binding.searchStart;
         SettingViewModel.mButton.observe(getViewLifecycleOwner(), settingButton::setText);
+
+
+        // todo Anzeige last modi der DB -> noch mal?
+        /*
         if (FileManager.CacheFileExist(requireContext(), MainActivity.CacheXMLData)) {
             settingSearch.setText(R.string.die_suche_war_erfolgreich_);
         }
-
+        */
         settingButton.setOnClickListener(v -> {
             // Background Thread with worker
             WorkRequest uploadWorkRequest = new OneTimeWorkRequest.Builder(getWebWorker.class).build();

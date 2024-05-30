@@ -1,8 +1,9 @@
 package com.example.stolperstein.ui.settings;
 
 
-import static com.example.stolperstein.MainActivity.CacheXMLData;
+import static com.example.stolperstein.MainActivity.CacheKMLFileName;
 import static com.example.stolperstein.MainActivity.preAddress;
+import static com.example.stolperstein.classes.sqlHandler.getInstance;
 
 import android.content.Context;
 import android.location.Address;
@@ -14,6 +15,7 @@ import androidx.work.WorkerParameters;
 
 import com.example.stolperstein.MainActivity;
 import com.example.stolperstein.classes.FileManager;
+import com.example.stolperstein.classes.sqlHandler;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -26,11 +28,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
-import java.util.TreeMap;
 
 import kotlin.text.Regex;
 
+// todo hashmap gegen db tauschen
 public class getWebWorker extends Worker {
+    sqlHandler sqlHandler;
     public getWebWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
     }
@@ -41,14 +44,14 @@ public class getWebWorker extends Worker {
         String website = MainActivity.web_link;
         Locale mLocale = Locale.GERMANY;
 
-        // create a kml file to cache
-        StringBuilder kmlFile = new StringBuilder();
-        // create a xml Data File
-        StringBuilder xmlFile = new StringBuilder();
+        // creating a new db handler class
+        sqlHandler = getInstance(getApplicationContext());
+        // alte DB loeschen
+        sqlHandler.clearDB("person");
+        sqlHandler.clearDB("address");
 
-        // geocoder um revers nach geopoints zu suchen
-        int maxResults = 1;
-        GeocoderNominatim mGeoCoder = new GeocoderNominatim(mLocale, mUserAgent);
+        StringBuilder kmlFile = new StringBuilder();
+
         Elements mRows = null;
         SettingViewModel.mButton.postValue("PLEASE WAIT");
         int numberAddress = 0;
@@ -59,55 +62,65 @@ public class getWebWorker extends Worker {
             Darum 2 Hashmaps. Eine fuer die Stolpersteine selbst in der Anzeige
             im NameFragment und eine fuer die KML-Geodaten im MapFragment.
              */
-            TreeMap<String, ArrayList<String>> resultWeb = new TreeMap<>(); // alphabetisch
-            HashMap<String, String> resultAddress = new HashMap<>();
+
+            //TreeMap<String, ArrayList<String>> resultWeb = new TreeMap<>(); // alphabetische HashMap
+            //HashMap<String, String> resultAddress = new HashMap<>(); // addressen HashMap
+
+            HashMap<String,String> localPoint = new HashMap<>();
+
             Document doc = Jsoup.connect(website).get();
             Elements mTable = doc.select("table tbody");
             mRows = mTable.select("tr");
             // tabelle reihenweise auslesen
             //Log.i("ST_getWebWorker", "mRows: " + mRows.size());
+
             for (int i = 1; mRows.size() > i; i++) {
-                //for (int i = 1; 10 > i; i++) {
+            //for (int i = 1; 10 > i; i++) { // fuer kurze tests
                 //first row is the col names so skip it.
                 Elements mTD = mRows.get(i).select("td");
-                for (int z = 0; mTD.size() > z; z++) {
-                    //Log.i("ST_getWebWorker", "i " + i + " z " + z + " - " + mTD.get(z).toString());
-                    ArrayList<String> entryTD = new ArrayList<>();
-                    entryTD.add(mTD.get(0).select("span[style=\"display:none;\"]").text()); // name
-                    entryTD.add(mTD.get(1).text());                             // adresse
-                    entryTD.add(mTD.get(2).text());                             // geboren
-                    entryTD.add(mTD.get(3).text());                             // deportiert
-                    entryTD.add(mTD.get(4).select("a").attr("href"));    // Link Biografie
-                    entryTD.add(mTD.get(5).select("a").attr("href"));    // Link Foto
-                    entryTD.add(mTD.get(6).text());                             // verlegt am
 
-                    // daten in hashes
-                    resultWeb.put(entryTD.get(0), entryTD); // name, treemap, alphabetisch
-
-                    // info: default ist string null, wird mcoder kein geo ermitteln , bleibt es bei null!
-                    // info: @null erzeugt bei marker in map einen abbruch, darum string null
-                    resultAddress.put(entryTD.get(1), "null"); // hashmap, addressen fuer mcoder
-                }
-
-            }
-
-            // geopoints suchen und der hashmap hinzufugen
-            Object[] keysAddress = resultAddress.keySet().toArray();
-            for (Object keyAddress : keysAddress) {
+                // arguments for sql
+                List<String> args = new ArrayList<>();
+                args.add(mTD.get(0).select("span[style=\"display:none;\"]").text()); //name
                 // alles in klammern raus
                 Regex reg = new Regex("\\(.*\\)");
-                String newKeyAddress = reg.replace((CharSequence) keyAddress,"");
+                String newAddress = reg.replace(mTD.get(1).text(),"");
+                args.add(newAddress); //addresse
+                args.add(mTD.get(2).text()); //geboren
+                args.add(mTD.get(3).text()); //deportiert
+                args.add(mTD.get(4).select("a").attr("href")); //bio
+                args.add(mTD.get(5).select("a").attr("href")); //foto
+                args.add(mTD.get(6).text()); //verlegt
+                sqlHandler.addNewName("person", args);
+                Log.i("ST_getWebWorker", "person: " + args.get(0));
+                // hashmap fur mcoder
+                localPoint.put(newAddress, null);
+            }
+            //Log.i("ST_getWebWorker","-> " + localPoint.toString());
+
+            // geopoints suchen aus HashMap localpoint und der DB hinzufugen
+            // geocoder um revers nach geopoints zu suchen
+            int maxResults = 1;
+            GeocoderNominatim mGeoCoder = new GeocoderNominatim(mLocale, mUserAgent);
+            for (Object keyAddress : localPoint.keySet()) {
                 // hier mcoder
                 // address zu Geo Daten. Laengen- und Breitengrad
                 List<Address> mCoder = mGeoCoder.getFromLocationName(preAddress
-                        + Objects.requireNonNull(newKeyAddress), maxResults);
+                        + Objects.requireNonNull(keyAddress), maxResults);
                 if (!mCoder.isEmpty()) {
-                    resultAddress.replace((String) keyAddress, mCoder.get(0).getLongitude() + "," + mCoder.get(0).getLatitude());
-                    //Log.i("ST_getWebWorker",  "points " + mCoder.get(0).getLongitude() + "," + mCoder.get(0).getLatitude());
+                    String mGeo = mCoder.get(0).getLongitude() + "," + mCoder.get(0).getLatitude();
                     // progress
-                    SettingViewModel.progBarSet.postValue((numberAddress * 100) / resultAddress.size());  // setting in Progressbar
-                    SettingViewModel.mSearch.postValue(newKeyAddress + "\n"
-                            + mCoder.get(0).getLongitude() + "," + mCoder.get(0).getLatitude());
+                    SettingViewModel.progBarSet.postValue((numberAddress * 100) / localPoint.size());  // setting in Progressbar
+                    SettingViewModel.mSearch.postValue(keyAddress + "\n"
+                            + mGeo);
+                    localPoint.put(keyAddress.toString(),mGeo);
+                    // arguments for sql
+                    List<String> args = new ArrayList<>();
+                    args.add(keyAddress.toString());
+                    args.add(mGeo);
+                    sqlHandler.addNewGeoPoint("address", args);
+                    //Log.i("ST_getWebWorker","-> " + keyAddress);
+                    //Log.i("ST_getWebWorker","-> " + mCoder.get(0).getLongitude() + "," + mCoder.get(0).getLatitude());
                 } else {
                     SettingViewModel.mSearch.postValue(keyAddress + "\n"
                             + "error: address no found");
@@ -115,72 +128,36 @@ public class getWebWorker extends Worker {
                 }
                 numberAddress++;
             }
-            //Log.i("ST_getWebWorker", "address in geopoints: " + index);
-            //Log.i("ST_getWebWorker", "resWeb size: " + resultWeb.keySet().size());
-            //Log.i("ST_getWebWorker", "resAddress size: " + resultAddress.keySet().size());
 
-            // die geopoints den addressen hinzufuegen
-            // schleife aus webdaten ueber schleife aus geodaten
-            for (String keyWeb : resultWeb.keySet()) {
-                //Log.i("ST_getWebWorker","name " + keyWeb);
-                ArrayList<String> values = resultWeb.get(keyWeb); // .get values
-                if (values != null) {
-                    for (String keyAddress : resultAddress.keySet()) {
-                        String geopoint = resultAddress.get(keyAddress);
-                        if (keyAddress != null) {
-                            //Log.i("ST_getWebWorker", "true/false " + values.get(1).equals(keyAddress));
-                            if (values.get(1).equals(keyAddress)) {
-                                values.add(geopoint);
-                            }
-                        }
-                    } //Log.i("ST_getWebWorker", "values : " + values);
-                } //Log.i("ST_getWebWorker", "resWeb: " + resultWeb);
-
-            }
-
-            /*
             kmlFile.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
                     .append("<kml xmlns=\"http://www.opengis.net/kml/2.2\">")
                     .append("<Document>\n");
-            for (String keyWeb : resultWeb.keySet()) {
-                //Log.i("ST_getWebWorker","name " + keyWeb);
-                ArrayList<String> values = resultWeb.get(keyWeb); // .get values
-                assert values != null;
-                if (values.get(7) != null) { // kein geopoint - keine anzeige
+            for (String keyAddress : localPoint.keySet()) {
+                if (!(localPoint.get(keyAddress) == null)) {
                     kmlFile.append("<Placemark>\n") // kml file
-                            //.append("\t<id>").append(i).append("</id>\n") // id
                             .append("\t\t<name>")
-                            .append(Objects.requireNonNull(values.get(1))) // strasse
+                            .append(keyAddress)
                             .append("</name>\n")
-                            .append("\t\t<description>")
-                            .append(Objects.requireNonNull(values.get(0))) //name
-                            .append("</description>\n")
+                            .append("\t\t<description>");
+                    // db abfrage nach geopoints
+
+                    sqlHandler = getInstance(getApplicationContext());
+                    List<String> queryDB = sqlHandler.getNamesInAddress(keyAddress);
+                    Log.i("ST_getWebWorker", "query: " + queryDB.toString());
+                    for (String entry : queryDB) {
+                        kmlFile.append(" -> ").append(entry);
+                    }
+
+                    kmlFile.append("</description>\n")
                             .append("\t<Point>\n")
                             .append("\t\t<coordinates>")
-                            .append(Objects.requireNonNull(values.get(7)))
+                            .append(Objects.requireNonNull(localPoint.get(keyAddress)))
                             .append("</coordinates>\n")
                             .append("\t</Point>\n")
                             .append("</Placemark>\n");
                 }
             }
             kmlFile.append("</Document>\n</kml>");
-             */
-
-            xmlFile.append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n");
-            for (String keyWeb : resultWeb.keySet()) {
-                ArrayList<String> values = resultWeb.get(keyWeb); // .get values
-                assert values != null;
-                xmlFile.append("<person>\n")
-                        .append("\t<name>").append(Objects.requireNonNull(values.get(0))).append("</name>\n")
-                        .append("\t<address>").append(Objects.requireNonNull(values.get(1))).append("</address>\n")
-                        .append("\t<coordinates>").append(values.get(7)).append("</coordinates>\n")
-                        .append("\t<born>").append(Objects.requireNonNull(values.get(2))).append("</born>\n")
-                        .append("\t<death>").append(Objects.requireNonNull(values.get(3))).append("</death>\n")
-                        .append("\t<installed>").append(Objects.requireNonNull(values.get(6))).append("</installed>\n")
-                        .append("\t<bio>").append(Objects.requireNonNull(values.get(4))).append("</bio>\n")
-                        .append("\t<photo>").append(Objects.requireNonNull(values.get(5))).append("</photo>\n")
-                        .append("</person>\n");
-            }
         } catch (IOException e) {
             Log.i("ST_getWebWorker", "result: " + Result.failure());
             throw new RuntimeException(e);
@@ -192,13 +169,11 @@ public class getWebWorker extends Worker {
             SettingViewModel.mButton.postValue("GONE");
 
             //Log.i("ST_getWebWorker", "kml: " + kmlFile);
-            //Log.i("ST_getWebWorker", "xml: " + xmlFile);
 
             // safe in cache
-            //FileManager.saveCacheFile(getApplicationContext(), CacheKMLFileName, kmlFile.toString());
-            FileManager.saveCacheFile(getApplicationContext(), CacheXMLData, xmlFile.toString());
+            FileManager.saveCacheFile(getApplicationContext(), CacheKMLFileName, kmlFile.toString());
         }
-        Log.i("ST_getWebWorker", "result: " + Result.success());
+        //Log.i("ST_getWebWorker", "result: " + Result.success());
         return Result.success();
     }
 }

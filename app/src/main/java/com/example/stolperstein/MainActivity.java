@@ -28,10 +28,14 @@ import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    //public static String CacheKMLFileName = "StolpersteineKiel.kml";
-    public static String CacheXMLData = "KielStolpersteine.xml";
+    public static String CacheKMLFileName = "StolpersteineKiel.kml";
+
+    public static HashMap<Integer, List<String>> hashPerson = new HashMap<>();
 
     //LocationManager locationManager;
     public static String[] PermsLocation = {
@@ -82,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         navController.setGraph(navGraph);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        if (!FileManager.CacheFileExist(getApplicationContext(), CacheXMLData)) {
+        if (!FileManager.CacheFileExist(getApplicationContext(), CacheKMLFileName)) {
             Dialog dialog = new Dialog(this);
             dialog.setTitle(R.string.welcome);
             dialog.setContentView(R.layout.dialog_welcome);
@@ -145,5 +149,4 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
 }
