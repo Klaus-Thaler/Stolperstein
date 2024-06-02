@@ -89,57 +89,6 @@ public class NameFragment extends Fragment {
             }
         });
         //Log.i("ST_NameFragment", "- " + sqlHandler.getNames().toString());
-
-        //List<String> arrayList = new ArrayList<>(sqlHandler.getNames());
-        //ArrayAdapter<String> adapter  = new ArrayAdapter<>(root.getContext(), R.layout.searchtextview, arrayList);
-        //SearchView searchView = root.findViewById(R.id.search);
-
-        //searchView.setOnCloseListener();
-
-        //CharSequence query = SearchView.getQueryHint(); // get the query string currently in the text field
-
-        //Log.i("ST_NameFragment", "- " + query);
-
-        //utils.showToast(root.getContext(), "-" + query);
-
-        //searchView.setAdapter(namens);
-
-
-        //searchText.setAda
-
-        //searchView.setOnClickListener(new );
-
         return root;
     }
-    /*
-    public boolean onQueryTextSubmit(String query) {
-        //final List<Data> filteredModelList = filter(dabListItem, query);
-        //NameListAdapter.setItems(filteredModelList);
-        NameListAdapter.notifyDataSetChanged();
-        //NameListAdapter.scrollToPosition(0);
-
-        return false;
-    }
-
-     */
-
-    /*
-    public void onResume() {
-        super.onResume();
-        Configuration.getInstance().load(requireActivity(),
-                PreferenceManager.getDefaultSharedPreferences(requireActivity()));
-        NameFragment.super.onResume();
-        //if (mapView != null) { mapView.onResume(); }
-    }
-    @Override
-    public void onPause() {
-        super.onPause();
-        Configuration.getInstance().load(requireActivity(),
-                PreferenceManager.getDefaultSharedPreferences(requireActivity()));
-        NameFragment.super.onPause();
-        //if (mapView != null) { mapView.onPause(); }
-    }
-
-     */
-
 }
