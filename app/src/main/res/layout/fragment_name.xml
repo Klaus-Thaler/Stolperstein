@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.names.NameFragment">
 
+    <include android:id="@+id/searchlayout" layout="@layout/searchtextview" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/name_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/searchlayout"
+        app:layout_constraintTop_toBottomOf="@id/searchlayout"
+        android:layout_margin="1dp"
         android:visibility="visible">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

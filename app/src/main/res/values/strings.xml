@@ -120,7 +120,7 @@
     <string name="follow">Folgen</string>
     <string name="nofollow">nicht Folgen</string>
     <string name="download_kml">Download Daten</string>
-    <string name="kml_file_speichern">Die ermittelten Daten als XML-File zur Weitergabe in Downloads speichern?</string>
+    <string name="kml_file_speichern">Die ermittelten Daten als KML-File zur Weitergabe in Downloads speichern?</string>
     <string name="clear">löschen</string>
     <string name="this_app_is_for_android_8_and_higher">Der Standort konnte nicht identifiziert werden.\\nDiese App ist für Android 8 und höher</string>
     <string name="quelle_wikipedia">Quelle: https://de.wikipedia.org/wiki/Gunter_Demnig</string>

@@ -10,8 +10,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.sqlHandler;
 import com.example.stolperstein.classes.utils;
@@ -49,6 +51,7 @@ public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
         holder.bornText.setText(show.get(2));
         holder.deathText.setText(show.get(3));
         holder.installedText.setText(show.get(6));
+        holder.counter.setText(String.valueOf(position+1));
 
         // buttons
         holder.bioButton.setOnClickListener(v -> {

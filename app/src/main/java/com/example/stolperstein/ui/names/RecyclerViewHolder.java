@@ -18,6 +18,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     Button bioButton;
     Button fotoButton;
     Button geopointButton;
+    TextView counter;
 
     public RecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -29,5 +30,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         bioButton = itemView.findViewById(R.id.name_button_bio);
         fotoButton = itemView.findViewById(R.id.name_button_foto);
         geopointButton = itemView.findViewById(R.id.name_button_geopoint);
+        counter = itemView.findViewById(R.id.name_count);
     }
 }

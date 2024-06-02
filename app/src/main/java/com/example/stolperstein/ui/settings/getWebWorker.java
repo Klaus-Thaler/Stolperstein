@@ -83,6 +83,7 @@ public class getWebWorker extends Worker {
                 List<String> args = new ArrayList<>();
                 args.add(mTD.get(0).select("span[style=\"display:none;\"]").text()); //name
                 // alles in klammern raus
+                // todo eckige klammern auch raus
                 Regex reg = new Regex("\\(.*\\)");
                 String newAddress = reg.replace(mTD.get(1).text(),"");
                 args.add(newAddress); //addresse

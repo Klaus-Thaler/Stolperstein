@@ -164,6 +164,53 @@ public class sqlHandler extends SQLiteOpenHelper {
         //Log.i("ST_sqlHandler", "result: " + list);
         return list;
     }
+    public List<String> getListFromQuery(String query, String index) {
+        //Log.i("ST_sqlHandler", "query: " + query);
+        List<String> list = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+        try  {
+            if (cursor.moveToFirst()) {
+                do {
+                    list.add(cursor.getString(cursor.getColumnIndexOrThrow(index)));
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            Log.i("ST_sqlHandler", "Error while trying to get data from database");
+        } finally {
+            if (cursor != null && !cursor.isClosed()) {
+                cursor.close();
+            }
+        }
+        //Log.i("ST_sqlHandler", "result: " + list);
+        return list;
+    }
+    public String[] getNames() {
+        // suche alle namen einer addresse
+        // mehrere stolpersteine an einem ort
+        String query = "SELECT person.name FROM person";
+        //Log.i("ST_sqlHandler", "query: " + query);
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+        String[] list = new String[cursor.getCount()];
+        try  {
+            if (cursor.moveToFirst()) {
+                do {
+                    list[cursor.getPosition()] = cursor.getString(cursor.getColumnIndexOrThrow(NAME_NAME));
+                    //Log.i("ST_sqlHandler", "name: " + NAME_NAME + NAME_ADDRESS);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            Log.i("ST_sqlHandler", "Error while trying to get data from database");
+        } finally {
+            if (!cursor.isClosed()) {
+                cursor.close();
+            }
+        }
+        //Log.i("ST_sqlHandler", "result: " + list);
+        return list;
+    }
 
     public void addNewGeoPoint(String table, List<String> args) {
         // writing data in database.
@@ -178,6 +225,38 @@ public class sqlHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public HashMap<Integer,List<String>> getHashMapFromData(String query) {
+        HashMap<Integer,List<String>> data = new HashMap<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Log.i("ST_sqlHandler", "query: " + query);
+        Cursor cursor = db.rawQuery(query,null);
+        Integer z = 0;
+        try  {
+            if (cursor.moveToFirst()) {
+                do {
+                    List<String> list = new ArrayList<>();
+                    list.add(cursor.getString(cursor.getColumnIndexOrThrow(NAME_NAME)));
+                    list.add(cursor.getString(cursor.getColumnIndexOrThrow(NAME_ADDRESS)));
+                    list.add(cursor.getString(cursor.getColumnIndexOrThrow(NAME_BORN)));
+                    list.add(cursor.getString(cursor.getColumnIndexOrThrow(NAME_DEATH)));
+                    list.add(cursor.getString(cursor.getColumnIndexOrThrow(NAME_BIO)));
+                    list.add(cursor.getString(cursor.getColumnIndexOrThrow(NAME_PHOTO)));
+                    list.add(cursor.getString(cursor.getColumnIndexOrThrow(NAME_INSTALL)));
+                    data.put(z, list);
+                    z++;
+                    //Log.i("ST_sqlHandler", "z: " + z);
+                }
+                while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            Log.i("ST_sqlHandler", "Error while trying to get data from database");
+        } finally {
+            if (cursor != null && !cursor.isClosed()) {
+                cursor.close();
+            }
+        }
+        return data;
+    }
     public HashMap<Integer,List<String>> getAllPersonData() {
         HashMap<Integer,List<String>> data = new HashMap<>();
         SQLiteDatabase db = this.getWritableDatabase();

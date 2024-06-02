@@ -48,7 +48,7 @@
     <string name="follow">follow</string>
     <string name="nofollow">no follow</string>
     <string name="download_kml">download Data</string>
-    <string name="kml_file_speichern">Save the data found as a XML file for sharing in downloads?</string>
+    <string name="kml_file_speichern">Save the data found as a KML file for sharing in downloads?</string>
     <string name="menu_karte">OSM Card</string>
     <string name="menu_artist">The Artist</string>
     <string name="menu_project">The Project</string>

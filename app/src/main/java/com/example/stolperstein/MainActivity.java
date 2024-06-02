@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static String CacheKMLFileName = "StolpersteineKiel.kml";
 
-    public static HashMap<Integer, List<String>> hashPerson = new HashMap<>();
+    public static HashMap<Integer, List<String>> hashPerson;
 
     //LocationManager locationManager;
     public static String[] PermsLocation = {
