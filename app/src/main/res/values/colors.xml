@@ -11,4 +11,5 @@
     <color name="transparent">#00ffffff</color>
     <color name="dialogText">#FF000000</color>
     <color name="dialogBackground">#FFFFFFFF</color>
+    <color name="searchbox">#E5EAFD</color>
 </resources>

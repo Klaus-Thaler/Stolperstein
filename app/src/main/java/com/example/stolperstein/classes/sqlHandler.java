@@ -38,6 +38,9 @@ public class sqlHandler extends SQLiteOpenHelper {
     private static final String ADDRESS_ADDRESS = "address";
     private static final String ADDRESS_GEOPOINT = "geopoint";
 
+    /**
+     * SQLite
+     */
 
     // creating a constructor for our database handler.
     private static sqlHandler sInstance;
@@ -50,9 +53,9 @@ public class sqlHandler extends SQLiteOpenHelper {
         }
         return sInstance;
     }
-        private sqlHandler(Context context) {
-            super(context, DB_NAME, null, DB_VERSION);
-        }
+    private sqlHandler(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+    }
 
     // below method is for creating a database by running a sqlite query
     @Override
@@ -179,6 +182,32 @@ public class sqlHandler extends SQLiteOpenHelper {
             Log.i("ST_sqlHandler", "Error while trying to get data from database");
         } finally {
             if (cursor != null && !cursor.isClosed()) {
+                cursor.close();
+            }
+        }
+        //Log.i("ST_sqlHandler", "result: " + list);
+        return list;
+    }
+    public List<String> getAllNames() {
+        // suche alle namen einer addresse
+        // mehrere stolpersteine an einem ort
+        String query = "SELECT person.name FROM person";
+        //Log.i("ST_sqlHandler", "query: " + query);
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+        List<String> list = new ArrayList<>();
+        try  {
+            if (cursor.moveToFirst()) {
+                do {
+                    list.add(cursor.getString(cursor.getColumnIndexOrThrow(NAME_NAME)));
+                    //Log.i("ST_sqlHandler", "name: " + NAME_NAME + NAME_ADDRESS);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            Log.i("ST_sqlHandler", "Error while trying to get data from database");
+        } finally {
+            if (!cursor.isClosed()) {
                 cursor.close();
             }
         }

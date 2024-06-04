@@ -4,13 +4,14 @@ package com.example.stolperstein.ui.names;
 import static com.example.stolperstein.MainActivity.hashPerson;
 import static com.example.stolperstein.classes.sqlHandler.getInstance;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,11 +22,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.sqlHandler;
-import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.FragmentNameBinding;
 
 public class NameFragment extends Fragment {
-    ArrayAdapter<String> arrayAdapter;
+
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -45,10 +46,6 @@ public class NameFragment extends Fragment {
         hashPerson = sqlHandler.getHashMapFromData(query);
         Log.i("ST_NameFragment", "query: "+ hashPerson.toString());
 
-
-        utils.showToast(getContext(), "count " + hashPerson.size());
-        //Log.i("ST_NameFragment", "- " + hashPerson.toString());
-
         // Add the following lines to create RecyclerView
         // Add RecyclerView member
         RecyclerView recyclerView = root.findViewById(R.id.name_recyclerview);
@@ -61,9 +58,13 @@ public class NameFragment extends Fragment {
         // search (die Lupe)
         SearchView searchView = root.findViewById(R.id.searchtext);
         searchView.setFocusable(true);
-        searchView.setQueryHint("Suche nach Namen ...");
+        searchView.setQueryHint("Search ...");
 
-        arrayAdapter = new ArrayAdapter<>(root.getContext(), R.layout.searchtextview, sqlHandler.getNames());
+        TextView searchResult = root.findViewById(R.id.searchResult);
+        searchResult.setText(hashPerson.size() + " Entry(s) found");
+        //Log.i("ST_NameFragment", "- " + hashPerson.toString());
+
+        //arrayAdapter = new ArrayAdapter<>(root.getContext(), R.layout.searchtextview, sqlHandler.getAllNames());
 
         // autofill
         // todo  List<String> fillList = sqlHandler.getNames();
@@ -71,24 +72,29 @@ public class NameFragment extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String searchText) {
                 String query ="SELECT * FROM person WHERE person.name LIKE '" + searchText + "%'";
-                //Log.i("ST_NameFragment", "query: "+ sqlHandler.getHashMapFromData(query));
                 hashPerson = sqlHandler.getHashMapFromData(query);
-                utils.showToast(root.getContext(), hashPerson.size() + " Entry(s) found");
+                //utils.showToast(root.getContext(), hashPerson.size() + " Entry(s) found");
                 // new adapter, new recycler
                 NameListAdapter nameListAdapter = new NameListAdapter(hashPerson, root.getContext());
                 recyclerView.setAdapter(nameListAdapter);
+
                 return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-                //utils.showToast(root.getContext(), "change: " + newText);
-                arrayAdapter.getFilter().filter(newText);
-                // todo
+            public boolean onQueryTextChange(String searchText) {
+                String query ="SELECT * FROM person WHERE person.name LIKE '" + searchText + "%'";
+                hashPerson = sqlHandler.getHashMapFromData(query);
+                //utils.showToast(root.getContext(), hashPerson.size() + " Entry(s) found");
+                searchResult.setText(hashPerson.size() + " Entry(s) found");
+                // new adapter, new recycler
+                NameListAdapter nameListAdapter = new NameListAdapter(hashPerson, root.getContext());
+                recyclerView.setAdapter(nameListAdapter);
+
                 return false;
             }
         });
-        //Log.i("ST_NameFragment", "- " + sqlHandler.getNames().toString());
         return root;
     }
+
 }
