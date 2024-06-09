@@ -77,10 +77,4 @@ public class ProjectFragment extends Fragment {
 
         return root;
     }
-
-    private Bitmap getBitmapFromAsset(String s) throws IOException{
-        AssetManager assetManager = getResources().getAssets();
-        InputStream isstr = assetManager.open(s);
-        return BitmapFactory.decodeStream(isstr);
-    }
 }

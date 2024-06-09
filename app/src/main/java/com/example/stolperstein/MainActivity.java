@@ -2,18 +2,10 @@ package com.example.stolperstein;
 
 import android.Manifest;
 import android.app.Dialog;
-import android.app.FragmentManager;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.NavGraph;
 import androidx.navigation.Navigation;
@@ -32,19 +23,14 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.stolperstein.classes.FileManager;
-
 import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.ActivityMainBinding;
 import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
-
-import com.example.stolperstein.ui.SettingsFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
-import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity {
 

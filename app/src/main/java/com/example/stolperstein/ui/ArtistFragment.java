@@ -3,10 +3,8 @@ package com.example.stolperstein.ui;
 import static com.example.stolperstein.MainActivity.mSharedPref;
 
 import android.annotation.SuppressLint;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
