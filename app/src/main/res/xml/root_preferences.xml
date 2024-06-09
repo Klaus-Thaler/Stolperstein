@@ -1,0 +1,44 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="changes" />
+    <androidx.preference.ListPreference
+        android:key="@string/settings_theme_key"
+        android:icon="@drawable/ic_menu_compass"
+        android:title="@string/brightness"
+        android:dialogTitle="@string/brightness"
+        app:useSimpleSummaryProvider="true"
+        android:entries="@array/settings_theme_entries"
+        android:entryValues="@array/settings_theme_values"
+        android:defaultValue="@string/settings_theme_value_default"/>
+
+    <ListPreference
+        android:key="@string/settings_locale_key"
+        android:icon="@drawable/ic_menu_compass"
+        android:title="@string/lang"
+        android:dialogTitle="@string/lang"
+        app:useSimpleSummaryProvider="true"
+        android:entries="@array/settings_locale_entries"
+        android:entryValues="@array/settings_locale_values" />
+
+    <ListPreference
+        android:key="@string/settings_textlabel_key"
+        android:icon="@drawable/ic_menu_compass"
+        android:title="Schriftgrösse"
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/sTextModerateValue"
+        android:entries="@array/textSizeLabel"
+        android:entryValues="@array/textSizeLabel" />
+
+    <!--
+    <PreferenceCategory
+        android:title="daten holen" />
+    <Preference
+        app:key="@string/hello_blank_fragment"
+        android:icon="@drawable/ic_menu_compass"
+        app:title="Go to Fragment!"
+        android:entrieS="GO"
+        />
+    -->
+</PreferenceScreen>

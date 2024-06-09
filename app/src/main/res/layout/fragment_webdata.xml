@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.settings.SettingFragment">
+    tools:context=".ui.WebData.WebDataFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,8 +21,7 @@
             android:text="@string/willkommen"
             android:textAlignment="center"
             android:textColor="@color/dialogText"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textSize="24sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
             android:typeface="monospace"
             android:visibility="visible" />
@@ -36,7 +35,7 @@
             android:text="@string/stolpersteine"
             android:textAlignment="center"
             android:textColor="@color/dialogText"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
             android:typeface="monospace"
             android:visibility="visible" />
@@ -49,7 +48,7 @@
             android:text="@string/kiel"
             android:textAlignment="center"
             android:textColor="@color/dialogText"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
             android:typeface="monospace"
             android:visibility="visible" />
@@ -71,6 +70,7 @@
             android:visibility="visible"
             android:maxLines="3"
             android:scrollbars="vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/suche" />
 
         <Button
@@ -92,7 +92,7 @@
             android:layout_margin="22sp"
             android:scrollbars="vertical"
             android:text="@string/Greeting_Description"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColorLink="@color/top"
             android:visibility="visible" />
 
@@ -103,7 +103,7 @@
             android:layout_margin="22sp"
             android:scrollbars="vertical"
             android:text="@string/source_github"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColorLink="@color/top"
             android:visibility="visible" />
 

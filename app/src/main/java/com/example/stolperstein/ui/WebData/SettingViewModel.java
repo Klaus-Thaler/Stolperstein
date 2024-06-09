@@ -1,8 +1,7 @@
-package com.example.stolperstein.ui.settings;
+package com.example.stolperstein.ui.WebData;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import java.io.IOException;
 
 public class SettingViewModel extends ViewModel {
     public static MutableLiveData<String> mSearch;

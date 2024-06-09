@@ -39,8 +39,8 @@
     <string name="title">title</string>
     <string name="about">about …</string>
     <string name="coffee_for_me">coffee for me</string>
-    <string name="search">search</string>
-    <string name="settings">settings</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
     <string name="contact_me">contact</string>
     <string name="welcome">welcome</string>
     <string name="m_chtest_du_den_standort_ermitteln">Want to find out your location? ‘Follow’ shows your location on the map. This only makes sense if you are in the city of Kiel or in the neighbourhood of Kiel. If you are not in Kiel, then use ‘No Follow’. This keeps the focus on the map of the city of Kiel.</string>
@@ -67,4 +67,6 @@
     <string name="map">Map</string>
     <string name="installed">installed</string>
     <string name="menu_search">Search</string>
+    <string name="brightness">brightness mode</string>
+    <string name="lang">Language</string>
 </resources>

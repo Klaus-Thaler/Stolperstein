@@ -2,9 +2,18 @@ package com.example.stolperstein;
 
 import android.Manifest;
 import android.app.Dialog;
+import android.app.FragmentManager;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.NavGraph;
 import androidx.navigation.Navigation;
@@ -22,14 +32,19 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.stolperstein.classes.FileManager;
+
 import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.ActivityMainBinding;
 import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
+
+import com.example.stolperstein.ui.SettingsFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,11 +70,22 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public static ActivityMainBinding binding;
+    //public static String[] mFONTSIZE;
+    public static SharedPreferences mSharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //ActivityCompat.requestPermissions(this, PermsLocation, 2);
+
+        // eigene font-size einstellungen
+        Integer[] mFontSize = new Integer[]{12, 14, 16, 18, 20, 24, 28, 32};
+        mSharedPref = getSharedPreferences("mPreference",MODE_PRIVATE);
+        SharedPreferences.Editor editor = mSharedPref.edit();
+        for (Integer item : mFontSize) {
+            editor.putInt(String.format("mFontSize_%s", item), item);
+        }
+        editor.apply();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
@@ -73,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_artist, R.id.nav_setting,
-                R.id.nav_project, R.id.nav_stones)
+                R.id.nav_project, R.id.nav_stones, R.id.nav_app_setting)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -102,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
             dialog.show();
         }
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -110,13 +135,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         // Items in Settings, rechts oben
-        // Items je nach mode <string name="mode" ...></string> hell <> dunkel
         if (item.getItemId() == R.id.settings_about) {
-            // darkmode (Let make me it simple)
             int content = R.raw.about_html;
             if (getResources().getString(R.string.mode).equals("night")) {
                 content = R.raw.about_html_dark;

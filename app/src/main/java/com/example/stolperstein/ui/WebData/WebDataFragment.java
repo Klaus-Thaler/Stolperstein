@@ -1,4 +1,6 @@
-package com.example.stolperstein.ui.settings;
+package com.example.stolperstein.ui.WebData;
+
+import static com.example.stolperstein.MainActivity.mSharedPref;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -17,9 +19,9 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 
-import com.example.stolperstein.databinding.FragmentSettingBinding;
+import com.example.stolperstein.databinding.FragmentWebdataBinding;
 
-public class SettingFragment extends Fragment {
+public class WebDataFragment extends Fragment {
     @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -27,12 +29,15 @@ public class SettingFragment extends Fragment {
 
         SettingViewModel settingViewModel = new ViewModelProvider(this).get(SettingViewModel.class);
 
-        FragmentSettingBinding binding = FragmentSettingBinding.inflate(inflater, container, false);
+        FragmentWebdataBinding binding = FragmentWebdataBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        final TextView textFirstWelcome = binding.firstWelcome;
+        textFirstWelcome.setTextSize(mSharedPref.getFloat("mFontSize_24.0",24F));
+
         final TextView textViewDesc = binding.firstDescription;
-        // textview clickable
         textViewDesc.setMovementMethod(LinkMovementMethod.getInstance());
+        textViewDesc.setTextSize(mSharedPref.getFloat("mFontSize_16.0",16F));
 
         final ProgressBar progBarSet = binding.counterWeb;
         SettingViewModel.progBarSet.observe(getViewLifecycleOwner(), progBarSet::setProgress);
@@ -40,9 +45,11 @@ public class SettingFragment extends Fragment {
 
         final TextView settingSearch = binding.listSetup;
         SettingViewModel.mSearch.observe(getViewLifecycleOwner(), settingSearch::setText);
+        settingSearch.setTextSize(mSharedPref.getFloat("mFontSize_16.0",16F));
 
         final  TextView furtherText = binding.furtherInfo;
         furtherText.setMovementMethod(LinkMovementMethod.getInstance());
+        furtherText.setTextSize(mSharedPref.getFloat("mFontSize_16.0",16F));
 
         final Button settingButton = binding.searchStart;
         SettingViewModel.mButton.observe(getViewLifecycleOwner(), settingButton::setText);

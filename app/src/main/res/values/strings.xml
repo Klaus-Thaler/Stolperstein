@@ -137,4 +137,34 @@
     <string name="kiel" translatable="false">Kiel</string>
     <string name="menu_search">Suche</string>
 
+    <!-- Preference Titles -->
+    <!-- theme change dark & light -->
+    <string name="settings_theme_key" translatable="false">theme</string>
+    <string name="settings_theme_value_default" translatable="false">DEFAULT</string>
+    <string name="settings_theme_value_light" translatable="false">LIGHT</string>
+    <string name="settings_theme_value_dark" translatable="false">DARK</string>
+    <string name="brightness">Helligkeitsmodus</string>
+    <!-- change locale -->
+    <string name="settings_locale_key" translatable="false">lang</string>
+    <string name="settings_locale_value_default" translatable="false">de</string>
+    <string name="locale_de" translatable="false">de</string>
+    <string name="locale_en" translatable="false">en-GB</string>
+    <string name="lang">Sprache</string>
+    <!-- change font-size -->
+    <string name="settings_textlabel_key" translatable="false">label size</string>
+    <string name="sTextSmallLabel" translatable="false">Small</string>
+    <string name="sTextMediumLabel" translatable="false">Medium</string>
+    <string name="sTextModerateLabel" translatable="false">Moderate</string>
+    <string name="sTextLargeLabel" translatable="false">Large</string>
+    <string name="sTextExtraLargeLabel" translatable="false">Extra Large</string>
+    <!-- text size value  -->
+    <string name="settings_textsize_key" translatable="false">text-size</string>
+    <string name="sTextSmallValue" translatable="false">15sp</string>
+    <string name="sTextMediumValue" translatable="false">17sp</string>
+    <string name="sTextModerateValue" translatable="false">20sp</string>
+    <string name="sTextLargeValue" translatable="false">23sp</string>
+    <string name="sTextExtraLargeValue" translatable="false">26sp</string>
+
+
+
 </resources>

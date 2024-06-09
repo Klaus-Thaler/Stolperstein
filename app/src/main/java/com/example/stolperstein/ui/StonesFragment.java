@@ -1,5 +1,7 @@
 package com.example.stolperstein.ui;
 
+import static com.example.stolperstein.MainActivity.mSharedPref;
+
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
@@ -28,31 +30,36 @@ public class StonesFragment extends Fragment {
 
         final TextView title = binding.stonesTitle;
         title.setText(R.string.die_stolpersteine);
-        title.setTextSize(24);
+        title.setTextSize(mSharedPref.getInt("mFontSize_24",24));
 
         String resString1 = getString(R.string.this_stone1);
         final TextView content1 = binding.stonesContent1;
+        content1.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content1.setMovementMethod(LinkMovementMethod.getInstance());
         content1.setText(resString1);
 
         String resString2 = getString(R.string.this_stone2);
         final TextView content2 = binding.stonesContent2;
+        content2.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content2.setMovementMethod(LinkMovementMethod.getInstance());
         content2.setText(resString2);
 
         String resString3 = getString(R.string.this_stone3);
         final TextView content3 = binding.stonesContent3;
+        content3.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content3.setMovementMethod(LinkMovementMethod.getInstance());
         content3.setText(resString3);
 
         String resString4 = getString(R.string.this_stone4);
         final TextView content4 = binding.stonesContent4;
+        content4.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content4.setMovementMethod(LinkMovementMethod.getInstance());
         content4.setText(resString4);
 
 
         String resString5 = getString(R.string.quelle_wikipedia);
         final TextView content5 = binding.stonesContent5;
+        content5.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content5.setMovementMethod(LinkMovementMethod.getInstance());
         content5.setText(resString5);
 

@@ -4,41 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
-
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.stolperstein.ui.MapFragment"
         android:label="@string/menu_karte"
         tools:layout="@layout/fragment_map" />
-
     <fragment
         android:id="@+id/nav_name"
         android:name="com.example.stolperstein.ui.names.NameFragment"
         android:label="@string/menu_name"
         tools:layout="@layout/fragment_name" />
-
     <fragment
         android:id="@+id/nav_artist"
         android:name="com.example.stolperstein.ui.ArtistFragment"
         android:label="@string/menu_artist"
         tools:layout="@layout/fragment_artist" />
-
     <fragment
         android:id="@+id/nav_project"
         android:name="com.example.stolperstein.ui.ProjectFragment"
         android:label="@string/menu_project"
         tools:layout="@layout/fragment_project" />
-
     <fragment
         android:id="@+id/nav_stones"
         android:name="com.example.stolperstein.ui.StonesFragment"
         android:label="@string/menu_stones"
         tools:layout="@layout/fragment_stones" />
-
     <fragment
         android:id="@+id/nav_setting"
-        android:name="com.example.stolperstein.ui.settings.SettingFragment"
+        android:name="com.example.stolperstein.ui.WebData.WebDataFragment"
         android:label="@string/menu_setting"
-        tools:layout="@layout/fragment_setting" />
-
+        tools:layout="@layout/fragment_webdata" />
+    <fragment
+        android:id="@+id/nav_app_setting"
+        android:name="com.example.stolperstein.ui.SettingsFragment"
+        android:label="@string/menu_setting"
+        tools:layout="@layout/fragment_blank"/>
 </navigation>

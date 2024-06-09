@@ -18,13 +18,21 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Stolperstein"
-        tools:targetApi="31">
+        tools:targetApi="tiramisu">
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Stolperstein.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" android:configChanges="locale" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

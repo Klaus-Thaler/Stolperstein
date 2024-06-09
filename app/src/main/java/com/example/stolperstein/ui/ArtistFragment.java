@@ -1,8 +1,12 @@
 package com.example.stolperstein.ui;
 
+import static com.example.stolperstein.MainActivity.mSharedPref;
+
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,33 +31,39 @@ public class ArtistFragment extends Fragment {
         binding = FragmentArtistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
         // Inflate the layout for this fragment
         final TextView title = binding.artistTitle;
         title.setText(R.string.gunter_demnig);
-        title.setTextSize(24);
+        title.setTextSize(mSharedPref.getInt("mFontSize_24",24));
 
         String resString1 = getString(R.string.this_artist1);
         final TextView content1 = binding.artistContent1;
+        content1.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content1.setMovementMethod(LinkMovementMethod.getInstance());
         content1.setText(resString1);
 
         String resString2 = getString(R.string.this_artist2);
         final TextView content2 = binding.artistContent2;
+        content2.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content2.setMovementMethod(LinkMovementMethod.getInstance());
         content2.setText(resString2);
 
         String resString3 = getString(R.string.this_artist3);
         final TextView content3 = binding.artistContent3;
+        content3.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content3.setMovementMethod(LinkMovementMethod.getInstance());
         content3.setText(resString3);
 
         String resString4 = getString(R.string.this_artist4);
         final TextView content4 = binding.artistContent4;
+        content4.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content4.setMovementMethod(LinkMovementMethod.getInstance());
         content4.setText(resString4);
 
         String resString5 = getString(R.string.source_github);
         final TextView content5 = binding.artistContent5;
+        content5.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content5.setMovementMethod(LinkMovementMethod.getInstance());
         content5.setText(resString5);
 
