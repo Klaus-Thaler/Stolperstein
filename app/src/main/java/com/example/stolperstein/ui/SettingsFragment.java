@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -27,39 +28,20 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
         // theme font size
         getPreferenceManager()
-                .findPreference(getString(R.string.settings_textlabel_key))
+                .findPreference(getString(R.string.mPreference))
                 .setOnPreferenceChangeListener((preference, newValue) -> {
                     // neue shared Preference
                     SharedPreferences.Editor editor = mSharedPref.edit();
-                    Integer[] mFontSize = new Integer[]{12, 14, 16, 18, 20, 24, 28, 32};
 
-                    if (getContext().getString(R.string.sTextSmallLabel).equals(newValue)) {
-                        utils.showToast(getContext(), newValue.toString());
-                        for (Integer item : mFontSize) {
-                            editor.putInt(String.format("mFontSize_%s", item), item - 4);
-                        }
-                    } else if (getContext().getString(R.string.sTextMediumLabel).equals(newValue)) {
-                        utils.showToast(getContext(), newValue.toString());
-                        for (Integer item : mFontSize) {
-                            editor.putInt(String.format("mFontSize_%s", item), item - 2);
-                        }
-                    } else if (getContext().getString(R.string.sTextModerateLabel).equals(newValue)) {
-                        utils.showToast(getContext(), newValue.toString());
-                        for (Integer item : mFontSize) {
-                            editor.putInt(String.format("mFontSize_%s", item), item);
-                        }
-                    } else if (getContext().getString(R.string.sTextLargeLabel).equals(newValue)) {
-                        utils.showToast(getContext(), newValue.toString());
-                        for (Integer item : mFontSize) {
-                            editor.putInt(String.format("mFontSize_%s", item), item + 2);
-                        }
-                    } else if (getContext().getString(R.string.sTextExtraLargeLabel).equals(newValue)) {
-                        utils.showToast(getContext(), newValue.toString());
-                        for (Integer item : mFontSize) {
-                            editor.putInt(String.format("mFontSize_%s", item), item + 4);
-                        }
+                    // meine default text-size preferences aus main activity holen und veraendern
+                    int[] mDefaultFontSizes = getResources().getIntArray(R.array.default_text_size);
+                    for (Integer item : mDefaultFontSizes) {
+                        int result = item + Integer.parseInt((String) newValue);
+                        //utils.showToast(getContext(), "> " + result);
+                        editor.putInt(String.format("mFontSize_%s", item), result);
                     }
                     editor.apply();
+                    Log.i("setFrag","" + mSharedPref.getAll());
                     return true;
                 });
         // dark modus
@@ -80,34 +62,17 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 .findPreference(getString(R.string.settings_locale_key))
                 .setOnPreferenceChangeListener((preference, newValue) -> {
                     LocaleListCompat appLocale;
-                    if (getContext().getString(R.string.locale_en).equals(newValue)) {
-                        appLocale = LocaleListCompat.forLanguageTags(getContext().getString(R.string.locale_en));
-                    } else {
-                        appLocale = LocaleListCompat.forLanguageTags(getContext().getString(R.string.locale_de));
+                    String[] localeArray = getResources().getStringArray(R.array.settings_locale_values);
+                    appLocale = LocaleListCompat.forLanguageTags("de");
+                    for (String item : localeArray){
+                        if (item.equals(newValue)) {
+                            appLocale = LocaleListCompat.forLanguageTags(item);
+                        }
                     }
-                    // Call this on the main thread as it may require Activity.restart()
+                    //utils.showToast(getContext(), "applocale " + appLocale);
                     AppCompatDelegate.setApplicationLocales(appLocale);
                     return true;
                 });
-
-        // todo
-        /*
-        // start fragment
-        getPreferenceManager()
-                .findPreference(getString(R.string.hello_blank_fragment))
-                .setOnPreferenceChangeListener(((preference, newValue) -> {
-
-
-                    utils.showToast(getContext(), "click");
-
-                    @SuppressLint("CommitTransaction") FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.nav_host_fragment_content_main,new Fragment());
-                    fragmentTransaction.commit();
-
-
-
-                    return true;
-                }));
-        */
     }
+
 }

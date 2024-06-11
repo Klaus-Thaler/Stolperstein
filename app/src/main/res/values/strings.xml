@@ -16,9 +16,9 @@
 
     <string name="das_kunstprojekt">Das Kunstprojekt</string>
     <string name="this_project1">Die in Fußwege eingebetteten Gedenksteine halten die Erinnerung an die Opfer des Nationalsozialismus - jüdische Bürger, Sinti und Roma, politisch Verfolgte, Homosexuelle, Zeugen Jehovas und "Euthanasie"-Opfer - wach.</string>
-    <string name="this_project2">Auf den etwa zehn mal zehn Zentimeter großen Stolpersteinen sind kleine Messingplatten mit den Namen und Lebensdaten von NS-Opfern angebracht.\nSie werden vor dem letzten bekannten und frei gewählten Wohnort in das Pflaster des Gehweges eingelassen. Finanziert werden die Stolpersteine durch private Spenden.</string>
-    <string name="this_project3">Zuletzt wurden am 20. Mai 2019 insgesamt 9 Stolpersteine verlegt. In Kiel liegen damit bereits 262 Steine.</string>
-    <string name="this_project4">Die Sinti und Roma in Schleswig-Holstein lehnen allerdings Stolpersteine für ihre Opfer ab.\nIn Kiel wird stattdessen durch einen Gedenkstein und eine erläuternde Informationstafel im Hiroshimapark gegenüber dem Haus Lorentzendamm 36 an ihren Leidensweg erinnert.</string>
+    <string name="this_project2">" Auf den etwa zehn mal zehn Zentimeter großen Stolpersteinen sind kleine Messingplatten mit den Namen und Lebensdaten von NS-Opfern angebracht. \\nSie werden vor dem letzten bekannten und frei gewählten Wohnort in das Pflaster des Gehweges eingelassen. Finanziert werden die Stolpersteine durch private Spenden."</string>
+        <string name="this_project3">Zuletzt wurden am 20. Mai 2019 insgesamt 9 Stolpersteine verlegt. In Kiel liegen damit bereits 262 Steine.</string>
+    <string name="this_project4">Die Sinti und Roma in Schleswig-Holstein lehnen allerdings Stolpersteine für ihre Opfer ab. In Kiel wird stattdessen durch einen Gedenkstein und eine erläuternde Informationstafel im Hiroshimapark gegenüber dem Haus Lorentzendamm 36 an ihren Leidensweg erinnert.</string>
     <string name="die_stolpersteine">Die Stolpersteine</string>
 
     <string name="this_artist1">Gunter Demnig (* 27. Oktober 1947 in Berlin)  ist ein deutscher Künstler.
@@ -137,34 +137,22 @@
     <string name="kiel" translatable="false">Kiel</string>
     <string name="menu_search">Suche</string>
 
-    <!-- Preference Titles -->
+    <!-- Preferences -->
+    <!-- sprache -->
+    <string name="settings_locale_key" translatable="false">lang</string>
+    <string name="settings_locale_default" translatable="false">de</string>
+    <!-- text size -->
+    <string name="settings_text_key" translatable="false">textsize</string>
+    <integer name="settings_textsize_default" translatable="false">17</integer>
     <!-- theme change dark & light -->
     <string name="settings_theme_key" translatable="false">theme</string>
     <string name="settings_theme_value_default" translatable="false">DEFAULT</string>
     <string name="settings_theme_value_light" translatable="false">LIGHT</string>
     <string name="settings_theme_value_dark" translatable="false">DARK</string>
     <string name="brightness">Helligkeitsmodus</string>
-    <!-- change locale -->
-    <string name="settings_locale_key" translatable="false">lang</string>
-    <string name="settings_locale_value_default" translatable="false">de</string>
-    <string name="locale_de" translatable="false">de</string>
-    <string name="locale_en" translatable="false">en-GB</string>
+    <!-- default custom font-size -->
     <string name="lang">Sprache</string>
-    <!-- change font-size -->
-    <string name="settings_textlabel_key" translatable="false">label size</string>
-    <string name="sTextSmallLabel" translatable="false">Small</string>
-    <string name="sTextMediumLabel" translatable="false">Medium</string>
-    <string name="sTextModerateLabel" translatable="false">Moderate</string>
-    <string name="sTextLargeLabel" translatable="false">Large</string>
-    <string name="sTextExtraLargeLabel" translatable="false">Extra Large</string>
-    <!-- text size value  -->
     <string name="settings_textsize_key" translatable="false">text-size</string>
-    <string name="sTextSmallValue" translatable="false">15sp</string>
-    <string name="sTextMediumValue" translatable="false">17sp</string>
-    <string name="sTextModerateValue" translatable="false">20sp</string>
-    <string name="sTextLargeValue" translatable="false">23sp</string>
-    <string name="sTextExtraLargeValue" translatable="false">26sp</string>
-
-
+    <string name="mPreference" translatable="false">dimens</string>
 
 </resources>

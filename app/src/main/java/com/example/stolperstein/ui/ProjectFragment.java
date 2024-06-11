@@ -35,14 +35,14 @@ public class ProjectFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView title = binding.projectTitle;
-        title.setText(R.string.das_kunstprojekt);
         title.setTextSize(mSharedPref.getInt("mFontSize_24",24));
+        title.setText(R.string.das_kunstprojekt);
 
         String resString1 = getResources().getString(R.string.this_project1);
         final TextView content1 = binding.projectContent1;
         content1.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content1.setMovementMethod(LinkMovementMethod.getInstance());
-        content1.setText(resString1);
+        content1.setText(getResources().getString(R.string.this_project1));
 
         String resString2 = getResources().getString(R.string.this_project2);
         final TextView content2 = binding.projectContent2;

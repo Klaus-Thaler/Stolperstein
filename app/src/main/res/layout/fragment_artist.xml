@@ -22,14 +22,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/placeholder"
                 android:textAlignment="center"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+
+                />
 
             <TextView
                 android:id="@+id/artistContent1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="@string/placeholder" />
+                android:text="@string/placeholder"
+
+                />
 
             <ImageView
                 android:id="@+id/artistPic1"
@@ -46,6 +50,7 @@
                 android:paddingTop="2sp"
                 android:paddingBottom="22sp"
                 android:text="@string/placeholder"
+
                 />
             <TextView
                 android:id="@+id/artistContent3"
@@ -53,14 +58,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6sp"
                 android:layout_marginBottom="6sp"
-                android:text="@string/placeholder" />
+                android:text="@string/placeholder"
+
+                />
             <TextView
                 android:id="@+id/artistContent4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="6sp"
                 android:paddingBottom="6sp"
-                android:text="@string/placeholder" />
+                android:text="@string/placeholder"
+
+                />
 
             <TextView
                 android:id="@+id/artistContent5"
@@ -70,7 +79,9 @@
                 android:textColorLink="@color/top"
                 android:text="@string/placeholder"
                 android:layout_marginTop="22dp"
-                android:layout_marginBottom="44dp"/>
+                android:layout_marginBottom="44dp"
+
+                />
 
         </LinearLayout>
     </ScrollView>

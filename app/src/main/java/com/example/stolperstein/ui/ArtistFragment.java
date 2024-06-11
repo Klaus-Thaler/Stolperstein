@@ -33,7 +33,7 @@ public class ArtistFragment extends Fragment {
         // Inflate the layout for this fragment
         final TextView title = binding.artistTitle;
         title.setText(R.string.gunter_demnig);
-        title.setTextSize(mSharedPref.getInt("mFontSize_24",24));
+        title.setTextSize(mSharedPref.getInt("mFontSize_26",26));
 
         String resString1 = getString(R.string.this_artist1);
         final TextView content1 = binding.artistContent1;

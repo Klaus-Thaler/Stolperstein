@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,8 +30,10 @@ import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
 import com.google.android.material.navigation.NavigationView;
 
+import java.sql.Array;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicIntegerArray;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public static ActivityMainBinding binding;
-    //public static String[] mFONTSIZE;
     public static SharedPreferences mSharedPref;
 
     @Override
@@ -64,18 +66,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //ActivityCompat.requestPermissions(this, PermsLocation, 2);
 
-        // eigene font-size einstellungen
-        Integer[] mFontSize = new Integer[]{12, 14, 16, 18, 20, 24, 28, 32};
-        mSharedPref = getSharedPreferences("mPreference",MODE_PRIVATE);
-        SharedPreferences.Editor editor = mSharedPref.edit();
-        for (Integer item : mFontSize) {
-            editor.putInt(String.format("mFontSize_%s", item), item);
-        }
-        editor.apply();
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
         setContentView(root);
+
+        // eigene font-size einstellungen
+        // integer array, weil es sich besser rechenen laesst
+        int[] mDefaultFontSizes = getResources().getIntArray(R.array.default_text_size);
+        String preferenceSize = getResources().getString(R.string.mPreference);
+        mSharedPref = getSharedPreferences(preferenceSize, MODE_PRIVATE);
+        SharedPreferences.Editor editor = mSharedPref.edit(); //editor.clear();
+        editor.clear();
+        for (int item : mDefaultFontSizes) {
+            editor.putInt(String.format("mFontSize_%s", item), item);
+        }
+        editor.apply();
+        Log.i("setFrag","" + mSharedPref.getAll());
+
+
 
         setSupportActionBar(binding.appBarMain.toolbar);
 
@@ -98,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         navController.setGraph(navGraph);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        // sollte es noch kein kml geben, dann begruessung anzeigen
         if (!FileManager.CacheFileExist(getApplicationContext(), CacheKMLFileName)) {
             Dialog dialog = new Dialog(this);
             dialog.setTitle(R.string.welcome);

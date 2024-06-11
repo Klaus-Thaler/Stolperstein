@@ -3,9 +3,13 @@
     <string-array name="settings_locale_entries">
         <item>german</item>
         <item>english</item>
+        <item>france</item>
+        <item>ukrainian</item>
     </string-array>
     <string-array name="settings_locale_values">
-        <item>@string/locale_de</item>
-        <item>@string/locale_en</item>
+        <item>de</item>
+        <item>en-GB</item>
+        <item>fr</item>
+        <item>uk</item>
     </string-array>
 </resources>

@@ -33,11 +33,11 @@ public class WebDataFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textFirstWelcome = binding.firstWelcome;
-        textFirstWelcome.setTextSize(mSharedPref.getFloat("mFontSize_24.0",24F));
+        textFirstWelcome.setTextSize(mSharedPref.getInt("mFontSize_24",24));
 
         final TextView textViewDesc = binding.firstDescription;
         textViewDesc.setMovementMethod(LinkMovementMethod.getInstance());
-        textViewDesc.setTextSize(mSharedPref.getFloat("mFontSize_16.0",16F));
+        textViewDesc.setTextSize(mSharedPref.getInt("mFontSize_16",16));
 
         final ProgressBar progBarSet = binding.counterWeb;
         SettingViewModel.progBarSet.observe(getViewLifecycleOwner(), progBarSet::setProgress);
@@ -45,11 +45,11 @@ public class WebDataFragment extends Fragment {
 
         final TextView settingSearch = binding.listSetup;
         SettingViewModel.mSearch.observe(getViewLifecycleOwner(), settingSearch::setText);
-        settingSearch.setTextSize(mSharedPref.getFloat("mFontSize_16.0",16F));
+        settingSearch.setTextSize(mSharedPref.getInt("mFontSize_16",16));
 
         final  TextView furtherText = binding.furtherInfo;
         furtherText.setMovementMethod(LinkMovementMethod.getInstance());
-        furtherText.setTextSize(mSharedPref.getFloat("mFontSize_16.0",16F));
+        furtherText.setTextSize(mSharedPref.getInt("mFontSize_16",16));
 
         final Button settingButton = binding.searchStart;
         SettingViewModel.mButton.observe(getViewLifecycleOwner(), settingButton::setText);

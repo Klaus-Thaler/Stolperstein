@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_textsize_entries">
+        <item name="small">small</item>
+        <item name="medium">medium</item>
+        <item name="moderate">moderate</item>
+        <item name="large">large</item>
+        <item name="extra-large">extra-large</item>
+    </string-array>
+
+    <string-array name="settings_textsize_values">
+        <item>-4</item>
+        <item>-2</item>
+        <item>0</item>
+        <item>+3</item>
+        <item>+6</item>
+    </string-array>
+
+    <integer-array name="default_text_size">
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+        <item>22</item>
+        <item>24</item>
+        <item>26</item>
+        <item>28</item>
+        <item>30</item>
+        <item>32</item>
+    </integer-array>
+</resources>

@@ -10,6 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:background="@color/top"
         android:theme="@style/Theme.Stolperstein.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar

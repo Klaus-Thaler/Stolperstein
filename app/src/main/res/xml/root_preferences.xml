@@ -5,7 +5,7 @@
         android:title="changes" />
     <androidx.preference.ListPreference
         android:key="@string/settings_theme_key"
-        android:icon="@drawable/ic_menu_compass"
+        android:icon="@drawable/baseline_dark_mode_24"
         android:title="@string/brightness"
         android:dialogTitle="@string/brightness"
         app:useSimpleSummaryProvider="true"
@@ -15,30 +15,22 @@
 
     <ListPreference
         android:key="@string/settings_locale_key"
-        android:icon="@drawable/ic_menu_compass"
+        android:icon="@drawable/baseline_font_download_24"
         android:title="@string/lang"
         android:dialogTitle="@string/lang"
         app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/settings_locale_default"
         android:entries="@array/settings_locale_entries"
         android:entryValues="@array/settings_locale_values" />
 
     <ListPreference
-        android:key="@string/settings_textlabel_key"
-        android:icon="@drawable/ic_menu_compass"
-        android:title="Schriftgrösse"
+        android:key="@string/mPreference"
+        android:icon="@drawable/baseline_format_line_spacing_24"
+        android:title="Schriftgroesse"
+        android:dialogTitle="Schriftgroesse"
         app:useSimpleSummaryProvider="true"
-        android:defaultValue="@string/sTextModerateValue"
-        android:entries="@array/textSizeLabel"
-        android:entryValues="@array/textSizeLabel" />
+        android:defaultValue="@integer/settings_textsize_default"
+        android:entries="@array/settings_textsize_entries"
+        android:entryValues="@array/settings_textsize_values" />
 
-    <!--
-    <PreferenceCategory
-        android:title="daten holen" />
-    <Preference
-        app:key="@string/hello_blank_fragment"
-        android:icon="@drawable/ic_menu_compass"
-        app:title="Go to Fragment!"
-        android:entrieS="GO"
-        />
-    -->
 </PreferenceScreen>

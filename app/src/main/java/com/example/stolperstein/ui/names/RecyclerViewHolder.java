@@ -25,19 +25,19 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     public RecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
         nameText = itemView.findViewById(R.id.name_name);
-        nameText.setTextSize(mSharedPref.getFloat("mFontSize_20.0",20F));
+        nameText.setTextSize(mSharedPref.getInt("mFontSize_20",20));
         addressText = itemView.findViewById(R.id.name_address);
-        addressText.setTextSize(mSharedPref.getFloat("mFontSize_14.0",14F));
+        addressText.setTextSize(mSharedPref.getInt("mFontSize_14",14));
         bornText = itemView.findViewById(R.id.name_born);
-        bornText.setTextSize(mSharedPref.getFloat("mFontSize_14.0",14F));
+        bornText.setTextSize(mSharedPref.getInt("mFontSize_14",14));
         deathText = itemView.findViewById(R.id.name_death);
-        deathText.setTextSize(mSharedPref.getFloat("mFontSize_14.0",14F));
+        deathText.setTextSize(mSharedPref.getInt("mFontSize_14",14));
         installedText = itemView.findViewById(R.id.name_installed);
-        installedText.setTextSize(mSharedPref.getFloat("mFontSize_14.0",14F));
+        installedText.setTextSize(mSharedPref.getInt("mFontSize_14",14));
         bioButton = itemView.findViewById(R.id.name_button_bio);
         fotoButton = itemView.findViewById(R.id.name_button_foto);
         geopointButton = itemView.findViewById(R.id.name_button_geopoint);
         counter = itemView.findViewById(R.id.name_count);
-        counter.setTextSize(mSharedPref.getFloat("mFontSize_14.0",14F));
+        counter.setTextSize(mSharedPref.getInt("mFontSize_14",14));
     }
 }

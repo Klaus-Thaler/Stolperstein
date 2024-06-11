@@ -7,23 +7,23 @@
         android:id="@+id/topGroup">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/osm_ic_follow_me"
+            android:icon="@drawable/baseline_fmd_good_24"
             android:title="@string/menu_karte" />
         <item
             android:id="@+id/nav_name"
-            android:icon="@drawable/osm_ic_follow_me"
+            android:icon="@drawable/baseline_group_24"
             android:title="@string/menu_name" />
         <item
             android:id="@+id/nav_artist"
-            android:icon="@drawable/osm_ic_follow_me"
+            android:icon="@drawable/baseline_format_paint_24"
             android:title="@string/menu_artist" />
         <item
             android:id="@+id/nav_project"
-            android:icon="@drawable/osm_ic_follow_me"
+            android:icon="@drawable/baseline_foundation_24"
             android:title="@string/menu_project" />
         <item
             android:id="@+id/nav_stones"
-            android:icon="@drawable/osm_ic_follow_me"
+            android:icon="@drawable/baseline_dashboard_customize_24"
             android:title="@string/menu_stones" />
     </group>
 
@@ -31,14 +31,14 @@
         android:id="@+id/secondGroup">
         <item
             android:id="@+id/nav_setting"
-            android:icon="@drawable/btn_moreinfo"
+            android:icon="@drawable/baseline_cloud_download_24"
             android:title="@string/menu_search" />
     </group>
     <group android:checkableBehavior="single"
     android:id="@+id/bottomGroup">
         <item
             android:id="@+id/nav_app_setting"
-            android:icon="@drawable/btn_moreinfo"
+            android:icon="@drawable/baseline_build_circle_24"
             android:title="@string/settings" />
     </group>
 </menu>

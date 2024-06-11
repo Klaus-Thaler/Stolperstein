@@ -54,7 +54,7 @@ dependencies {
     implementation libs.jsoup
     //
     // https://github.com/osmdroid/osmdroid
-    // implementation 'org.osmdroid:osmdroid-android:6.1.19'
+    // implementation--- 'org.osmdroid:osmdroid-android:6.1.19'
     releaseImplementation libs.osmdroid.android
     //
     // https://github.com/MKergall/osmbonuspack
