@@ -2,9 +2,7 @@ package com.example.stolperstein.ui;
 
 import static com.example.stolperstein.MainActivity.mSharedPref;
 
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
@@ -19,9 +17,6 @@ import androidx.fragment.app.Fragment;
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.FragmentProjectBinding;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 public class ProjectFragment extends Fragment {
     public FragmentProjectBinding binding;

@@ -21,12 +21,11 @@ import com.example.stolperstein.databinding.FragmentArtistBinding;
 
 public class ArtistFragment extends Fragment {
 
-    private FragmentArtistBinding binding;
     @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentArtistBinding.inflate(inflater, container, false);
+        com.example.stolperstein.databinding.FragmentArtistBinding binding = FragmentArtistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 

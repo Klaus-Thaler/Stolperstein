@@ -15,8 +15,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.example.stolperstein.R;
-import com.example.stolperstein.classes.utils;
-
 
 public class SettingsFragment extends PreferenceFragmentCompat {
     public FragmentManager fragmentManager;

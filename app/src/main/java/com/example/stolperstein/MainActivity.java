@@ -30,10 +30,8 @@ import com.example.stolperstein.ui.DialogAbout;
 import com.example.stolperstein.ui.DialogDownloadCacheFile;
 import com.google.android.material.navigation.NavigationView;
 
-import java.sql.Array;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicIntegerArray;
 
 public class MainActivity extends AppCompatActivity {
 
