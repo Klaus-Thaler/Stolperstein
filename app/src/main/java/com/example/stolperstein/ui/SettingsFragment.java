@@ -2,24 +2,17 @@ package com.example.stolperstein.ui;
 
 import static com.example.stolperstein.MainActivity.mSharedPref;
 
-import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.LocaleListCompat;
-import androidx.fragment.app.FragmentManager;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.example.stolperstein.R;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
-    public FragmentManager fragmentManager;
-    @SuppressLint("ResourceType")
-    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey);
@@ -35,7 +28,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                     int[] mDefaultFontSizes = getResources().getIntArray(R.array.default_text_size);
                     for (Integer item : mDefaultFontSizes) {
                         int result = item + Integer.parseInt((String) newValue);
-                        //utils.showToast(getContext(), "> " + result);
+                        //utils.showToast(getContext(), "> " + result + "> " + item);
                         editor.putInt(String.format("mFontSize_%s", item), result);
                     }
                     editor.apply();
@@ -64,6 +57,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                     appLocale = LocaleListCompat.forLanguageTags("de");
                     for (String item : localeArray){
                         if (item.equals(newValue)) {
+                            //utils.showToast(getContext(), "> " + item);
                             appLocale = LocaleListCompat.forLanguageTags(item);
                         }
                     }
@@ -72,5 +66,4 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                     return true;
                 });
     }
-
 }

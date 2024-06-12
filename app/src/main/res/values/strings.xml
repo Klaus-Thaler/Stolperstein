@@ -1,18 +1,17 @@
 <resources>
-    <string name="app_name" translatable="false">Stolperstein Kiel</string>
     <string name="mode" translatable="false">day</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="nav_header_title" translatable="false">Stolpersteine Kiel</string>
-    <string name="nav_header_subtitle" translatable="false">NIE WIEDER IST JETZT</string>
+    <string name="nav_header_subtitle">NIE WIEDER IST JETZT</string>
     <string name="nav_header_desc" translatable="false">Navigation header</string>
     <string name="action_settings" translatable="false">Settings</string>
 
     <string name="menu_karte">OSM Karte</string>
     <string name="menu_artist">Der Künstler</string>
     <string name="menu_project">Das Projekt</string>
-    <string name="placeholder" translatable="false">*</string>
-    <string name="gunter_demnig" translatable="false">Gunter Demnig</string>
+    <string name="placeholder">...</string>
+    <string name="gunter_demnig">Gunter Demnig</string>
 
     <string name="das_kunstprojekt">Das Kunstprojekt</string>
     <string name="this_project1">Die in Fußwege eingebetteten Gedenksteine halten die Erinnerung an die Opfer des Nationalsozialismus - jüdische Bürger, Sinti und Roma, politisch Verfolgte, Homosexuelle, Zeugen Jehovas und "Euthanasie"-Opfer - wach.</string>
@@ -75,13 +74,7 @@
         mitunter vorgehalten wird, relativiert sich schnell, wenn man berücksichtigt, dass von den 120 €,
         die ein Stolperstein kostet, Material, Werkzeug, Versand, Organisation und die insgesamt acht
         Mitarbeiter des Projekts bezahlt werden.</string>
-    <string name="this_stone4">Auch aus anderer Richtung gibt es Kritik. So
-        lehnen die Sinti und Roma in Schleswig-Holstein Stolpersteine für ihre Opfer ab, weil man die
-        Steine mit den Füßen treten könne. Darum gibt es für diese Opfer einen besonderen Gedenkstein
-        im Hiroshimapark. Aus dem gleichen Grund betrachtet Charlotte Knobloch, die Präsidentin der
-        israelitischen Kultusgemeinde München und Oberbayern und ehemalige Präsidentin (2006-2010)
-        des Zentralrats der Juden, die Steine als Entwürdigung der Opfer, während der heutige
-        Zentalratspräsident Josef Schuster (seit 2014) das Stolpersteinprojekt befürwortet.></string>
+    <string name="this_stone4">Auch aus anderer Richtung gibt es Kritik. So         lehnen die Sinti und Roma in Schleswig-Holstein Stolpersteine für ihre Opfer ab, weil man die         Steine mit den Füßen treten könne. Darum gibt es für diese Opfer einen besonderen Gedenkstein         im Hiroshimapark. Aus dem gleichen Grund betrachtet Charlotte Knobloch, die Präsidentin der         israelitischen Kultusgemeinde München und Oberbayern und ehemalige Präsidentin (2006-2010)         des Zentralrats der Juden, die Steine als Entwürdigung der Opfer, während der heutige         Zentalratspräsident Josef Schuster (seit 2014) das Stolpersteinprojekt befürwortet.</string>
     <string name="menu_stones">Die Stolpersteine</string>
     <string name="willkommen">Willkommen</string>
     <string name="start">Start</string>
@@ -116,19 +109,19 @@
     <string name="yes" translatable="false">yes</string>
     <string name="m_chtest_du_den_standort_ermitteln">Möchtest du deinen Standort ermitteln? \"Follow\" zeigt deinen Standort auf der Karte an. Das ist nur sinnvoll, wenn du in der Stadt Kiel oder in der Umgebung von Kiel bist. Wenn du nicht in Kiel bist, dann benutze \"No Follow\". So bleibt der Fokus auf der Karte der Stadt Kiel.</string>
 
-    <string name="location">Standort</string>
+    <string name="location">Dein Standort</string>
     <string name="follow">Folgen</string>
     <string name="nofollow">nicht Folgen</string>
     <string name="download_kml">Download Daten</string>
     <string name="kml_file_speichern">Die ermittelten Daten als KML-File zur Weitergabe in Downloads speichern?</string>
     <string name="clear">löschen</string>
     <string name="this_app_is_for_android_8_and_higher">Der Standort konnte nicht identifiziert werden.\\nDiese App ist für Android 8 und höher</string>
-    <string name="quelle_wikipedia">Quelle: https://de.wikipedia.org/wiki/Gunter_Demnig</string>
-    <string name="source_github">Quell-Code: https://github.com/Klaus-Thaler/Stolperstein</string>
+    <string name="quelle_wikipedia" translatable="false">Quelle: https://de.wikipedia.org/wiki/Gunter_Demnig</string>
+    <string name="source_github" translatable="false">Quell-Code: https://github.com/Klaus-Thaler/Stolperstein</string>
     <string name="show_in_card">in Map anzeigen</string>
     <string name="name">Name</string>
     <string name="address">Adresse</string>
-    <string name="born">geboren</string>
+    <string name="born">Geboren</string>
     <string name="death">gestorben/deportiert</string>
     <string name="bio">Biografie</string>
     <string name="foto">Foto</string>
@@ -143,7 +136,7 @@
     <string name="settings_locale_default" translatable="false">de</string>
     <!-- text size -->
     <string name="settings_text_key" translatable="false">textsize</string>
-    <integer name="settings_textsize_default" translatable="false">17</integer>
+    <integer name="settings_textsize_default" translatable="false">18</integer>
     <!-- theme change dark & light -->
     <string name="settings_theme_key" translatable="false">theme</string>
     <string name="settings_theme_value_default" translatable="false">DEFAULT</string>
@@ -154,5 +147,10 @@
     <string name="lang">Sprache</string>
     <string name="settings_textsize_key" translatable="false">text-size</string>
     <string name="mPreference" translatable="false">dimens</string>
+    <string name="settings_info_text">Hier können sie Einstellungen vornehmen. Diese Einstellungen wirken sich hauptsächlich auf die einzelnen Seiten aus.</string>
+    <string name="howto">Bemerkung</string>
+    <string name="app_name">Stolperstein Kiel</string>
+    <string name="changes">Änderungen</string>
+    <string name="fontSize">Schriftgröße</string>
 
 </resources>

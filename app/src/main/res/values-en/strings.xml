@@ -2,6 +2,8 @@
 <resources>
 
     <string name="noData"><![CDATA[<html><style>body {background-color:white;color:black;} a {color:blue;}</style><body><table><tr><th>No data available yet.</th></tr><tr><td>To start the app for the first time, please go to <i>Settings</i> -> <i>Search</i> -> click on <i>Start</i>. </td></tr></table></body></html>]]></string>
+    <string name="placeholder">...</string>
+    <string name="gunter_demnig">Gunter Demnig</string>
     <string name="das_kunstprojekt">The art project</string>
     <string name="this_project1">The memorial stones embedded in footpaths keep alive the memory of the victims of National Socialism - Jewish citizens, Sinti and Roma, politically persecuted people, homosexuals, Jehovah\'s Witnesses and victims of \'euthanasia\'.</string>
     <string name="this_project2">The Stolpersteine, which measure around ten by ten centimetres, are small brass plates with the names and dates of life of Nazi victims.\nThey are set into the pavement in front of the last known and freely chosen place of residence. The Stolpersteine are financed by private donations.</string>
@@ -20,7 +22,7 @@
     <string name="beruf_und_werk">Profession and work</string>
     <string name="ausbildung">Education</string>
     <string name="willkommen">Welcome</string>
-    <string name="start">start</string>
+    <string name="start">Start</string>
     <string name="suche">Search for stumbling blocks …</string>
     <string name="stolpersteine">stumbling blocks</string>
     <string name="Greeting_Description">To set up the app, data must first be generated.
@@ -34,7 +36,7 @@
     <string name="setting">Settings</string>
     <string name="starte_die_suche">Start the search. Names and addresses for the stumbling blocks are being sought.</string>
     <string name="menu_name">The Names</string>
-    <string name="close"><u>close</u></string>
+    <string name="close"><u>Close</u></string>
     <string name="clear">clear</string>
     <string name="title">title</string>
     <string name="about">about …</string>
@@ -44,19 +46,19 @@
     <string name="contact_me">contact</string>
     <string name="welcome">welcome</string>
     <string name="m_chtest_du_den_standort_ermitteln">Want to find out your location? ‘Follow’ shows your location on the map. This only makes sense if you are in the city of Kiel or in the neighbourhood of Kiel. If you are not in Kiel, then use ‘No Follow’. This keeps the focus on the map of the city of Kiel.</string>
-    <string name="location">location</string>
+    <string name="location">your location</string>
     <string name="follow">follow</string>
     <string name="nofollow">no follow</string>
     <string name="download_kml">download Data</string>
     <string name="kml_file_speichern">Save the data found as a KML file for sharing in downloads?</string>
+    <string name="app_name">Stolperstein Kiel</string>
+    <string name="nav_header_subtitle">NIE WIEDER IST JETZT</string>
     <string name="menu_karte">OSM Card</string>
     <string name="menu_artist">The Artist</string>
     <string name="menu_project">The Project</string>
     <string name="menu_stones">The stumbling blocks</string>
     <string name="this_app_is_for_android_8_and_higher">the location could not be identified this app is for android 8 and higher.</string>
     <string name="menu_setting">Settings</string>
-    <string name="quelle_wikipedia">Source: https://de.wikipedia.org/wiki/Gunter_Demnig</string>
-    <string name="source_github">Source-Code: https://github.com/Klaus-Thaler/Stolperstein</string>
     <string name="show_in_card">show in card</string>
     <string name="name">Name</string>
     <string name="address">Address</string>
@@ -69,4 +71,8 @@
     <string name="menu_search">Search</string>
     <string name="brightness">brightness mode</string>
     <string name="lang">Language</string>
+    <string name="settings_info_text">You can make settings here. These settings mainly affect the individual pages.</string>
+    <string name="howto">Remark</string>
+    <string name="changes">Changes</string>
+    <string name="fontSize">Font size</string>
 </resources>

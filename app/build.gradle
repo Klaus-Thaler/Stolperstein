@@ -14,7 +14,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        resourceConfigurations += ["de", "en", "en-rGB"]
+        resourceConfigurations += ["de", "en", "en-rGB" , "uk", "uk-rUA", "fr", "fr-rFR"]
     }
 
     buildTypes {

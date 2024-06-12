@@ -12,4 +12,6 @@
     <color name="dialogText">#FF000000</color>
     <color name="dialogBackground">#FFFFFFFF</color>
     <color name="searchbox">#E5EAFD</color>
+    <color name="orange_200">#FFC170</color>
+    <color name="orange_600">#FFA42E</color>
 </resources>
