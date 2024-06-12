@@ -5,7 +5,7 @@
     <string name="menu_karte">OSM Carte</string>
     <string name="menu_artist">L\'artiste</string>
     <string name="menu_project">Le projet</string>
-    <string name="placeholder">...</string>
+    <string name="placeholder">…</string>
     <string name="gunter_demnig">Gunter Demnig</string>
     <string name="das_kunstprojekt">Le projet artistique</string>
     <string name="this_project1">Les pierres commémoratives intégrées dans des chemins piétonniers perpétuent le souvenir des victimes du nazisme - citoyens juifs, Sinti et Roms, persécutés politiques, homosexuels, témoins de Jéhovah et victimes de l\'euthanasie.</string>
@@ -30,7 +30,7 @@ Les noms des victimes ont été et sont encore gravés dans de petites pierres n
     <string name="menu_stones">Les pierres d\'achoppement</string>
     <string name="willkommen">Bienvenue</string>
     <string name="start">Lancement</string>
-    <string name="suche">Chercher des pierres d\'achoppement ...</string>
+    <string name="suche">Chercher des pierres d\'achoppement …</string>
     <string name="stolpersteine">Pierres d\'achoppement</string>
     <string name="Greeting_Description">Pour configurer l\'application, il faut d\'abord générer des données. Cela peut prendre un certain temps, mais n\'est nécessaire qu\'une seule fois pour la configuration de l\'app. Dans un premier temps, les informations sont chargées à partir du wiki. Ensuite, à partir des adresses, auxquelles se réfèrent les pierres d\'achoppement, on détermine les géo-points pour l\'affichage sur la carte. Si l\'opération est réussie, la carte s\'affiche avec toutes les informations obtenues. Ce processus peut être répété individuellement dans \"Recherche\".</string>
     <string name="Greeting_Description_short">Pour configurer l\'application, il faut d\'abord générer des données. Cela peut prendre un certain temps, mais n\'est nécessaire qu\'une seule fois pour la configuration de l\'application. Va dans \"Recherche\" et démarre le processus de recherche.</string>
@@ -42,7 +42,7 @@ Les noms des victimes ont été et sont encore gravés dans de petites pierres n
     <string name="noData">abc</string>
     <string name="close"><u>Fermer</u></string>
     <string name="title">Titre</string>
-    <string name="about">À propos de ...</string>
+    <string name="about">À propos de …</string>
     <string name="coffee_for_me">café pour moi</string>
     <string name="search">Recherche</string>
     <string name="settings">Paramètres</string>

@@ -10,7 +10,7 @@
     <string name="menu_karte">OSM Karte</string>
     <string name="menu_artist">Der Künstler</string>
     <string name="menu_project">Das Projekt</string>
-    <string name="placeholder">...</string>
+    <string name="placeholder">…</string>
     <string name="gunter_demnig">Gunter Demnig</string>
 
     <string name="das_kunstprojekt">Das Kunstprojekt</string>
@@ -74,7 +74,7 @@
         mitunter vorgehalten wird, relativiert sich schnell, wenn man berücksichtigt, dass von den 120 €,
         die ein Stolperstein kostet, Material, Werkzeug, Versand, Organisation und die insgesamt acht
         Mitarbeiter des Projekts bezahlt werden.</string>
-    <string name="this_stone4">Auch aus anderer Richtung gibt es Kritik. So         lehnen die Sinti und Roma in Schleswig-Holstein Stolpersteine für ihre Opfer ab, weil man die         Steine mit den Füßen treten könne. Darum gibt es für diese Opfer einen besonderen Gedenkstein         im Hiroshimapark. Aus dem gleichen Grund betrachtet Charlotte Knobloch, die Präsidentin der         israelitischen Kultusgemeinde München und Oberbayern und ehemalige Präsidentin (2006-2010)         des Zentralrats der Juden, die Steine als Entwürdigung der Opfer, während der heutige         Zentalratspräsident Josef Schuster (seit 2014) das Stolpersteinprojekt befürwortet.</string>
+    <string name="this_stone4">Auch aus anderer Richtung gibt es Kritik. So lehnen die Sinti und Roma in Schleswig–Holstein Stolpersteine für ihre Opfer ab, weil man die Steine mit den Füßen treten könne. Darum gibt es für diese Opfer einen besonderen Gedenkstein im Hiroshimapark. Aus dem gleichen Grund betrachtet Charlotte Knobloch, die Präsidentin der israelitischen Kultusgemeinde München und Oberbayern und ehemalige Präsidentin (2006–2010) des Zentralrats der Juden, die Steine als Entwürdigung der Opfer, während der heutige Zentalratspräsident Josef Schuster (seit 2014) das Stolpersteinprojekt befürwortet.</string>
     <string name="menu_stones">Die Stolpersteine</string>
     <string name="willkommen">Willkommen</string>
     <string name="start">Start</string>

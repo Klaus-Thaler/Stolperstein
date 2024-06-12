@@ -2,7 +2,7 @@
 <resources>
 
     <string name="noData"><![CDATA[<html><style>body {background-color:white;color:black;} a {color:blue;}</style><body><table><tr><th>No data available yet.</th></tr><tr><td>To start the app for the first time, please go to <i>Settings</i> -> <i>Search</i> -> click on <i>Start</i>. </td></tr></table></body></html>]]></string>
-    <string name="placeholder">...</string>
+    <string name="placeholder">…</string>
     <string name="gunter_demnig">Gunter Demnig</string>
     <string name="das_kunstprojekt">The art project</string>
     <string name="this_project1">The memorial stones embedded in footpaths keep alive the memory of the victims of National Socialism - Jewish citizens, Sinti and Roma, politically persecuted people, homosexuals, Jehovah\'s Witnesses and victims of \'euthanasia\'.</string>
