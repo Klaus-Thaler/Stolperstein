@@ -68,4 +68,8 @@
     <string name="howto">Зауваження</string>
     <string name="changes">зміни</string>
     <string name="fontSize">Розмір шрифту</string>
+    <string name="font_size">Розмір шрифту</string>
+    <string name="hiermit_suchen_sie_nach_den_wiki_daten_im_internet">Використовується для пошуку даних вікі в Інтернеті.</string>
+    <string name="Description_done_1">"Дані взяті з "</string>
+    <string name="Description_done_2">Зовсім не обов\'язково отримувати нові дані.</string>
 </resources>

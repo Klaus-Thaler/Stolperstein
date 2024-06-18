@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.settings.SettingsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12sp"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                android:textSize="22sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_margin="12sp"/>
+
+            <TextView
+                android:id="@+id/first_welcome3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/settings_info_text"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/name_recycler_border"
+                android:layout_margin="2sp"
+                tools:ignore="ExtraText">
+                <TextView
+                    android:id="@+id/text_lang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lang"
+                    android:layout_marginStart="22sp"
+                    android:drawablePadding="10dp"
+                    app:drawableLeftCompat="@drawable/baseline_font_download_24" />
+                />
+
+                <TableRow android:gravity="right"
+                    tools:ignore="RtlHardcoded">
+                    <RadioGroup
+                        android:id="@+id/lang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/lang_german"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/german"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:id="@+id/lang_english"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/english"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:id="@+id/lang_france"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/france"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:id="@+id/lang_ukrainian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/ukrainian"
+                            android:textAlignment="textStart" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <!-- crashed
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/name_recycler_border"
+                    android:layout_margin="2sp">
+                <TextView
+                    android:id="@+id/first_welcome5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_info_text"/>
+
+                    <TableRow android:gravity="right">
+
+                        <RadioGroup
+                            android:id="@+id/theme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/theme_system"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layoutDirection="rtl"
+                                android:text="system"
+                                android:textAlignment="textStart" />
+
+                            <RadioButton
+                                android:id="@+id/theme_light"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layoutDirection="rtl"
+                                android:text="hell"
+                                android:textAlignment="textStart" />
+
+                            <RadioButton
+                                android:id="@+id/theme_dark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layoutDirection="rtl"
+                                android:text="dark"
+                                android:textAlignment="textStart" />
+                        </RadioGroup>
+                    </TableRow>
+            </TableLayout>
+            -->
+
+            <!-- spaeter ...
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/name_recycler_border"
+                android:layout_margin="2sp">
+                <TextView
+                    android:id="@+id/text_fontsize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font_size"
+                    android:layout_marginStart="22sp"
+                    android:drawablePadding="10dp"
+                    app:drawableLeftCompat="@drawable/baseline_format_line_spacing_24" />
+
+                <TableRow android:gravity="right"
+                    tools:ignore="RtlHardcoded">
+
+                    <RadioGroup
+                        android:id="@+id/fontsize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="small"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="medium"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="moderate"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="large"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="xlarge"
+                            android:textAlignment="textStart" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+            -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/hiermit_suchen_sie_nach_den_wiki_daten_im_internet" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/name_recycler_border"
+                android:layout_margin="2sp">
+                <TextView
+                    android:id="@+id/text_download"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginBottom="22dp"
+                    android:drawablePadding="10dp"
+                    app:drawableLeftCompat="@drawable/baseline_cloud_download_24" />
+                <TextView
+                    android:id="@+id/first_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeholder"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/listSetup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="22sp"
+                    android:visibility="visible"
+                    android:maxLines="3"
+                    android:scrollbars="vertical"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/suche" />
+                <ProgressBar
+                    android:id="@+id/counterWeb"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:min="0"
+                    android:max="100"
+                    android:visibility="visible" />
+                <TableRow android:gravity="right"
+                    tools:ignore="RtlHardcoded">
+                <Button
+                    android:id="@+id/searchStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/start"
+                    android:clickable="true"
+                    android:soundEffectsEnabled="true"
+                    app:shapeAppearanceOverlay="@style/leaf"
+                    tools:ignore="RtlHardcoded" />
+                </TableRow>
+
+            </TableLayout>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/name_recycler_border"
+                android:layout_margin="2sp">
+                <TextView
+                    android:id="@+id/furtherInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="22sp"
+                    android:scrollbars="vertical"
+                    android:text="@string/source_github"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible" />
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

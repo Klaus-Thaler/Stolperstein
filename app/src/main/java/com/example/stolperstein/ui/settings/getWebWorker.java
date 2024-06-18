@@ -1,4 +1,4 @@
-package com.example.stolperstein.ui.WebData;
+package com.example.stolperstein.ui.settings;
 
 
 import static com.example.stolperstein.MainActivity.CacheKMLFileName;

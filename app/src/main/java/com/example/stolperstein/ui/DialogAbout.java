@@ -3,13 +3,10 @@ package com.example.stolperstein.ui;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.RequiresApi;
 
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.utils;
@@ -17,7 +14,6 @@ import com.example.stolperstein.classes.utils;
 import java.io.InputStream;
 
 public class DialogAbout {
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     public static void show(Context context, String dialogTitle,
                             Integer resourceRaw, String resourcePic) {
         // zeigt den Dialog Frame nach Klick Settings; about, contact, coffee, ...

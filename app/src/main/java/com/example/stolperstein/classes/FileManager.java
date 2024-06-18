@@ -18,7 +18,8 @@ import java.util.Locale;
 
 public class FileManager {
 
-    public static String CacheFileLastModified(File file) {
+    public static String CacheFileLastModified(Context context, String fileName) {
+        File file = context.getFileStreamPath(fileName);
         long timeStamp = file.lastModified();
         Date date = new java.util.Date(timeStamp);
         return new SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.GERMANY).format(date);
@@ -36,7 +37,7 @@ public class FileManager {
             return false;
         }
     }
-    public static void saveDataInDownload(Context context, String fileName){
+    public static void saveDataInDownload(Context context, String fileName) {
         File downloads = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         //utils.showToast(context,"downloads" + downloads.toString());
         File mExternalFile = new File(downloads, fileName);
@@ -58,8 +59,9 @@ public class FileManager {
             utils.showToast(context,"Saving in Downloads not possible!");
         }
     }
-    public static String getFileSize(File file) {
+    public static String getFileSize(Context context, String fileName) {
         //return (double) file.length() / (1024 * 1024) + " mb";
+        File file = context.getFileStreamPath(fileName);
         return (int) file.length() / (1024) + " kb";
     }
 

@@ -14,7 +14,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        resourceConfigurations += ["de", "en", "en-rGB" , "uk", "uk-rUA", "fr", "fr-rFR"]
+        resourceConfigurations += ['de', 'en', 'uk', 'fr']
     }
 
     buildTypes {
@@ -71,7 +71,7 @@ dependencies {
     //
     // https://developer.android.com/develop/ui/views/components/settings?hl=de
     // implementation "androidx.preference:preference-ktx:1.2.0"
-    implementation libs.preference.ktx
+    //implementation libs.preference.ktx
     //
     // https://stackoverflow.com/questions/57449900/letting-webview-on-android-work-with-prefers-color-scheme-dark
     //implementation libs.webkit

@@ -36,7 +36,6 @@ public class utils {
     }
     public static Bitmap getBitmapFromAsset(Context context, String fileName) {
         // Asset Bilder holen und bereitstellen
-        Bitmap img1 = null;
         InputStream inStream;
         try {
             AssetManager assetManager = context.getResources().getAssets();

@@ -2,10 +2,7 @@ package com.example.stolperstein.ui;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.os.Build;
 import android.widget.Button;
-
-import androidx.annotation.RequiresApi;
 
 import com.example.stolperstein.R;
 
@@ -21,7 +18,6 @@ import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
 
 public class DialogSingleMap {
     //Building dialog
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     public static void show(Context context, String dialogTitle, String mName, String mAddress, String mGeopoint) {
         // zeigt den Dialog Frame nach Klick: show in maps
 

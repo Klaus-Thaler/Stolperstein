@@ -152,5 +152,14 @@
     <string name="app_name">Stolperstein Kiel</string>
     <string name="changes">Änderungen</string>
     <string name="fontSize">Schriftgröße</string>
+    <string name="german" translatable="false">deutsch</string>
+    <string name="english" translatable="false">english</string>
+    <string name="ukrainian" translatable="false">Українська</string>
+    <string name="france" translatable="false">france</string>
+    <string name="font_size">Schriftgroesse</string>
+    <string name="hiermit_suchen_sie_nach_den_wiki_daten_im_internet">Hiermit suchen sie nach den Wiki-Daten im Internet.</string>
+    <string name="Description_done_1">Die Daten sind vom</string>
+    <string name="Description_done_2">Es ist nicht zwingend notwendig neue Daten zu holen.</string>
+    <!-- Preference Titles -->
 
 </resources>

@@ -72,4 +72,8 @@ Les noms des victimes ont été et sont encore gravés dans de petites pierres n
     <string name="howto">Remarque</string>
     <string name="changes">Changements</string>
     <string name="fontSize">Taille de la police</string>
+    <string name="font_size">Taille de la police</string>
+    <string name="hiermit_suchen_sie_nach_den_wiki_daten_im_internet">Ils l\'utilisent pour rechercher les données wiki sur Internet.</string>
+    <string name="Description_done_1">"Les données sont fournies par le "</string>
+    <string name="Description_done_2">Il n\'est pas obligatoire d\'aller chercher de nouvelles données.</string>
 </resources>

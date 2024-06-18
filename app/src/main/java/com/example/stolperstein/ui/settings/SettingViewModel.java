@@ -1,4 +1,4 @@
-package com.example.stolperstein.ui.WebData;
+package com.example.stolperstein.ui.settings;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

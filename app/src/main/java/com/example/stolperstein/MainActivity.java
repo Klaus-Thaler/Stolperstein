@@ -2,11 +2,9 @@ package com.example.stolperstein;
 
 import android.Manifest;
 import android.app.Dialog;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public static ActivityMainBinding binding;
-    public static SharedPreferences mSharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,21 +65,6 @@ public class MainActivity extends AppCompatActivity {
         View root = binding.getRoot();
         setContentView(root);
 
-        // eigene font-size einstellungen
-        // integer array, weil es sich besser rechenen laesst
-        int[] mDefaultFontSizes = getResources().getIntArray(R.array.default_text_size);
-        String preferenceSize = getResources().getString(R.string.mPreference);
-        mSharedPref = getSharedPreferences(preferenceSize, MODE_PRIVATE);
-        SharedPreferences.Editor editor = mSharedPref.edit(); //editor.clear();
-        editor.clear();
-        for (int item : mDefaultFontSizes) {
-            editor.putInt(String.format("mFontSize_%s", item), item);
-        }
-        editor.apply();
-        Log.i("setFrag","" + mSharedPref.getAll());
-
-
-
         setSupportActionBar(binding.appBarMain.toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;
@@ -90,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_artist, R.id.nav_setting,
+                R.id.nav_home, R.id.nav_artist, R.id.nav_settings,
                 R.id.nav_project, R.id.nav_stones, R.id.nav_app_setting)
                 .setOpenableLayout(drawer)
                 .build();
@@ -136,9 +118,7 @@ public class MainActivity extends AppCompatActivity {
             if (getResources().getString(R.string.mode).equals("night")) {
                 content = R.raw.about_html_dark;
             }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                DialogAbout.show(this, "About", content, "stolperstein_ein_mensch.png");
-            }
+            DialogAbout.show(this, "About", content, "stolperstein_ein_mensch.png");
         }
         if (item.getItemId() == R.id.settings_donat) {
             // darkmode (Let make me it simple)
@@ -146,15 +126,11 @@ public class MainActivity extends AppCompatActivity {
             if (getResources().getString(R.string.mode).equals("night")) {
                 content = R.raw.donate_html_dark;
             }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                DialogAbout.show(this, "Coffee & Donuts", content, "donut.png");
-            }
+            DialogAbout.show(this, "Coffee & Donuts", content, "donut.png");
         }
         if (item.getItemId() == R.id.settings_download_cachefile) {
             ActivityCompat.requestPermissions(this, MainActivity.PermsStorage, 2);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                DialogDownloadCacheFile.show(this, "Download");
-            }
+            DialogDownloadCacheFile.show(this, "Download");
         }
         return super.onOptionsItemSelected(item);
     }

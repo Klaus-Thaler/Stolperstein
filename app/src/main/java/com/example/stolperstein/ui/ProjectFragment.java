@@ -1,7 +1,5 @@
 package com.example.stolperstein.ui;
 
-import static com.example.stolperstein.MainActivity.mSharedPref;
-
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
@@ -30,36 +28,30 @@ public class ProjectFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView title = binding.projectTitle;
-        title.setTextSize(mSharedPref.getInt("mFontSize_24",24));
         title.setText(R.string.das_kunstprojekt);
 
         String resString1 = getResources().getString(R.string.this_project1);
         final TextView content1 = binding.projectContent1;
-        content1.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content1.setMovementMethod(LinkMovementMethod.getInstance());
         content1.setText(getResources().getString(R.string.this_project1));
 
         String resString2 = getResources().getString(R.string.this_project2);
         final TextView content2 = binding.projectContent2;
-        content2.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content2.setMovementMethod(LinkMovementMethod.getInstance());
         content2.setText(resString2);
 
         String resString3 = getResources().getString(R.string.this_project3);
         final TextView content3 = binding.projectContent3;
-        content3.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content3.setMovementMethod(LinkMovementMethod.getInstance());
         content3.setText(resString3);
 
         String resString4 = getResources().getString(R.string.this_project4);
         final TextView content4 = binding.projectContent4;
-        content4.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content4.setMovementMethod(LinkMovementMethod.getInstance());
         content4.setText(resString4);
 
         String resString5 = "Quelle: https://kiel-wiki.de/Stolpersteine";
         final TextView content5 = binding.projectContent5;
-        content5.setTextSize(mSharedPref.getInt("mFontSize_16",16));
         content5.setMovementMethod(LinkMovementMethod.getInstance());
         content5.setText(resString5);
 
