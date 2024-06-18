@@ -3,7 +3,6 @@ package com.example.stolperstein;
 import android.Manifest;
 import android.app.Dialog;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
