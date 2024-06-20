@@ -220,7 +220,7 @@
                 android:background="@drawable/name_recycler_border"
                 android:layout_margin="2sp">
                 <TextView
-                    android:id="@+id/text_download"
+                    android:id="@+id/text_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/search"
@@ -243,6 +243,7 @@
                     android:layout_margin="22sp"
                     android:visibility="visible"
                     android:maxLines="3"
+                    android:minLines="3"
                     android:scrollbars="vertical"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/suche" />
@@ -270,11 +271,72 @@
                 </TableRow>
 
             </TableLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/hier_download_kml" />
+
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/name_recycler_border"
                 android:layout_margin="2sp">
+                <TextView
+                    android:id="@+id/text_download_kml"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/geodaten"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginBottom="22dp"
+                    android:drawablePadding="10dp"
+                    app:drawableLeftCompat="@drawable/baseline_cloud_download_24" />
+
+                <TextView
+                    android:id="@+id/download_cachefile_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    android:text="@string/download_kml"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible" />
+                <TableRow android:gravity="right"
+                    tools:ignore="RtlHardcoded">
+                    <Button
+                        android:id="@+id/button_download_file"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/start"
+                        android:clickable="true"
+                        android:soundEffectsEnabled="true"
+                        app:shapeAppearanceOverlay="@style/leaf"
+                        tools:ignore="RtlHardcoded" />
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/copyrights" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/name_recycler_border"
+                android:layout_margin="2sp">
+                <TextView
+                    android:id="@+id/text_download"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/copyrights"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginBottom="22dp"
+                    android:drawablePadding="10dp"
+                    app:drawableLeftCompat="@drawable/baseline_copyright_24" />
+
                 <TextView
                     android:id="@+id/furtherInfo"
                     android:layout_width="match_parent"
@@ -284,7 +346,10 @@
                     android:text="@string/source_github"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColorLink="@color/top"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    android:linksClickable="true"
+                    android:autoLink="web"
+                    />
             </TableLayout>
         </LinearLayout>
     </ScrollView>

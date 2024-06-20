@@ -79,4 +79,8 @@
     <string name="hiermit_suchen_sie_nach_den_wiki_daten_im_internet">This is used to search for wiki data on the Internet.</string>
     <string name="Description_done_1">"The data is from the "</string>
     <string name="Description_done_2">It is not absolutely necessary to fetch new data.</string>
+    <string name="No_data_available">No data available yet. Please perform the search first.</string>
+    <string name="hier_download_kml">Here you can save the KML file in the Downloads section.</string>
+    <string name="dialog_body_about">The app finds the Stolpersteine in the city of Kiel.\nIt uses the data from Wikipedia to generate the geopoints for display in the Open Street Map.\nIt also displays information about the project and the artist.\nAnd much more.</string>
+    <string name="dialog_body_me">Hello Fans \nIf you like my work and would like to support me, then buy me a coffee. \nBecause nothing works here without coffee and donuts.</string>
 </resources>

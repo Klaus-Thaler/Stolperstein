@@ -1,6 +1,7 @@
 package com.example.stolperstein.ui.settings;
 
 import static com.example.stolperstein.MainActivity.CacheKMLFileName;
+import static com.example.stolperstein.MainActivity.PermsStorage;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.app.ActivityCompat;
 import androidx.core.os.LocaleListCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -23,6 +25,7 @@ import androidx.work.WorkRequest;
 
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.FileManager;
+import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.FragmentSettingsBinding;
 
 public class SettingsFragment extends Fragment {
@@ -39,6 +42,7 @@ public class SettingsFragment extends Fragment {
 
 
         final TextView infoText = binding.firstDescription;
+        SettingViewModel.downloadInfo.observe(getViewLifecycleOwner(), infoText::setText);
 
         if (FileManager.CacheFileExist(requireActivity(),CacheKMLFileName)) {
             String date = FileManager.CacheFileLastModified(requireContext(), CacheKMLFileName);
@@ -62,13 +66,7 @@ public class SettingsFragment extends Fragment {
         final Button settingButton = binding.searchStart;
         SettingViewModel.mButton.observe(getViewLifecycleOwner(), settingButton::setText);
 
-
-        // todo Anzeige last modi der DB -> noch mal?
-        /*
-        if (FileManager.CacheFileExist(requireContext(), MainActivity.CacheXMLData)) {
-            settingSearch.setText(R.string.die_suche_war_erfolgreich_);
-        }
-        */
+        // worker background process
         settingButton.setOnClickListener(v -> {
             // Background Thread with worker
             WorkRequest uploadWorkRequest = new OneTimeWorkRequest.Builder(getWebWorker.class).build();
@@ -130,6 +128,23 @@ public class SettingsFragment extends Fragment {
 
         */
 
-        return root;
+        // download kml file
+        TextView downloadText = root.findViewById(R.id.download_cachefile_text);
+        SettingViewModel.dText.observe(getViewLifecycleOwner(), downloadText::setText);
+        Button downloadButton = root.findViewById(R.id.button_download_file);
+
+        if (FileManager.CacheFileExist(requireContext(), CacheKMLFileName)) {
+            downloadButton.setOnClickListener(v -> {
+                ActivityCompat.requestPermissions(requireActivity(), PermsStorage, 2);
+                FileManager.saveDataInDownload(requireContext(), CacheKMLFileName);
+                SettingViewModel.dText.postValue("Download okay");
+            });
+        } else {
+            downloadButton.setActivated(false);
+            downloadText.setText(getText(R.string.No_data_available));
+            //utils.showToast(requireContext(),"No data available yet. Please run Setting first.");
+        }
+
+    return root;
     }
 }

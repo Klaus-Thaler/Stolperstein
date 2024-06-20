@@ -14,6 +14,7 @@ import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
 import com.example.stolperstein.MainActivity;
+import com.example.stolperstein.R;
 import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.classes.sqlHandler;
 
@@ -168,6 +169,7 @@ public class getWebWorker extends Worker {
             SettingViewModel.mSearch.postValue(mRows.size() - 1 + " Stolpersteine \nin " + numberAddress + " Addressen gefunden." );
             SettingViewModel.progBarSet.postValue(0);
             SettingViewModel.mButton.postValue("GONE");
+            SettingViewModel.dText.postValue(getApplicationContext().getString(R.string.hier_download_kml));
 
             //Log.i("ST_getWebWorker", "kml: " + kmlFile);
 

@@ -12,7 +12,6 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.NavGraph;
@@ -24,7 +23,6 @@ import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.ActivityMainBinding;
 import com.example.stolperstein.ui.DialogAbout;
-import com.example.stolperstein.ui.DialogDownloadCacheFile;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.HashMap;
@@ -45,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
     };
     public static String[] PermsStorage = {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.INTERNET
     };
     //public static HashMap<Integer, List<String>> dataPerson;
     public static String web_link = "https://kiel-wiki.de/Stolpersteine";
@@ -113,24 +109,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         // Items in Settings, rechts oben
         if (item.getItemId() == R.id.settings_about) {
-            int content = R.raw.about_html;
-            if (getResources().getString(R.string.mode).equals("night")) {
-                content = R.raw.about_html_dark;
-            }
-            DialogAbout.show(this, "About", content, "stolperstein_ein_mensch.png");
+            String content = getString(R.string.dialog_body_about);
+            DialogAbout.show(this, "About", content,"stolperstein_ein_mensch.png");
         }
         if (item.getItemId() == R.id.settings_donat) {
-            // darkmode (Let make me it simple)
-            int content = R.raw.donate_html;
-            if (getResources().getString(R.string.mode).equals("night")) {
-                content = R.raw.donate_html_dark;
-            }
+            String content = getString(R.string.dialog_body_me);
             DialogAbout.show(this, "Coffee & Donuts", content, "donut.png");
         }
-        if (item.getItemId() == R.id.settings_download_cachefile) {
-            ActivityCompat.requestPermissions(this, MainActivity.PermsStorage, 2);
-            DialogDownloadCacheFile.show(this, "Download");
-        }
+
         return super.onOptionsItemSelected(item);
     }
     @Override

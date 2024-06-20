@@ -22,8 +22,5 @@
             android:id="@+id/settings_donat"
             android:title="@string/coffee_for_me" />
 
-        <item
-            android:id="@+id/settings_download_cachefile"
-            android:title="@string/download_kml" />
     </group>
 </menu>

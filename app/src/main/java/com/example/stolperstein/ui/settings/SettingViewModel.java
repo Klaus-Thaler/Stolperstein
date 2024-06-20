@@ -3,10 +3,14 @@ package com.example.stolperstein.ui.settings;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.stolperstein.R;
+
 public class SettingViewModel extends ViewModel {
     public static MutableLiveData<String> mSearch;
     public static MutableLiveData<String> mButton;
     public static MutableLiveData<Integer> progBarSet;
+    public static MutableLiveData<String> downloadInfo;
+    public static MutableLiveData<String> dText;
 
     public SettingViewModel() {
         //mText = new MutableLiveData<>();
@@ -15,6 +19,8 @@ public class SettingViewModel extends ViewModel {
         progBarSet.setValue(0);
         mSearch = new MutableLiveData<>();
         mButton = new MutableLiveData<>();
+        downloadInfo = new MutableLiveData<>();
+        dText = new MutableLiveData<>();
         //mButton.postValue("Stop");
     }
 }

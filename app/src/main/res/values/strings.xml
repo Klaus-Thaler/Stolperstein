@@ -160,6 +160,13 @@
     <string name="hiermit_suchen_sie_nach_den_wiki_daten_im_internet">Hiermit suchen sie nach den Wiki-Daten im Internet.</string>
     <string name="Description_done_1">Die Daten sind vom</string>
     <string name="Description_done_2">Es ist nicht zwingend notwendig neue Daten zu holen.</string>
+    <string name="No_data_available">Keine Daten vorhanden. Bitte erst die Suche starten.</string>
+    <string name="hier_download_kml">Hier können sie den KML-File in Downloads gespeichern.</string>
+    <string name="copyrights" translatable="false">Copyrights</string>
+    <string name="geodaten" translatable="false">Geo Dates</string>
+    <string name="dialog_body_about">Die App findet die Stolpersteine  in der Stadt Kiel.\nSie nutzt die Daten aus Wikipedia und erzeugt damit die Geopunkte für die Anzeige in der Open-Street-Map.\nDes weiteren werden Informationen zum Projekt und zum Künstler ausgegeben.\nUnd vieles mehr.</string>
+    <string name="dialog_body_me">Hello Fans If you like my work and would like to support me, then buy me a coffee. Because nothing works here without coffee and donuts.</string>
+    <string name="email" translatable="false"><u>klaus.thaler@vodafonemail.de</u></string>
     <!-- Preference Titles -->
 
 </resources>
