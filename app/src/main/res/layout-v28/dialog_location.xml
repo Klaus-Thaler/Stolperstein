@@ -1,5 +1,4 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -60,8 +59,7 @@
             app:autoSizeMaxTextSize="18sp"
             app:autoSizeStepGranularity="1sp"
             app:shapeAppearanceOverlay="@style/leaf"
-            style="?android:attr/buttonCornerRadius"
-            tools:targetApi="p" />
+            style="?android:attr/buttonCornerRadius" />
 
         <Button
             android:id="@+id/button_no"
@@ -75,8 +73,7 @@
             app:autoSizeMaxTextSize="18sp"
             app:autoSizeStepGranularity="1sp"
             app:shapeAppearanceOverlay="@style/leaf"
-            style="?android:attr/buttonCornerRadius"
-            tools:targetApi="p"/>
+            style="?android:attr/buttonCornerRadius" />
     </LinearLayout>
 
 </RelativeLayout>

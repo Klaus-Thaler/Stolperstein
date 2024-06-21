@@ -23,7 +23,7 @@ public class utils {
     public static String get_text(InputStream inputStream) {
         // String lesen und bereitstellen
         StringBuilder sb = new StringBuilder();
-        String string = "";
+        String string;
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
         while (true) {
             try {

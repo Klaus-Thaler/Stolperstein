@@ -10,6 +10,7 @@
         android:layout_margin="2sp"
         android:text="@string/close"
         android:textSize="14sp"
+        android:autoSizeMaxTextSize="18sp"
         android:textColor="@color/dialogText"
         android:background="@color/transparent"
         android:layout_alignParentEnd="true"/>

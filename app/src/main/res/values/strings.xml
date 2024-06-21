@@ -165,8 +165,10 @@
     <string name="copyrights" translatable="false">Copyrights</string>
     <string name="geodaten" translatable="false">Geo Dates</string>
     <string name="dialog_body_about">Die App findet die Stolpersteine  in der Stadt Kiel.\nSie nutzt die Daten aus Wikipedia und erzeugt damit die Geopunkte für die Anzeige in der Open-Street-Map.\nDes weiteren werden Informationen zum Projekt und zum Künstler ausgegeben.\nUnd vieles mehr.</string>
-    <string name="dialog_body_me">Hello Fans If you like my work and would like to support me, then buy me a coffee. Because nothing works here without coffee and donuts.</string>
+    <string name="dialog_body_me">Hallo Fans\nWenn euch meine Arbeit gefällt und ihr mich unterstützen wollt, dann kauft mir einen Kaffee.\nDenn ohne Kaffee und Donuts geht hier nichts.</string>
     <string name="email" translatable="false"><u>klaus.thaler@vodafonemail.de</u></string>
+    <string name="gnu_org_licenses" translatable="false">License: https://www.gnu.org/licenses/gpl-3.0.html</string>
+    <string name="f_droid_about">F-Droid: https://f-droid.org/de/about/</string>
     <!-- Preference Titles -->
 
 </resources>

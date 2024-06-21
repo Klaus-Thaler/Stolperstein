@@ -41,7 +41,6 @@ public class getWebWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        String mUserAgent = null;
         String website = MainActivity.web_link;
         Locale mLocale = Locale.GERMANY;
 
@@ -63,9 +62,6 @@ public class getWebWorker extends Worker {
             Darum 2 Hashmaps. Eine fuer die Stolpersteine selbst in der Anzeige
             im NameFragment und eine fuer die KML-Geodaten im MapFragment.
              */
-
-            //TreeMap<String, ArrayList<String>> resultWeb = new TreeMap<>(); // alphabetische HashMap
-            //HashMap<String, String> resultAddress = new HashMap<>(); // addressen HashMap
 
             HashMap<String,String> localPoint = new HashMap<>();
 
@@ -103,7 +99,7 @@ public class getWebWorker extends Worker {
             // geopoints suchen aus HashMap localpoint und der DB hinzufugen
             // geocoder um revers nach geopoints zu suchen
             int maxResults = 1;
-            GeocoderNominatim mGeoCoder = new GeocoderNominatim(mLocale, mUserAgent);
+            GeocoderNominatim mGeoCoder = new GeocoderNominatim(mLocale, null);
             for (Object keyAddress : localPoint.keySet()) {
                 // hier mcoder
                 // address zu Geo Daten. Laengen- und Breitengrad
@@ -121,8 +117,7 @@ public class getWebWorker extends Worker {
                     args.add(keyAddress.toString());
                     args.add(mGeo);
                     sqlHandler.addNewGeoPoint("address", args);
-                    //Log.i("ST_getWebWorker","-> " + keyAddress);
-                    //Log.i("ST_getWebWorker","-> " + mCoder.get(0).getLongitude() + "," + mCoder.get(0).getLatitude());
+
                 } else {
                     SettingViewModel.mSearch.postValue(keyAddress + "\n"
                             + "error: address no found");

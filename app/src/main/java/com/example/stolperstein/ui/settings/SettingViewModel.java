@@ -3,8 +3,6 @@ package com.example.stolperstein.ui.settings;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.stolperstein.R;
-
 public class SettingViewModel extends ViewModel {
     public static MutableLiveData<String> mSearch;
     public static MutableLiveData<String> mButton;

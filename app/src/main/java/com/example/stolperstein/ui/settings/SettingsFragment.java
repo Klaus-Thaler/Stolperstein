@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -65,6 +66,9 @@ public class SettingsFragment extends Fragment {
 
         final Button settingButton = binding.searchStart;
         SettingViewModel.mButton.observe(getViewLifecycleOwner(), settingButton::setText);
+
+        final ImageView imageLGPL = binding.imageLgpl;
+        imageLGPL.setImageBitmap(utils.getBitmapFromAsset(requireContext(),"LGPLv3_Logo.png"));
 
         // worker background process
         settingButton.setOnClickListener(v -> {

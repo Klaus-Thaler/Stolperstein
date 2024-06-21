@@ -47,11 +47,21 @@ public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
         List<String> show = Objects.requireNonNull(data.get(position));
         holder.nameText.setText(show.get(0));
+        holder.nameText.setAutoSizeTextTypeUniformWithConfiguration(16, 22,1,1);
         holder.addressText.setText(show.get(1));
+        holder.addressText.setAutoSizeTextTypeUniformWithConfiguration(8,16,1,1);
         holder.bornText.setText(show.get(2));
+        holder.bornText.setAutoSizeTextTypeUniformWithConfiguration(8,16,1,1);
         holder.deathText.setText(show.get(3));
+        holder.deathText.setAutoSizeTextTypeUniformWithConfiguration(8,16,1,1);
         holder.installedText.setText(show.get(6));
+        holder.installedText.setAutoSizeTextTypeUniformWithConfiguration(8,16,1,1);
         holder.counter.setText(String.valueOf(position+1));
+        holder.counter.setAutoSizeTextTypeUniformWithConfiguration(8,16,1,1);
+
+        holder.bioButton.setAutoSizeTextTypeUniformWithConfiguration(8,16,1,1);
+        holder.fotoButton.setAutoSizeTextTypeUniformWithConfiguration(8,16,1,1);
+        holder.geopointButton.setAutoSizeTextTypeUniformWithConfiguration(8,16,1,1);
 
         // buttons
         holder.bioButton.setOnClickListener(v -> {

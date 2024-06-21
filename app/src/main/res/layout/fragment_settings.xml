@@ -93,122 +93,6 @@
                     </RadioGroup>
                 </TableRow>
             </TableLayout>
-
-            <!-- crashed
-                <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/name_recycler_border"
-                    android:layout_margin="2sp">
-                <TextView
-                    android:id="@+id/first_welcome5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/settings_info_text"/>
-
-                    <TableRow android:gravity="right">
-
-                        <RadioGroup
-                            android:id="@+id/theme"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/theme_system"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:layoutDirection="rtl"
-                                android:text="system"
-                                android:textAlignment="textStart" />
-
-                            <RadioButton
-                                android:id="@+id/theme_light"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:layoutDirection="rtl"
-                                android:text="hell"
-                                android:textAlignment="textStart" />
-
-                            <RadioButton
-                                android:id="@+id/theme_dark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:layoutDirection="rtl"
-                                android:text="dark"
-                                android:textAlignment="textStart" />
-                        </RadioGroup>
-                    </TableRow>
-            </TableLayout>
-            -->
-
-            <!-- spaeter ...
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/name_recycler_border"
-                android:layout_margin="2sp">
-                <TextView
-                    android:id="@+id/text_fontsize"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/font_size"
-                    android:layout_marginStart="22sp"
-                    android:drawablePadding="10dp"
-                    app:drawableLeftCompat="@drawable/baseline_format_line_spacing_24" />
-
-                <TableRow android:gravity="right"
-                    tools:ignore="RtlHardcoded">
-
-                    <RadioGroup
-                        android:id="@+id/fontsize"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:text="small"
-                            android:textAlignment="textStart" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:text="medium"
-                            android:textAlignment="textStart" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:text="moderate"
-                            android:textAlignment="textStart" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:text="large"
-                            android:textAlignment="textStart" />
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:text="xlarge"
-                            android:textAlignment="textStart" />
-                    </RadioGroup>
-                </TableRow>
-            </TableLayout>
-            -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -326,7 +210,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/name_recycler_border"
-                android:layout_margin="2sp">
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginBottom="44dp">
                 <TextView
                     android:id="@+id/text_download"
                     android:layout_width="match_parent"
@@ -341,7 +228,10 @@
                     android:id="@+id/furtherInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="22sp"
+                    android:layout_marginStart="22sp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="12sp"
+                    android:autoSizeMaxTextSize="16sp"
                     android:scrollbars="vertical"
                     android:text="@string/source_github"
                     android:textAppearance="?android:attr/textAppearanceSmall"
@@ -350,6 +240,45 @@
                     android:linksClickable="true"
                     android:autoLink="web"
                     />
+                <TextView
+                    android:id="@+id/licenseInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22sp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="12sp"
+                    android:autoSizeMaxTextSize="16sp"
+                    android:scrollbars="vertical"
+                    android:text="@string/gnu_org_licenses"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible"
+                    android:linksClickable="true"
+                    android:autoLink="web"
+                />
+                <TextView
+                    android:id="@+id/fdroidInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22sp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="12sp"
+                    android:autoSizeMaxTextSize="16sp"
+                    android:scrollbars="vertical"
+                    android:text="@string/f_droid_about"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible"
+                    android:linksClickable="true"
+                    android:autoLink="web"
+                />
+                <ImageView
+                    android:id="@+id/image_lgpl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginRight="42dp"
+                    android:contentDescription="@string/todo" />
             </TableLayout>
         </LinearLayout>
     </ScrollView>

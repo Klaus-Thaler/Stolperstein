@@ -36,7 +36,7 @@ public class NameFragment extends Fragment {
         FragmentNameBinding binding = FragmentNameBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        NameViewModel nameViewModel = new ViewModelProvider(this).get(NameViewModel.class);
+        //NameViewModel nameViewModel = new ViewModelProvider(this).get(NameViewModel.class);
 
         // creating a new db handler class
         sqlHandler sqlHandler = getInstance(root.getContext());

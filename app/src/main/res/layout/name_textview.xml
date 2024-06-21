@@ -2,98 +2,148 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/name_recycler_border"
-    android:layout_marginTop="2sp"
-    android:layout_marginBottom="22sp"
-    android:layout_marginLeft="12sp"
-    android:layout_marginRight="12sp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="62dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
     android:orientation="vertical"
     android:stretchColumns="*">
 
-    <TableRow>
+    <TableRow
+        android:layout_width="match_parent" >
         <TextView
             android:id="@+id/name_name"
-            android:layout_height="wrap_content"
+            android:layout_height="32sp"
+            android:layout_width="360dp"
+            android:maxWidth="360dp"
             android:layout_margin="2sp"
             android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_span="2" />
+            android:layout_span="3" />
         <TextView
             android:id="@+id/name_count"
-            android:text=""
+            android:text="@string/placeholder"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:textAlignment="textEnd"
-
             />
     </TableRow>
-    <TableRow>
+    <TableRow
+        android:layout_width="match_parent">
         <TextView
             android:id="@+id/address_str"
             android:text="@string/address"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeMaxTextSize="12sp"
+            app:autoSizeStepGranularity="1sp"/>
+
         <TextView
             android:id="@+id/name_address"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp"
-            android:layout_span="2"/>
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            android:layout_span="2"
+            app:autoSizeStepGranularity="1sp" />
     </TableRow>
     <TableRow>
         <TextView
             android:id="@+id/born_str"
             android:text="@string/born"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeMaxTextSize="12sp"
+            app:autoSizeStepGranularity="1sp"/>
         <TextView
             android:id="@+id/name_born"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp"
-            android:layout_span="2"/>
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            android:layout_span="2" />
     </TableRow>
     <TableRow>
         <TextView
             android:id="@+id/death_str"
             android:text="@string/death"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
+            android:layout_width="100dp"
+            android:minHeight="32dp"
+            android:maxHeight="38dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeMaxTextSize="12sp"
+            app:autoSizeStepGranularity="1sp"/>
         <TextView
             android:id="@+id/name_death"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp"
-            android:layout_span="2"/>
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            android:layout_span="2"
+            app:autoSizeStepGranularity="1sp"/>
     </TableRow>
-    <TableRow>
+    <TableRow
+        android:layout_width="match_parent">
         <TextView
             android:id="@+id/installed_str"
             android:text="@string/installed"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp" />
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeMaxTextSize="12sp"
+            app:autoSizeStepGranularity="1sp"/>
         <TextView
             android:id="@+id/name_installed"
-            android:layout_height="wrap_content"
-            android:layout_margin="2sp"
-            android:layout_span="2"/>
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            android:layout_span="2"
+            app:autoSizeStepGranularity="1sp"/>
     </TableRow>
-    <TableRow>
+    <TableRow
+        android:layout_width="match_parent">
         <Button
             android:id="@+id/name_button_bio"
             android:text="@string/bio"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
+            android:maxWidth="100dp"
+            android:layout_height="48dp"
+            android:height="48dp"
             android:layout_marginLeft="6sp"
             android:layout_marginRight="6sp"
             style="?android:attr/buttonBarButtonStyle" />
         <Button
             android:id="@+id/name_button_foto"
             android:text="@string/foto"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
+            android:maxWidth="100dp"
+            android:layout_height="48dp"
+            android:height="48dp"
             android:layout_marginLeft="6sp"
             android:layout_marginRight="6sp"
             style="?android:attr/buttonBarButtonStyle" />
         <Button
             android:id="@+id/name_button_geopoint"
             android:text="@string/map"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
+            android:maxWidth="100sp"
+            android:layout_height="48dp"
             android:layout_marginLeft="6sp"
             android:layout_marginRight="6sp"
             style="?android:attr/buttonBarButtonStyle" />

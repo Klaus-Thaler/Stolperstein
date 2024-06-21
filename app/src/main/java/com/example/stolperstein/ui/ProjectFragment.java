@@ -33,7 +33,7 @@ public class ProjectFragment extends Fragment {
         String resString1 = getResources().getString(R.string.this_project1);
         final TextView content1 = binding.projectContent1;
         content1.setMovementMethod(LinkMovementMethod.getInstance());
-        content1.setText(getResources().getString(R.string.this_project1));
+        content1.setText(resString1);
 
         String resString2 = getResources().getString(R.string.this_project2);
         final TextView content2 = binding.projectContent2;

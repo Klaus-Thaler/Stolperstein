@@ -3,15 +3,12 @@ package com.example.stolperstein.ui;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.stolperstein.R;
 import com.example.stolperstein.classes.utils;
-
-import java.io.InputStream;
 
 public class DialogAbout {
     public static void show(Context context, String dialogTitle,
