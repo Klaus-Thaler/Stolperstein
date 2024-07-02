@@ -29,6 +29,8 @@ import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.FragmentSettingsBinding;
 
+import java.util.Objects;
+
 public class SettingsFragment extends Fragment {
 
     @SuppressLint("SetTextI18n")
@@ -64,10 +66,22 @@ public class SettingsFragment extends Fragment {
         final  TextView furtherText = binding.furtherInfo;
         furtherText.setMovementMethod(LinkMovementMethod.getInstance());
 
+        final TextView license = binding.licenseInfo;
+        license.setMovementMethod(LinkMovementMethod.getInstance());
+
+        final TextView osm = binding.licenseOSM;
+        osm.setMovementMethod(LinkMovementMethod.getInstance());
+
+        final TextView fdroid = binding.fdroidInfo;
+        fdroid.setMovementMethod(LinkMovementMethod.getInstance());
+
+        final TextView wiki = binding.licenseWiki;
+        wiki.setMovementMethod(LinkMovementMethod.getInstance());
+
         final Button settingButton = binding.searchStart;
         SettingViewModel.mButton.observe(getViewLifecycleOwner(), settingButton::setText);
 
-        final ImageView imageLGPL = binding.imageLgpl;
+        final ImageView imageLGPL = binding.imageLGPLlogo;
         imageLGPL.setImageBitmap(utils.getBitmapFromAsset(requireContext(),"LGPLv3_Logo.png"));
 
         // worker background process

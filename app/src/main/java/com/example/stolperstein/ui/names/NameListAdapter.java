@@ -91,8 +91,6 @@ public class NameListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
                 utils.showToast(mContext, "no GeoPoint for this address. ;-(");
             }
         });
-
-        Log.i("ST_NameListAdapter", "-> " + show.get(0));
     }
 
     @Override

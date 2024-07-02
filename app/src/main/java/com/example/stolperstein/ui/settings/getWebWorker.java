@@ -69,9 +69,7 @@ public class getWebWorker extends Worker {
             Elements mTable = doc.select("table tbody");
             mRows = mTable.select("tr");
             // tabelle reihenweise auslesen
-            //Log.i("ST_getWebWorker", "mRows: " + mRows.size());
-
-            for (int i = 1; mRows.size() > i; i++) {
+                        for (int i = 1; mRows.size() > i; i++) {
             //for (int i = 1; 10 > i; i++) { // fuer kurze tests
                 //first row is the col names so skip it.
                 Elements mTD = mRows.get(i).select("td");
@@ -90,11 +88,9 @@ public class getWebWorker extends Worker {
                 args.add(mTD.get(5).select("a").attr("href")); //foto
                 args.add(mTD.get(6).text()); //verlegt
                 sqlHandler.addNewName("person", args);
-                Log.i("ST_getWebWorker", "person: " + args.get(0));
                 // hashmap fur mcoder
                 localPoint.put(newAddress, null);
             }
-            //Log.i("ST_getWebWorker","-> " + localPoint.toString());
 
             // geopoints suchen aus HashMap localpoint und der DB hinzufugen
             // geocoder um revers nach geopoints zu suchen
@@ -121,7 +117,6 @@ public class getWebWorker extends Worker {
                 } else {
                     SettingViewModel.mSearch.postValue(keyAddress + "\n"
                             + "error: address no found");
-                    //Log.i("ST_getWebWorker", "mcoder error: " + keyAddress);
                 }
                 numberAddress++;
             }
@@ -136,15 +131,13 @@ public class getWebWorker extends Worker {
                             .append(keyAddress)
                             .append("</name>\n")
                             .append("\t\t<description>");
-                    // db abfrage nach geopoints
 
+                    // db abfrage nach geopoints
                     sqlHandler = getInstance(getApplicationContext());
                     List<String> queryDB = sqlHandler.getNamesInAddress(keyAddress);
-                    Log.i("ST_getWebWorker", "query: " + queryDB.toString());
                     for (String entry : queryDB) {
                         kmlFile.append(" -> ").append(entry);
                     }
-
                     kmlFile.append("</description>\n")
                             .append("\t<Point>\n")
                             .append("\t\t<coordinates>")
@@ -156,7 +149,6 @@ public class getWebWorker extends Worker {
             }
             kmlFile.append("</Document>\n</kml>");
         } catch (IOException e) {
-            Log.i("ST_getWebWorker", "result: " + Result.failure());
             throw new RuntimeException(e);
         } finally {
             assert mRows != null;
@@ -166,12 +158,9 @@ public class getWebWorker extends Worker {
             SettingViewModel.mButton.postValue("GONE");
             SettingViewModel.dText.postValue(getApplicationContext().getString(R.string.hier_download_kml));
 
-            //Log.i("ST_getWebWorker", "kml: " + kmlFile);
-
             // safe in cache
             FileManager.saveCacheFile(getApplicationContext(), CacheKMLFileName, kmlFile.toString());
         }
-        //Log.i("ST_getWebWorker", "result: " + Result.success());
         return Result.success();
     }
 }

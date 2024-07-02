@@ -44,7 +44,6 @@ public class NameFragment extends Fragment {
         String query = "SELECT * FROM person;";
 
         hashPerson = sqlHandler.getHashMapFromData(query);
-        Log.i("ST_NameFragment", "query: "+ hashPerson.toString());
 
         // Add the following lines to create RecyclerView
         // Add RecyclerView member
@@ -62,7 +61,6 @@ public class NameFragment extends Fragment {
 
         TextView searchResult = root.findViewById(R.id.searchResult);
         searchResult.setText(hashPerson.size() + " Entry(s) found");
-        //Log.i("ST_NameFragment", "- " + hashPerson.toString());
 
         //arrayAdapter = new ArrayAdapter<>(root.getContext(), R.layout.searchtextview, sqlHandler.getAllNames());
 

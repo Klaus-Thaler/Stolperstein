@@ -161,7 +161,7 @@
     <string name="Description_done_1">Die Daten sind vom</string>
     <string name="Description_done_2">Es ist nicht zwingend notwendig neue Daten zu holen.</string>
     <string name="No_data_available">Keine Daten vorhanden. Bitte erst die Suche starten.</string>
-    <string name="hier_download_kml">Hier können sie den KML-File in Downloads gespeichern.</string>
+    <string name="hier_download_kml">Hier können sie den KML-File in Downloads speichern.</string>
     <string name="copyrights" translatable="false">Copyrights</string>
     <string name="geodaten" translatable="false">Geo Dates</string>
     <string name="dialog_body_about">Die App findet die Stolpersteine  in der Stadt Kiel.\nSie nutzt die Daten aus Wikipedia und erzeugt damit die Geopunkte für die Anzeige in der Open-Street-Map.\nDes weiteren werden Informationen zum Projekt und zum Künstler ausgegeben.\nUnd vieles mehr.</string>
@@ -169,6 +169,9 @@
     <string name="email" translatable="false"><u>klaus.thaler@vodafonemail.de</u></string>
     <string name="gnu_org_licenses" translatable="false">License: https://www.gnu.org/licenses/gpl-3.0.html</string>
     <string name="f_droid_about">F-Droid: https://f-droid.org/de/about/</string>
+    <string name="osm_copyright" translatable="false">OSM: https://www.openstreetmap.org/copyright</string>
+    <string name="wikipedia_hilfe" translatable="false">Wikipedia: https://de.wikipedia.org/wiki/Hilfe:FAQ_Rechtliches</string>
+    <string name="rights_and_licenses" translatable="false">Copyrights and Licenses</string>
     <!-- Preference Titles -->
 
 </resources>

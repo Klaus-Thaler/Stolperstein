@@ -204,7 +204,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                android:text="@string/copyrights" />
+                android:text="@string/rights_and_licenses" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -215,11 +215,11 @@
                 android:layout_marginLeft="2dp"
                 android:layout_marginBottom="44dp">
                 <TextView
-                    android:id="@+id/text_download"
+                    android:id="@+id/text_copyrights"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/copyrights"
-                    android:layout_marginStart="22dp"
+                    android:text="@string/rights_and_licenses"
+                    android:layout_marginStart="12dp"
                     android:layout_marginBottom="22dp"
                     android:drawablePadding="10dp"
                     app:drawableLeftCompat="@drawable/baseline_copyright_24" />
@@ -228,7 +228,7 @@
                     android:id="@+id/furtherInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="22sp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
                     android:textSize="12sp"
                     android:autoSizeMaxTextSize="16sp"
@@ -244,7 +244,7 @@
                     android:id="@+id/licenseInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="22sp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
                     android:textSize="12sp"
                     android:autoSizeMaxTextSize="16sp"
@@ -257,10 +257,42 @@
                     android:autoLink="web"
                 />
                 <TextView
+                    android:id="@+id/licenseOSM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="12sp"
+                    android:autoSizeMaxTextSize="16sp"
+                    android:scrollbars="vertical"
+                    android:text="@string/osm_copyright"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible"
+                    android:linksClickable="true"
+                    android:autoLink="web"
+                    />
+                <TextView
+                    android:id="@+id/licenseWiki"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="12sp"
+                    android:autoSizeMaxTextSize="16sp"
+                    android:scrollbars="vertical"
+                    android:text="@string/wikipedia_hilfe"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible"
+                    android:linksClickable="true"
+                    android:autoLink="web"
+                    />
+                <TextView
                     android:id="@+id/fdroidInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="22sp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
                     android:textSize="12sp"
                     android:autoSizeMaxTextSize="16sp"
@@ -273,7 +305,7 @@
                     android:autoLink="web"
                 />
                 <ImageView
-                    android:id="@+id/image_lgpl"
+                    android:id="@+id/imageLGPLlogo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="42dp"

@@ -108,9 +108,7 @@ public class MapFragment extends Fragment {
             File mCacheFile = FileManager.loadCacheFile(requireActivity(), CacheKMLFileName);
             KmlDocument kmlDoc = new KmlDocument();
             kmlDoc.parseKMLFile(mCacheFile);
-            Log.i("ST_readcache",  "data " + mCacheFile);
             String erg = FileManager.readCacheFile(requireActivity(), CacheKMLFileName);
-            Log.i("ST_readfile", "readfile: " + erg);
             FolderOverlay kmlOverlay = (FolderOverlay) kmlDoc.mKmlRoot.buildOverlay(
                     mapView, null, null, kmlDoc);
             mapView.getOverlays().add(kmlOverlay);
