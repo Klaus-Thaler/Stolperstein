@@ -172,6 +172,14 @@
     <string name="osm_copyright" translatable="false">OSM: https://www.openstreetmap.org/copyright</string>
     <string name="wikipedia_hilfe" translatable="false">Wikipedia: https://de.wikipedia.org/wiki/Hilfe:FAQ_Rechtliches</string>
     <string name="rights_and_licenses" translatable="false">Copyrights and Licenses</string>
+    <string name="german_short" translatable="false">de</string>
+    <string name="english_short" translatable="false">en</string>
+    <string name="france_short" translatable="false">fr</string>
+    <string name="ukrainian_short" translatable="false">yк</string>
+    <string name="implementations_jsoup_org" translatable="false">Implementation JSOUP: https://jsoup.org/</string>
+    <string name="implementation_osmbonuspack" translatable="false">Implementation OSM Bonuspack: https://github.com/MKergall/osmbonuspack</string>
+    <string name="info_app">Diese App ist keine offizielle App der Stadt Kiel. Diese App dient ausschließlich meinem privaten Bedürfnis nach Information zur Zeitgeschichte und dem Gedenken an die Opfer des Nationalsozialismus.</string>
+    <string name="wichtige_info">Wichtige Info</string>
     <!-- Preference Titles -->
 
 </resources>

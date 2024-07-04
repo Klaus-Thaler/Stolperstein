@@ -22,5 +22,9 @@
             android:id="@+id/settings_donat"
             android:title="@string/coffee_for_me" />
 
+        <item
+            android:id="@+id/settings_info"
+            android:title="@string/wichtige_info" />
+
     </group>
 </menu>

@@ -84,4 +84,6 @@
     <string name="dialog_body_about">The app finds the Stolpersteine in the city of Kiel.\nIt uses the data from Wikipedia to generate the geopoints for display in the Open Street Map.\nIt also displays information about the project and the artist.\nAnd much more.</string>
     <string name="dialog_body_me">Hello Fans \nIf you like my work and would like to support me, then buy me a coffee. \nBecause nothing works here without coffee and donuts.</string>
     <string name="f_droid_about">F-Droid: https://f-droid.org/en/about/</string>
+    <string name="info_app">This app is not an official app of the City of Kiel. This app exclusively serves my private need for information on contemporary history and the commemoration of the victims of National Socialism.</string>
+    <string name="wichtige_info">Important information</string>
 </resources>

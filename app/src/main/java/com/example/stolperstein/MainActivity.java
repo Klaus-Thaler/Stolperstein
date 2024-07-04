@@ -116,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
             String content = getString(R.string.dialog_body_me);
             DialogAbout.show(this, "Coffee & Donuts", content, "donut.png");
         }
+        if (item.getItemId() == R.id.settings_info) {
+            String content = getString(R.string.info_app);
+            DialogAbout.show(this, "Info", content, null);
+        }
 
         return super.onOptionsItemSelected(item);
     }

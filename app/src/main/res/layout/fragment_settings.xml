@@ -50,7 +50,7 @@
                     app:drawableLeftCompat="@drawable/baseline_font_download_24" />
                 />
 
-                <TableRow android:gravity="right"
+                <TableRow android:gravity="center_horizontal"
                     tools:ignore="RtlHardcoded">
                     <RadioGroup
                         android:id="@+id/lang"
@@ -304,6 +304,54 @@
                     android:linksClickable="true"
                     android:autoLink="web"
                 />
+                <TextView
+                    android:id="@+id/LibsJsoup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="12sp"
+                    android:autoSizeMaxTextSize="16sp"
+                    android:scrollbars="vertical"
+                    android:text="@string/implementations_jsoup_org"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible"
+                    android:linksClickable="true"
+                    android:autoLink="web"
+                    />
+                <TextView
+                    android:id="@+id/LibsOSMBonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="12sp"
+                    android:autoSizeMaxTextSize="16sp"
+                    android:scrollbars="vertical"
+                    android:text="@string/implementation_osmbonuspack"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible"
+                    android:linksClickable="true"
+                    android:autoLink="web"
+                    />
+                <TextView
+                    android:id="@+id/info_kiel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="12sp"
+                    android:autoSizeMaxTextSize="16sp"
+                    android:scrollbars="vertical"
+                    android:text="@string/info_app"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColorLink="@color/top"
+                    android:visibility="visible"
+                    android:linksClickable="true"
+                    android:autoLink="web"
+                    />
                 <ImageView
                     android:id="@+id/imageLGPLlogo"
                     android:layout_width="match_parent"

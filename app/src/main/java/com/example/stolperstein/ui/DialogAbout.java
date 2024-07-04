@@ -21,13 +21,14 @@ public class DialogAbout {
         TextView bodyText = (TextView) dialog.findViewById(R.id.dialog_body);
         bodyText.setText(dialogText);
 
-        ImageView imageView = (ImageView) dialog.findViewById(R.id.dialog_image);
-        imageView.setCropToPadding(true);
-        imageView.setMaxWidth(10);
-        imageView.setMaxHeight(10);
-        Bitmap img1 = utils.getBitmapFromAsset(dialog.getContext(), resourcePic);
-        imageView.setImageBitmap(img1);
-        
+        if (resourcePic != null) {
+            ImageView imageView = (ImageView) dialog.findViewById(R.id.dialog_image);
+            imageView.setCropToPadding(true);
+            imageView.setMaxWidth(10);
+            imageView.setMaxHeight(10);
+            Bitmap img1 = utils.getBitmapFromAsset(dialog.getContext(), resourcePic);
+            imageView.setImageBitmap(img1);
+        }
         Button buttonClose = (Button) dialog.findViewById(R.id.button_close);
         buttonClose.setOnClickListener(v -> dialog.dismiss());
         dialog.show();
