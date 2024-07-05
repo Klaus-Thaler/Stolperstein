@@ -29,8 +29,6 @@ import com.example.stolperstein.classes.FileManager;
 import com.example.stolperstein.classes.utils;
 import com.example.stolperstein.databinding.FragmentSettingsBinding;
 
-import java.util.Objects;
-
 public class SettingsFragment extends Fragment {
 
     @SuppressLint("SetTextI18n")

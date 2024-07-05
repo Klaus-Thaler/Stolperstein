@@ -79,7 +79,7 @@ Les noms des victimes ont été et sont encore gravés dans de petites pierres n
     <string name="No_data_available">Aucune donnée n\'est encore disponible. Veuillez d\'abord effectuer une recherche.</string>
     <string name="hier_download_kml">Ici, vous pouvez enregistrer le fichier KML dans les téléchargements.</string>
     <string name="dialog_body_about">L\'application trouve les pierres d\'achoppement dans la ville de Kiel.\nElle utilise les données de Wikipedia et génère ainsi les géopoints pour l\'affichage dans l\'Open-Street-Map.\nDe plus, des informations sur le projet et l\'artiste sont fournies.\nEt bien plus encore.</string>
-    <string name="dialog_body_me">Bonjour les fans \nSi vous aimez mon travail et souhaitez me soutenir, offrez-moi un café.  \nParce que rien ne fonctionne ici sans café et sans beignets.</string>
+    <string name="dialog_body_me">Bonjour les fans \nSi vous aimez mon travail et souhaitez me soutenir, offrez-moi un café.\nParce que rien ne fonctionne ici sans café et sans beignets.\n\nDon: https://liberapay.com/KlausThaler/</string>
     <string name="f_droid_about">F-Droid:  https://f-droid.org/fr/about/</string>
     <string name="info_app">Cette application n\'est pas une application officielle de la ville de Kiel. Cette application répond uniquement à mon besoin privé d\'informations sur l\'histoire contemporaine et sur la commémoration des victimes du nazisme.</string>
     <string name="wichtige_info">Informations importantes</string>

@@ -2,7 +2,6 @@ package com.example.stolperstein.classes;
 
 import android.content.Context;
 import android.os.Environment;
-import android.util.Log;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
